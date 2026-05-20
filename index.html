@@ -238,6 +238,36 @@
 				</div>
 			</div>
 
+			<section class="has-top-divider has-bottom-divider pt-48 pb-48">
+                <div class="container-sm">
+                    <h3 class="text-center mt-0 mb-32">Project Progress Blog</h3>
+                    
+                    <div class="blog-posts-wrap">
+                        {% for post in site.posts limit:3 %}
+                        <article class="mb-32">
+                            <div class="text-xs mb-8" style="color: #0270D7; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">
+                                {{ post.date | date: "%B %d, %Y" }}
+                            </div>
+                            <h4 class="mt-0 mb-16">
+                                <a href="{{ post.url | relative_url }}" style="color: #fff;">{{ post.title }}</a>
+                            </h4>
+                            <p class="text-sm mb-16">
+                                {{ post.excerpt | strip_html | truncatewords: 30 }}
+                            </p>
+                            <a href="{{ post.url | relative_url }}" class="button button-sm button-primary">Read Progress Update</a>
+                        </article>
+                        
+                        {% unless forloop.last %}
+                            <hr>
+                        {% endunless %}
+                        
+                        {% else %}
+                        <p class="text-center text-xs">No progress updates published yet.</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+			
             <section class="features section">
                 <div class="container">
 					<div class="features-inner section-inner">
