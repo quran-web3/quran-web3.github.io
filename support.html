@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support Center | Quran Web3</title>
+    <link class="hf" rel="icon" href="/favicon.png">
+    <link href="/style.css" rel="stylesheet">
+  </head>
+  <body
+        x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+        x-init="
+             darkMode = JSON.parse(localStorage.getItem('darkMode'));
+             $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+        :class="{'b eh': darkMode === true}"
+      >
+        <header
+          class="g s r vd ya cj"
+          :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+          @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+        >
+          <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+            <div class="vd to/4 tc wf yf">
+              <a href="/">
+                <img class="om" src="/images/logo-light.png" alt="Logo Light" />
+                <img class="xc nm" src="/images/logo-dark.png" alt="Logo Dark" />
+              </a>
+              <button class="po rc" @click="navigationOpen = !navigationOpen">
+                <span class="rc i pf re pd">
+                  <span class="du-block h q vd yc">
+                    <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+                    <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+                    <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+                  </span>
+                  <span class="du-block h q vd yc lf">
+                    <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+                    <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div
+              class="vd wo/4 sd qo f ho oo wf yf"
+              :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
+            >
+                <nav>
+                  <ul class="tc _o sf yo cg ep">
+                    <li><a href="/" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
+                    <li><a href="/#mint" class="xl">Mint</a></li>
+                    <li><a href="/blog/" class="xl">Blog</a></li>
+                    <li><a href="/#donate" class="xl">Donate</a></li>
+                  </ul>
+                </nav>
+                <div class="tc wf ig pb no">
+                  <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
+                    <label class="rc ab i">
+                      <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="pf vd yc uk h r za ab" />
+                      <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
+                      </svg>
+                      <img class="xc nm" src="/images/icon-moon.svg" alt="Moon" />
+                    </label>
+                  </div>
+                  <a href="/wp.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Whitepaper</a>
+                  <a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Web3 Link</a>
+                </div>
+              </div>
+            </div>
+          </header>
+          <main>
+          <section class="gj qp gr hj rp hr">
+            <div class="bb ze ki xn 2xl:ud-px-0">
+              <div class="tc sf yo zf kq">
+                <div class="bb ze">
+                  
+                  <!-- Main Post Section Style Wrapper -->
+                  <div class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
+                    
+                    <!-- Header Title -->
+                    <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">Support Center</h1>
+                    <p style="text-align: center;" class="ob fb">Have questions or issues with our decentralized platform? Explore the guide and communities below to get the help you need.</p>
+                    
+                    <div class="ah ch pm mb-8 mt-6"></div>
+
+                    <!-- Section 1: Support Channels Grid (Expanded to 4 items) -->
+                    <h2 class="sj ck fk kk wm gb mb-4">Official Help Channels</h2>
+                    <div class="wc qf pn dg cb">
+                      
+                      <!-- Item 1: Discussions -->
+                      <div class="rounded-md border border-stroke dark:border-strokedark p-5 bg-white dark:bg-blacksection">
+                        <span class="gh lk rg ti vi ak fk mb-2" style="display: inline-block;">Community</span>
+                        <h4 class="kk wm tj ec">GitHub Discussions</h4>
+                        <p class="ob">The main channel for discussing bugs, data contributions, feature suggestions, and technical guides with the developer community.</p>
+                        <br />
+                        <a href="https://github.com/quran-web3/quran-web3.nft/discussions" target="_blank" class="vc ek lk gh dk rg gi hi _l">Open Discussion</a>
+                      </div>
+                      
+                      <!-- Item 2: Twitter -->
+                      <div class="rounded-md border border-stroke dark:border-strokedark p-5 bg-white dark:bg-blacksection">
+                        <span class="gh lk rg ti vi ak fk mb-2" style="display: inline-block;">Social Media</span>
+                        <h4 class="kk wm tj ec">Social Media & Community</h4>
+                        <p class="ob">Get the latest updates, minting schedules, IPFS integration, and Polygon network announcements in real-time via the X platform (Twitter).</p>
+                        <br />
+                        <a href="https://twitter.com/quran_web3" target="_blank" class="vc ek lk gh dk rg gi hi _l">Follow Twitter</a>
+                      </div>
+
+                      <!-- Item 3: Bug Reports (New) -->
+                      <div class="rounded-md border border-stroke dark:border-strokedark p-5 bg-white dark:bg-blacksection">
+                        <span class="fh sm pk _g ch pm rg ti vi ak fk mb-2" style="display: inline-block; color: #ffffff;">Technical</span>
+                        <h4 class="kk wm tj ec">Issue & Bug Tracker</h4>
+                        <p class="ob">Found a rendering glitch, typo in the database-less Quran text, or a loading error on an IPFS public gateway? Submit a structural issue ticket.</p>
+                        <br />
+                        <a href="https://github.com/quran-web3/quran-web3.nft/issues" target="_blank" class="vc ek lk gh dk rg gi hi _l">Report an Issue</a>
+                      </div>
+
+                      <!-- Item 4: Direct Mail (New) -->
+                      <div class="rounded-md border border-stroke dark:border-strokedark p-5 bg-white dark:bg-blacksection">
+                        <span class="nh lk rg wi vi ak fk mb-2" style="display: inline-block;">Inquiries</span>
+                        <h4 class="kk wm tj ec">Direct / Partnership Mail</h4>
+                        <p class="ob">For general development inquiries, sponsorship collaborations, or specific questions that cannot be discussed publically on GitHub forums.</p>
+                        <br />
+                        <a href="mailto:support@quran-web3.nft" class="vc ek lk gh dk rg gi hi _l">Contact Email</a>
+                      </div>
+
+                    </div>
+
+                    <div class="ah ch pm mb-8 mt-10"></div>
+
+                    <!-- Section 2: Interactive FAQ Accordion (Using Alpine.js) -->
+                    <h2 class="sj ck fk kk wm gb mb-2">Frequently Asked Questions</h2>
+                    <p class="ob mb-6">Quick solutions to common technical problems and conceptual misunderstandings about Web3 integration.</p>
+
+                    <div class="tc sf yo cg">
+                        
+                        <!-- FAQ 1 -->
+                        <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
+                            <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
+                                <span>How do I access this website if the main .io domain is down?</span>
+                                <span x-text="open ? '−' : '+'" class="ck"></span>
+                            </button>
+                            <div x-show="open" x-transition class="lc bh ch pm pt-4 dk pk" style="margin-top: 15px; padding-top: 15px;">
+                                Because this platform runs entirely on the IPFS peer-to-peer network, you can access it through any public IPFS gateway using our Unstoppable Domain or native IPNS hash records. Example backup: <code class="eh lk tg ti vi ak">https://ipfs.io/ipns/quran-web3.nft</code>.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
+                            <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
+                                <span>Why does the page load slowly during the first visit?</span>
+                                <span x-text="open ? '−' : '+'" class="ck"></span>
+                            </button>
+                            <div x-show="open" x-transition class="lc bh ch pm pt-4 dk pk" style="margin-top: 15px; padding-top: 15px;">
+                                Dolor sit amet, consectetur adipiscing elit. Static files distributed peer-to-peer require neighboring nodes to look up and cache the content hashes. Once the files are securely pinned and distributed across nodes, load speeds will normalize.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
+                            <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
+                                <span>Do I need a Web3 wallet or gas fee just to read the Quran text?</span>
+                                <span x-text="open ? '−' : '+'" class="ck"></span>
+                            </button>
+                            <div x-show="open" x-transition class="lc bh ch pm pt-4 dk pk" style="margin-top: 15px; padding-top: 15px;">
+                                No. Reading, browsing, and studying the content on this platform is 100% free and open-source. A Web3 cryptographic wallet (like MetaMask) is only utilized if you choose to participate in the milestone minting processes or direct donation pipelines.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
+                            <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
+                                <span>How can I contribute to data verification or code improvement?</span>
+                                <span x-text="open ? '−' : '+'" class="ck"></span>
+                            </button>
+                            <div x-show="open" x-transition class="lc bh ch pm pt-4 dk pk" style="margin-top: 15px; padding-top: 15px;">
+                                Lorem ipsum dolor sit amet. You can clone our static repository on GitHub, audit the structural formatting codes, and submit a Pull Request. Every updated build hash is strictly tracked and signed for verification transparency.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="ah ch pm mb-8 mt-10"></div>
+
+                    <!-- Section 3: Quick Troubleshooting Checklists -->
+                    <h2 class="sj ck fk kk wm gb mb-2">Quick Troubleshooting Guide</h2>
+                    <p class="ob mb-4">Follow these step-by-step instructions if you run into any common platform operational issues:</p>
+                    
+                    <div class="fh sm sg ci ac">
+                        <ol class="tc sf cg ac dk pk">
+                          <li>
+                              <div class="tc">
+                                  <span class="kk wm fk ub bf">1.</span>
+                                  <p><strong>Gateway Content Mismatch / Outdated Data Cache</strong></p>
+                              </div>
+                              <ol class="tc sf cg pi jc ic">
+                                  <li>
+                                      <div class="tc">
+                                          <span class="kk wm fk ub bf">1.1.</span>
+                                          <p>Perform a hard refresh on your web browser (<code class="eh lk tg ti vi ak">Ctrl + F5</code> or <code class="eh lk tg ti vi ak">Cmd + Shift + R</code>).</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="tc">
+                                          <span class="kk wm fk ub bf">1.2.</span>
+                                          <p>If utilizing a local IPFS node companion, run an updated hash pinning command.</p>
+                                      </div>
+                                  </li>
+                              </ol>
+                          </li>
+                          <li>
+                              <div class="tc">
+                                  <span class="kk wm fk ub bf">2.</span>
+                                  <p><strong>Unresolved DNS Lookup for .NFT Domain Extension</strong></p>
+                              </div>
+                              <ol class="tc sf cg pi jc ic">
+                                  <li>
+                                      <div class="tc">
+                                          <span class="kk wm fk ub bf">2.1.</span>
+                                          <p>Ensure your network uses a Web3-compatible DNS service like Cloudflare (1.1.1.1) or Google DNS.</p>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="tc">
+                                          <span class="kk wm fk ub bf">2.2.</span>
+                                          <p>Alternatively, install the official Unstoppable Domains extension or access through an standard HTTP gateway link.</p>
+                                      </div>
+                                  </li>
+                              </ol>
+                          </li>
+                        </ol>
+                    </div>
+
+                    <div class="ah ch pm mb-8 mt-10"></div>
+
+                    <!-- Section 4: Network & Hash Verification Status Table -->
+                    <h2 class="sj ck fk kk wm gb mb-2">Network Infrastructure Status</h2>
+                    <p class="ob mb-4">Real-time reference logs for our core decentralized platform build components.</p>
+                    
+                    <div class="fh sm sg ci ac" style="overflow-x: auto;">
+                        <table class="vd dk pk ic" style="min-width: 550px; text-align: left; border-collapse: collapse;">
+                            <thead>
+                                <tr class="ah ch pm">
+                                    <th class="sj fk kk wm pb-2 pt-2 pr-4">Network Component</th>
+                                    <th class="sj fk kk wm pb-2 pt-2 pr-4">Status Type</th>
+                                    <th class="sj fk kk wm pb-2 pt-2 pr-4">Current Availability Log</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="ah ch pm">
+                                    <td class="pb-2 pt-2 pr-4">GitHub Pages Gateway</td>
+                                    <td class="pb-2 pt-2 pr-4"><span class="nh lk rg wi vi ak fk" style="padding: 2px 8px; font-size:11px;">ONLINE</span></td>
+                                    <td class="pb-2 pt-2 pr-4">Operational - Synchronized with Main Branch</td>
+                                </tr>
+                                <tr class="ah ch pm">
+                                    <td class="pb-2 pt-2 pr-4">IPFS Node Distributed Pins</td>
+                                    <td class="pb-2 pt-2 pr-4"><span class="nh lk rg wi vi ak fk" style="padding: 2px 8px; font-size:11px;">ACTIVE</span></td>
+                                    <td class="pb-2 pt-2 pr-4">Propagating across public interplanetary gateways</td>
+                                </tr>
+                                <tr class="ah ch pm">
+                                    <td class="pb-2 pt-2 pr-4">Unstoppable Domain Contract</td>
+                                    <td class="pb-2 pt-2 pr-4"><span class="nh lk rg wi vi ak fk" style="padding: 2px 8px; font-size:11px;">VERIFIED</span></td>
+                                    <td class="pb-2 pt-2 pr-4">Domain pointer resolution record verified on Polygon</td>
+                                </tr>
+                                <tr>
+                                    <td class="pb-2 pt-2 pr-4">Polygon Mint Smart Contract</td>
+                                    <td class="pb-2 pt-2 pr-4"><span class="jh lk rg wi vi ak fk" style="padding: 2px 8px; font-size:11px;">STANDBY</span></td>
+                                    <td class="pb-2 pt-2 pr-4">Testing on Mumbai testnet pipeline / Mainnet coming soon</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="ah ch pm mb-8 mt-10"></div>
+
+                    <!-- Section 5: Technical Callouts at the bottom -->
+                    <div class="jh lk sg ci ac mb-4" style="padding: 15px 20px;">
+                        <strong class="gk">Core Transparency Notice:</strong> All support tickets, feature updates, and layout deployments are recorded transparently inside the project metadata. We do not use traditional backend databases, track user IPs, or collect sensitive telemetry.
+                    </div>
+                    <div class="oh lk sg ci" style="padding: 15px 20px;">
+                        <strong class="gk">Security Advisory:</strong> Be cautious of spoofing attempts. The official project channels will never ask for your private cryptographic wallet seed phrases, passwords, or direct private keys under any support pretense.
+                    </div>
+
+                  </div>
+                  <!-- End Main Post Section Style Wrapper -->
+
+                </div>
+              </div>
+            </div>
+          </section>
+        <section class="i pg gh ji">
+        <img class="h p q" src="/images/shape-16.svg" alt="Bg Shape" />
+          <div class="bb ye i z-10 ki xn dr">
+            <div class="tc uf sn tn un gg">
+              <div class="animate_left to/2">
+                <h2 class="fk vj zp pr lk ac">
+                    Quran Web3
+                </h2>
+                <p class="lk">
+                    By embracing Web3 principles, the project aims to enhance accessibility, preservation, and knowledge sharing of the Quran.
+                </p>
+              </div>
+              <div class="animate_right bf">
+                <a href="https://github.com/quran-web3" target="_blank" class="vc ek kk hh rg ol il cm gi hi">
+                    Github
+                </a>
+              </div>
+             </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="bb ze ki xn 2xl:ud-px-0">
+          <div class="ji gp">
+            <div class="tc uf ap gg fp">
+              <div class="animate_top zd/2 to/4">
+                <a href="/">
+                  <img src="/images/logo-light.png" alt="Logo" class="om" />
+                  <img src="/images/logo-dark.png" alt="Logo" class="xc nm" />
+                </a>
+                <p class="lc fb">Revolutionizing Quranic studies through Web3, ensuring decentralization, transparency, and collaborative knowledge-sharing.</p>
+              </div>
+              <div class="vd ro tc sf rn un gg vn">
+                <div class="animate_top">
+                  <h4 class="kk wm tj ec">Platform</h4>
+                  <ul>
+                    <li><a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" class="sc xl vb">Quran-Web3.NFT </a></li>
+                    <li><a href="https://polygonscan.com/token/0x74814b153519f3d77d5521cd185dd3071b6a017a" target="_blank" class="sc xl vb">605 Pages NFT</a></li>
+                    <li>
+                      <a href="/mint.html" class="sc xl vb">
+                        Quran-Web3.NFT 
+                        <span class="sc ek uj lk nh rg zi _i nc">Mint Coming Soon</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="animate_top">
+                  <h4 class="kk wm tj ec">Resources</h4>
+                  <ul>
+                    <li><a href="https://github.com/quran-web3/quran-web3.nft/projects" target="_blank" class="sc xl vb">Progress</a></li>
+                    <li><a href="https://github.com/quran-web3/quran-web3.nft/releases" target="_blank" class="sc xl vb">Releases</a></li>
+                    <li><a href="https://github.com/quran-web3/quran-web3.nft/discussions" target="_blank" class="sc xl vb">Discussions</a></li>
+                  </ul>
+                </div>
+                <div class="animate_top">
+                  <h4 class="kk wm tj ec">Network</h4>
+                  <ul>
+                    <li><a href="https://ud.me/quran-web3.nft" target="_blank" class="sc xl vb">Unstoppable Domains</a></li>
+                    <li><a href="https://github.com/quran-web3" target="_blank" class="sc xl vb">Github</a></li>
+                    <li><a href="https://twitter.com/quran_web3" target="_blank" class="sc xl vb">Twitter (X)</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
+            <div class="animate_top">
+              <ul class="tc wf gg">
+              <li><a href="/privacy-policy.html" class="xl">Privacy Policy</a></li>
+              <li><a href="/support.html" class="xl">Support</a></li>
+              </ul>
+            </div>
+            <div class="animate_top">
+              <p>&copy; 2026 Quran Web3. All rights reserved</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <button
+        class="xc wf xf ie ld vg sr gh tr g sa ta _a"
+        @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+        @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false"
+        :class="{ 'uc' : scrollTop }"
+      >
+      <svg class="uh se qd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+      </svg>
+    </button>
+  <script defer src="/bundle.js"></script>
+  </body>
+</html>

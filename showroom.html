@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Showroom | Quran Web3</title>
+    <link rel="icon" href="/favicon.png">
+    <link href="/style.css" rel="stylesheet">
+  </head>
+  <body
+    x-data="{ page: 'showroom', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+    x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    :class="{'b eh': darkMode === true}"
+  >
+    <header
+      class="g s r vd ya cj"
+      :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+      @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+    >
+      <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+        <div class="vd to/4 tc wf yf">
+          <a href="/">
+            <img class="om" src="/images/logo-light.png" alt="Logo Light" />
+            <img class="xc nm" src="/images/logo-dark.png" alt="Logo Dark" />
+          </a>
+          <button class="po rc" @click="navigationOpen = !navigationOpen">
+            <span class="rc i pf re pd">
+              <span class="du-block h q vd yc">
+                <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+                <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+                <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+              </span>
+              <span class="du-block h q vd yc lf">
+                <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+                <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+              </span>
+            </span>
+          </button>
+        </div>
+        <div
+          class="vd wo/4 sd qo f ho oo wf yf"
+          :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
+        >
+            <nav>
+              <ul class="tc _o sf yo cg ep">
+                <li><a href="/" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
+                <li><a href="/#mint" class="xl">Mint</a></li>
+                <li><a href="/blog/" class="xl">Blog</a></li>
+                <li><a href="/#donate" class="xl">Donate</a></li>
+              </ul>
+            </nav>
+            <div class="tc wf ig pb no">
+              <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
+                <label class="rc ab i">
+                  <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="pf vd yc uk h r za ab" />
+                  <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
+                  </svg>
+                  <img class="xc nm" src="/images/icon-moon.svg" alt="Moon" />
+                </label>
+              </div>
+              <a href="/wp.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Whitepaper</a>
+              <a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Web3 Link</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="gj qp gr hj rp hr">
+          <div class="bb ze ki xn 2xl:ud-px-0">
+            <div class="tc sf yo zf kq">
+              <div class="bb ze">
+                
+                <div class="hh rm _g ch pm sg bi fb xk xm bl">
+                  
+                  <h1 class="ek vj zp kk wm nb gb rj">UI/UX Showroom & Documentation</h1>
+                  <p class="dk pk ac rj fb">Explore the components, typography, and interactive elements designed specifically for the Quran-Web3 ecosystem. Switch between Light and Dark mode to see the adaptive styling in action.</p>
+
+                  <h2 class="sj ck fk kk wm ah ch pm jj gb mb">Base Level: Basic Typography</h2>
+                  
+                  <h3 class="sj zj fk kk wm ac">1. Standard Text & Headings</h3>
+                  <div class="fh sm sg ci ac">
+                      <h1 class="sj _j gk kk wm ac">This is Heading 1 (Main Title)</h1>
+                      <h2 class="sj ck fk kk wm ac">This is Heading 2 (Sub-topic)</h2>
+                      <h3 class="sj zj fk kk wm ac">This is Heading 3 (Sub-section)</h3>
+                      <p class="dk pk ac">
+                        This is a standard paragraph. The Web3 concept is about community, so encourage readers to discuss, provide feedback, and share their journey in learning the Quran.
+                      </p>
+                      <p class="dk pk ac">
+                        We can use <strong class="gk kk wm">Bold Text</strong> for emphasis, or <em class="ik">Italic Text</em> for foreign terms like <em>Smart Contract</em> or <em>Tajweed</em>.
+                      </p>
+                      <p class="dk pk ac">
+                        Larger lead text: <br>
+                        <span class="xj pk">Building transparent interactions on the IPFS network without a centralized database.</span>
+                      </p>
+                      <p class="dk pk ic">
+                        Smaller mute/caption text: <br>
+                        <span class="ak pk qk">Published by Developer - Quran-Web3.NFT</span>
+                      </p>
+                  </div>
+                  <span class="dk pk ak">💡 <em>Click the code area below to select all the text (auto-select).</em></span>
+                  <textarea class="vd sg ci ac jc" style="font-family: monospace; font-size: 13px; color: #D1D8E0; background-color: #181C31; border: 1px solid #3C4556; resize: vertical; cursor: pointer; outline: none; white-space: pre;" readonly onclick="this.select()" rows="13">
+&lt;h1 class="sj _j gk kk wm ac"&gt;This is Heading 1 (Main Title)&lt;/h1&gt;
+&lt;h2 class="sj ck fk kk wm ac"&gt;This is Heading 2 (Sub-topic)&lt;/h2&gt;
+&lt;h3 class="sj zj fk kk wm ac"&gt;This is Heading 3 (Sub-section)&lt;/h3&gt;
+
+&lt;p class="dk pk ac"&gt;This is a standard paragraph.&lt;/p&gt;
+
+&lt;p class="dk pk ac"&gt;
+  Using &lt;strong class="gk kk wm"&gt;Bold Text&lt;/strong&gt; or &lt;em class="ik"&gt;Italic Text&lt;/em&gt;.
+&lt;/p&gt;
+
+&lt;span class="xj pk"&gt;Larger lead text.&lt;/span&gt;
+&lt;span class="ak pk qk"&gt;Smaller mute/caption text.&lt;/span&gt;</textarea>
+                  <p class="dk pk ak fb">Always pair `kk` with `wm` to ensure the text turns white when Dark Mode is active.</p>
+
+                  <h3 class="sj zj fk kk wm ac">2. Basic Lists (Nested Structure)</h3>
+                  <div class="fh sm sg ci ac">
+                      <h4 class="sj wj ek kk wm ac">Category List (Unordered):</h4>
+                      <ul class="tc sf cg ac dk pk">
+                        <li>
+                            <div class="tc">
+                                <span class="mk ub gk bf">•</span>
+                                <p>Daily logs & IPFS technical challenges.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tc">
+                                <span class="mk ub gk bf">•</span>
+                                <p>Web3 education for laymen.</p>
+                            </div>
+                        </li>
+                      </ul>
+                      
+                      <h4 class="sj wj ek kk wm ac mt-6">Numbered List (Ordered) with Nested List:</h4>
+                      <ol class="tc sf cg ac dk pk ic">
+                        <li>
+                            <div class="tc">
+                                <span class="kk wm fk ub bf">1.</span>
+                                <p>Data transparency and preservation.</p>
+                            </div>
+                            <ol class="tc sf cg pi jc ic">
+                                <li>
+                                    <div class="tc">
+                                        <span class="kk wm fk ub bf">1.1.</span>
+                                        <p>Stored on InterPlanetary File System (IPFS).</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tc">
+                                        <span class="kk wm fk ub bf">1.2.</span>
+                                        <p>Permanent, censorship-resistant web.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <div class="tc">
+                                <span class="kk wm fk ub bf">2.</span>
+                                <p>Security without a centralized server.</p>
+                            </div>
+                        </li>
+                      </ol>
+                  </div>
+                  <span class="dk pk ak">💡 <em>Click the code area below to select all the text (auto-select).</em></span>
+                  <textarea class="vd sg ci ac jc" style="font-family: monospace; font-size: 13px; color: #D1D8E0; background-color: #181C31; border: 1px solid #3C4556; resize: vertical; cursor: pointer; outline: none; white-space: pre;" readonly onclick="this.select()" rows="24">
+&lt;!-- Unordered List --&gt;
+&lt;ul class="tc sf cg ac dk pk"&gt;
+  &lt;li&gt;
+    &lt;div class="tc"&gt;
+      &lt;span class="mk ub gk bf"&gt;•&lt;/span&gt;
+      &lt;p&gt;List item one.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered List with Nested --&gt;
+&lt;ol class="tc sf cg ac dk pk"&gt;
+  &lt;li&gt;
+    &lt;div class="tc"&gt;
+      &lt;span class="kk wm fk ub bf"&gt;1.&lt;/span&gt;
+      &lt;p&gt;Main Item 1.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- Nested List --&gt;
+    &lt;ol class="tc sf cg pi jc ic"&gt;
+      &lt;li&gt;
+        &lt;div class="tc"&gt;
+          &lt;span class="kk wm fk ub bf"&gt;1.1.&lt;/span&gt;
+          &lt;p&gt;Nested item 1.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</textarea>
+
+                  <h2 class="sj ck fk kk wm ah ch pm jj gb mb">Level 1: Typography Variations</h2>
+                  
+                  <h3 class="sj zj fk kk wm ac">1. Drop Cap Paragraph</h3>
+                  <div class="fh sm sg ci ac">
+                      <p class="dk pk ic"><span class="sj _j gk kk wm" style="float: left; font-size: 50px; line-height: 40px; padding-right: 10px; margin-top: 4px;">W</span>eb3 provides full control over data to the user. In the implementation of this project on the IPFS network, the static page data structure runs purely peer-to-peer without the intervention of traditional centralized servers.</p>
+                  </div>
+                  <span class="dk pk ak">💡 <em>Click the code area below to select all the text (auto-select).</em></span>
+                  <textarea class="vd sg ci ac jc" style="font-family: monospace; font-size: 13px; color: #D1D8E0; background-color: #181C31; border: 1px solid #3C4556; resize: vertical; cursor: pointer; outline: none; white-space: pre;" readonly onclick="this.select()" rows="3">
+&lt;p class="dk pk ac"&gt;
+  &lt;span class="sj _j gk kk wm" style="float: left; font-size: 50px; line-height: 40px; padding-right: 10px; margin-top: 4px;"&gt;W&lt;/span&gt;eb3 provides full control over data...
+&lt;/p&gt;</textarea>
+                  <p class="dk pk ak fb">Great for the first paragraph of an article to give it a professional magazine layout.</p>
+
+                  <h3 class="sj zj fk kk wm ac">2. Data Tables (New)</h3>
+                  <div class="fh sm sg ci ac" style="overflow-x: auto;">
+                      <table class="vd dk pk ic" style="min-width: 500px; text-align: left; border-collapse: collapse;">
+                          <thead>
+                              <tr class="ah ch pm">
+                                  <th class="sj fk kk wm pb-2 pt-2 pr-4">Feature</th>
+                                  <th class="sj fk kk wm pb-2 pt-2 pr-4">Web2 (Traditional)</th>
+                                  <th class="sj fk kk wm pb-2 pt-2 pr-4">Web3 (IPFS/Blockchain)</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr class="ah ch pm">
+                                  <td class="pb-2 pt-2 pr-4">Hosting</td>
+                                  <td class="pb-2 pt-2 pr-4">Centralized Server (AWS, etc.)</td>
+                                  <td class="pb-2 pt-2 pr-4">Decentralized P2P Nodes</td>
+                              </tr>
+                              <tr class="ah ch pm">
+                                  <td class="pb-2 pt-2 pr-4">Ownership</td>
+                                  <td class="pb-2 pt-2 pr-4">Platform Owner</td>
+                                  <td class="pb-2 pt-2 pr-4">Community / Wallet Owner</td>
+                              </tr>
+                              <tr>
+                                  <td class="pb-2 pt-2 pr-4">Security</td>
+                                  <td class="pb-2 pt-2 pr-4">Vulnerable to Single Point Failure</td>
+                                  <td class="pb-2 pt-2 pr-4">Censorship-resistant & Immutable</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <span class="dk pk ak">💡 <em>Click the code area below to select all the text (auto-select).</em></span>
+                  <textarea class="vd sg ci ac jc" style="font-family: monospace; font-size: 13px; color: #D1D8E0; background-color: #181C31; border: 1px solid #3C4556; resize: vertical; cursor: pointer; outline: none; white-space: pre;" readonly onclick="this.select()" rows="18">
+&lt;div style="overflow-x: auto;"&gt;
+  &lt;table class="vd dk pk ic" style="min-width: 500px; text-align: left; border-collapse: collapse;"&gt;
+      &lt;thead&gt;
+          &lt;tr class="ah ch pm"&gt;
+              &lt;th class="sj fk kk wm pb-2 pt-2 pr-4"&gt;Feature&lt;/th&gt;
+              &lt;th class="sj fk kk wm pb-2 pt-2 pr-4"&gt;Web2&lt;/th&gt;
+              &lt;th class="sj fk kk wm pb-2 pt-2 pr-4"&gt;Web3&lt;/th&gt;
+          &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+          &lt;tr class="ah ch pm"&gt;
+              &lt;td class="pb-2 pt-2 pr-4"&gt;Hosting&lt;/td&gt;
+              &lt;td class="pb-2 pt-2 pr-4"&gt;Centralized&lt;/td&gt;
+              &lt;td class="pb-2 pt-2 pr-4"&gt;Decentralized&lt;/td&gt;
+          &lt;/tr&gt;
+      &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</textarea>
+                  <p class="dk pk ak fb">Use responsive tables to present comparisons or data effectively.</p>
+
+                  <h3 class="sj zj fk kk wm ac">3. Inline Code & Divider (New)</h3>
+                  <div class="fh sm sg ci ac">
+                      <p class="dk pk ac">To highlight a variable, contract address, or folder name, you can use inline code styling like <code class="eh lk tg ti vi ak">_posts/2026-06-19-post.md</code> within a paragraph.</p>
+                      <div class="ah ch pm mb-4 mt-4"></div>
+                      <p class="dk pk ic">The line above is a divider to separate content blocks clearly.</p>
+                  </div>
+                  <span class="dk pk ak">💡 <em>Click the code area below to select all the text (auto-select).</em></span>
+                  <textarea class="vd sg ci ac jc" style="font-family: monospace; font-size: 13px; color: #D1D8E0; background-color: #181C31; border: 1px solid #3C4556; resize: vertical; cursor: pointer; outline: none; white-space: pre;" readonly onclick="this.select()" rows="6">
+&lt;p class="dk pk ac"&gt;
+  Example inline code &lt;code class="eh lk tg ti vi ak"&gt;_posts/file.md&lt;/code&gt; inside paragraph.
+&lt;/p&gt;
+
+&lt;!-- Horizontal Divider --&gt;
+&lt;div class="ah ch pm mb-4 mt-4"&gt;&lt;/div&gt;</textarea>
+
+                  <h2 class="sj ck fk kk wm ah ch pm jj gb mb">Level 2: Quotes & Callouts</h2>
+                  
+                  <h3 class="sj zj fk kk wm ac">1. Spiritual & Tafseer Blockquote</h3>
+                  <div class="fh sm sg ci ac">
+                      <blockquote class="hh rm _g ch pm sg ci ic" style="border-left: 4px solid #4E6BFF; padding-left: 20px;">
+                          <p class="sj wj fk kk wm gb" style="font-size: 22px; direction: rtl; text-align: right; line-height: 40px;">اِقْرَأْ بِاسْمِ رَبِّكَ الَّذِيْ خَلَقَۚ</p>
+                          <p class="dk pk ik yb">"Read! In the name of your Lord who created."</p>
+                          <footer class="ak pk qk">— QS. Al-'Alaq: 1</footer>
+                      </blockquote>
+                  </div>
+                  <span class="dk pk ak">💡 <em>Click the code area below to select all the text (auto-select).</em></span>
+                  <textarea class="vd sg ci ac jc" style="font-family: monospace; font-size: 13px; color: #D1D8E0; background-color: #181C31; border: 1px solid #3C4556; resize: vertical; cursor: pointer; outline: none; white-space: pre;" readonly onclick="this.select()" rows="5">
+&lt;blockquote class="hh rm _g ch pm sg ci ic" style="border-left: 4px solid #4E6BFF; padding-left: 20px;"&gt;
+    &lt;p class="sj wj fk kk wm gb" style="font-size: 22px; direction: rtl; text-align: right; line-height: 40px;"&gt;اِقْرَأْ بِاسْمِ رَبِّكَ الَّذِيْ خَلَقَۚ&lt;/p&gt;
+    &lt;p class="dk pk ik yb"&gt;"Read! In the name of your Lord who created."&lt;/p&gt;
+    &lt;footer class="ak pk qk"&gt;— QS. Al-'Alaq: 1&lt;/footer&gt;
+&lt;/blockquote&gt;</textarea>
+                  <p class="dk pk ak fb">Use this style specifically when quoting Quranic verses or Hadith.</p>
+
+                  <h3 class="sj zj fk kk wm ac">2. Technical Callouts (Info & Warning Boxes)</h3>
+                  <div class="fh sm sg ci ac">
+                      <div class="jh lk sg ci ac" style="padding: 15px 20px;">
+                          <strong class="gk">Important Info:</strong> The Quran-Web3 project utilizes a native Unstoppable Domain (.nft) bound directly to a smart contract on the blockchain.
+                      </div>
+                      <div class="oh lk sg ci ic" style="padding: 15px 20px;">
+                          <strong class="gk">IPFS Challenge:</strong> Static content requires a pinning process to ensure data is not lost from the peer-to-peer network when the main node goes offline.
+                      </div>
+                  </div>
+                  <span class="dk pk ak">💡 <em>Click the code area below to select all the text (auto-select).</em></span>
+                  <textarea class="vd sg ci ac jc" style="font-family: monospace; font-size: 13px; color: #D1D8E0; background-color: #181C31; border: 1px solid #3C4556; resize: vertical; cursor: pointer; outline: none; white-space: pre;" readonly onclick="this.select()" rows="9">
+&lt;!-- Info Box --&gt;
+&lt;div class="jh lk sg ci ac" style="padding: 15px 20px;"&gt;
+    &lt;strong class="gk"&gt;Important Info:&lt;/strong&gt; Insert your information here.
+&lt;/div&gt;
+
+&lt;!-- Warning Box --&gt;
+&lt;div class="oh lk sg ci ic" style="padding: 15px 20px;"&gt;
+    &lt;strong class="gk"&gt;Challenge:&lt;/strong&gt; Insert your warning or technical note here.
+&lt;/div&gt;</textarea>
+                  <p class="dk pk ak fb">Use these callouts to highlight important or critical information to the reader.</p>
+
+                  <h2 class="sj ck fk kk wm ah ch pm jj gb mb">Level 3: Card Designs & Action Buttons</h2>
+                  
+                  <h3 class="sj zj fk kk wm ac">1. Beginner Education Grid Cards</h3>
+                  <div class="fh sm sg ci ac">
+                      <div class="wc qf pn cg ic">
+                          <div class="hh rm _g ch pm sg ci xk xm bl _l:hover cn:hover" style="padding: 20px;">
+                              <span class="gh lk rg ti vi ak fk" style="display: inline-block; margin-bottom: 10px;">Web3 Concept</span>
+                              <h4 class="sj wj fk kk wm zb">No Database</h4>
+                              <p class="dk pk ic">All files are distributed static files, maintaining integrity from third-party manipulation.</p>
+                          </div>
+                          <div class="gh lk sg ci xk xm bl _l:hover cn:hover" style="padding: 20px;">
+                              <span class="fh sm pk _g ch pm rg ti vi ak fk" style="display: inline-block; margin-bottom: 10px; color: #ffffff;">Method</span>
+                              <h4 class="sj wj fk lk zb">P2P Network</h4>
+                              <p class="dk lk qk ic">Users download data directly from nearby nodes voluntarily and securely.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <span class="dk pk ak">💡 <em>Click the code area below to select all the text (auto-select).</em></span>
+                  <textarea class="vd sg ci ac jc" style="font-family: monospace; font-size: 13px; color: #D1D8E0; background-color: #181C31; border: 1px solid #3C4556; resize: vertical; cursor: pointer; outline: none; white-space: pre;" readonly onclick="this.select()" rows="15">
+&lt;div class="wc qf pn cg ic"&gt;
+    &lt;!-- White/Dark Adaptive Card --&gt;
+    &lt;div class="hh rm _g ch pm sg ci xk xm bl _l:hover cn:hover" style="padding: 20px;"&gt;
+        &lt;span class="gh lk rg ti vi ak fk" style="display: inline-block; margin-bottom: 10px;"&gt;Tag&lt;/span&gt;
+        &lt;h4 class="sj wj fk kk wm zb"&gt;Title&lt;/h4&gt;
+        &lt;p class="dk pk ic"&gt;Description content...&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Solid Blue Card --&gt;
+    &lt;div class="gh lk sg ci xk xm bl _l:hover cn:hover" style="padding: 20px;"&gt;
+        &lt;span class="fh sm pk _g ch pm rg ti vi ak fk" style="display: inline-block; margin-bottom: 10px; color:#fff;"&gt;Tag&lt;/span&gt;
+        &lt;h4 class="sj wj fk lk zb"&gt;Title&lt;/h4&gt;
+        &lt;p class="dk lk qk ic"&gt;Description content...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</textarea>
+                  <p class="dk pk ak fb">Use grid cards for comparisons or listing multiple features side-by-side.</p>
+
+                  <h3 class="sj zj fk kk wm ac">2. Action Buttons</h3>
+                  <div class="fh sm sg ci ac">
+                      <div class="tc wf ag ic uf">
+                        <a href="#" class="sc gh lk sg wi si bl tl:hover fk dk">View Repository</a>
+                        <a href="#" class="sc fh sm kk wm sg wi si bl _g ch pm sl:hover yl:hover fk dk">Read Whitepaper</a>
+                        <a href="#" class="sc nh lk sg wi si bl qk rk:hover fk dk">Donate / Support</a>
+                      </div>
+                  </div>
+                  <span class="dk pk ak">💡 <em>Click the code area below to select all the text (auto-select).</em></span>
+                  <textarea class="vd sg ci ac jc" style="font-family: monospace; font-size: 13px; color: #D1D8E0; background-color: #181C31; border: 1px solid #3C4556; resize: vertical; cursor: pointer; outline: none; white-space: pre;" readonly onclick="this.select()" rows="5">
+&lt;div class="tc wf ag ic uf"&gt;
+  &lt;a href="#" class="sc gh lk sg wi si bl tl:hover fk dk"&gt;Primary Button&lt;/a&gt;
+  &lt;a href="#" class="sc fh sm kk wm sg wi si bl _g ch pm sl:hover yl:hover fk dk"&gt;Secondary Button&lt;/a&gt;
+  &lt;a href="#" class="sc nh lk sg wi si bl qk rk:hover fk dk"&gt;Success Button&lt;/a&gt;
+&lt;/div&gt;</textarea>
+                  <p class="dk pk ak fb">Buttons are styled to be highly noticeable. Secondary buttons blend with the theme but hover with accent colors.</p>
+
+                  <h2 class="sj ck fk kk wm ah ch pm jj gb mb">Level 4: Interactive Components (Alpine.js)</h2>
+                  <p class="dk pk ac">These components utilize the Alpine.js plugin built into your <code>bundle.js</code>. Perfect for interactive Tajweed quizzes or FAQ accordions.</p>
+
+                  <h3 class="sj zj fk kk wm ac">1. Folding Accordion (FAQ / Technical Details)</h3>
+                  <div class="fh sm sg ci ac">
+                      <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
+                          <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
+                              <span>Why Use Unstoppable Domains (.nft)?</span>
+                              <span x-text="open ? '−' : '+'" class="ck"></span>
+                          </button>
+                          <div x-show="open" x-transition class="lc bh ch pm dk pk" style="margin-top: 15px; padding-top: 15px;">
+                              The .nft domain purchased from Unstoppable Domains is owned permanently with no annual renewal fees. It is stored directly in the owner's crypto wallet, making it censorship-resistant and fully integrated into the IPFS network.
+                          </div>
+                      </div>
+                  </div>
+                  <span class="dk pk ak">💡 <em>Click the code area below to select all the text (auto-select).</em></span>
+                  <textarea class="vd sg ci ac jc" style="font-family: monospace; font-size: 13px; color: #D1D8E0; background-color: #181C31; border: 1px solid #3C4556; resize: vertical; cursor: pointer; outline: none; white-space: pre;" readonly onclick="this.select()" rows="9">
+&lt;div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;"&gt;
+    &lt;button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm"&gt;
+        &lt;span&gt;Click Here for the Question?&lt;/span&gt;
+        &lt;span x-text="open ? '−' : '+'" class="ck"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div x-show="open" x-transition class="lc bh ch pm dk pk" style="margin-top: 15px; padding-top: 15px;"&gt;
+        The answer or hidden technical details are placed here.
+    &lt;/div&gt;
+&lt;/div&gt;</textarea>
+                  <p class="dk pk ak fb">Easily create toggleable areas. `x-data` handles the state entirely without custom JavaScript.</p>
+
+                  <h3 class="sj zj fk kk wm ac">2. Mini Interactive Quiz (Tajweed Education)</h3>
+                  <div class="fh sm sg ci ac">
+                      <div x-data="{ answered: false, correct: false }" class="hh rm _g ch pm sg ci ic" style="padding: 25px; text-align: center;">
+                          <span class="gh lk rg ti vi ak fk" style="display: inline-block; margin-bottom: 12px;">Quick Tajweed Quiz</span>
+                          <h4 class="sj wj gk kk wm mb-4">When a Nun Sukun meets a Mim (م), what is this recitation rule called?</h4>
+                          
+                          <div x-show="!answered" class="tc wf xf ag" style="margin-top: 15px;">
+                              <button @click="answered = true; correct = false" class="sc fh sm kk wm sg wi si bl _g ch pm fk dk">A. Idzhar Halqi</button>
+                              <button @click="answered = true; correct = true" class="sc gh lk sg wi si bl fk dk">B. Idgham Bighunnah</button>
+                              <button @click="answered = true; correct = false" class="sc fh sm kk wm sg wi si bl _g ch pm fk dk">C. Iqlab</button>
+                          </div>
+
+                          <div x-show="answered" x-transition style="margin-top: 20px;">
+                              <div x-show="correct">
+                                <span class="nh lk rg wi vi ak fk">🎉 Correct (Idgham Bighunnah)!</span>
+                              </div>
+                              <div x-show="!correct">
+                                <span class="kh lk rg wi vi ak fk">❌ Incorrect, Try Studying Again!</span>
+                              </div>
+                              <p class="dk pk jc">When Nun Sukun meets Mim, the sound of Nun is merged into the letter Mim accompanied by a nasal sound (ghunnah).</p>
+                              <button @click="answered = false" class="sc fh sm kk wm sg wi vi bl _g ch pm fk ak jc">Retry Quiz</button>
+                          </div>
+                      </div>
+                  </div>
+                  <span class="dk pk ak">💡 <em>Click the code area below to select all the text (auto-select).</em></span>
+                  <textarea class="vd sg ci ac jc" style="font-family: monospace; font-size: 13px; color: #D1D8E0; background-color: #181C31; border: 1px solid #3C4556; resize: vertical; cursor: pointer; outline: none; white-space: pre;" readonly onclick="this.select()" rows="18">
+&lt;div x-data="{ answered: false, correct: false }" class="hh rm _g ch pm sg ci ic" style="padding: 25px; text-align: center;"&gt;
+    &lt;span class="gh lk rg ti vi ak fk" style="display: inline-block; margin-bottom: 12px;"&gt;Quiz Tag&lt;/span&gt;
+    &lt;h4 class="sj wj gk kk wm mb-4"&gt;Quiz Question?&lt;/h4&gt;
+    
+    &lt;div x-show="!answered" class="tc wf xf ag" style="margin-top: 15px;"&gt;
+        &lt;button @click="answered = true; correct = false" class="sc fh sm kk wm sg wi si bl _g ch pm fk dk"&gt;Wrong Option&lt;/button&gt;
+        &lt;button @click="answered = true; correct = true" class="sc gh lk sg wi si bl fk dk"&gt;Right Option&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div x-show="answered" x-transition style="margin-top: 20px;"&gt;
+        &lt;div x-show="correct"&gt;&lt;span class="nh lk rg wi vi ak fk"&gt;🎉 Correct!&lt;/span&gt;&lt;/div&gt;
+        &lt;div x-show="!correct"&gt;&lt;span class="kh lk rg wi vi ak fk"&gt;❌ Incorrect!&lt;/span&gt;&lt;/div&gt;
+        &lt;p class="dk pk jc"&gt;Explanation text...&lt;/p&gt;
+        &lt;button @click="answered = false" class="sc fh sm kk wm sg wi vi bl _g ch pm fk ak jc"&gt;Retry&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</textarea>
+                  <p class="dk pk ak fb">A fully functional client-side quiz using Alpine.js logic.</p>
+
+                  <h2 class="sj ck fk kk wm ah ch pm jj gb mb">Level 5: Static Content Slider (Swiper.js)</h2>
+                  <p class="dk pk ac">Since your CSS and JS files support the <code>Swiper.js</code> library, you can embed beautiful carousels to showcase roadmaps or community reviews.</p>
+
+                  <h3 class="sj zj fk kk wm ac">1. Daily Logs & Milestone Carousel</h3>
+                  <div class="fh sm sg ci ac">
+                      <div class="swiper mySwiper-showroom ic" style="padding-bottom: 40px; position: relative; overflow: hidden; max-width: 100%;">
+                          <div class="swiper-wrapper">
+                              <div class="swiper-slide hh rm _g ch pm sg ci" style="padding: 30px; box-sizing: border-box;">
+                                  <span class="gh lk rg ti vi ak fk" style="display:inline-block; margin-bottom:10px;">Milestone 1</span>
+                                  <h4 class="sj wj fk kk wm zb">Initiate Unstoppable Contract</h4>
+                                  <p class="dk pk">Successfully secured the primary domain name <strong>quran-web3.nft</strong> for long-term Web3 identity.</p>
+                              </div>
+                              <div class="swiper-slide hh rm _g ch pm sg ci" style="padding: 30px; box-sizing: border-box;">
+                                  <span class="gh lk rg ti vi ak fk" style="display:inline-block; margin-bottom:10px;">Milestone 2</span>
+                                  <h4 class="sj wj fk kk wm zb">Static Content Compilation</h4>
+                                  <p class="dk pk">Compiling website files without a database so it loads lightweight via the inter-planetary gateway.</p>
+                              </div>
+                          </div>
+                          <div class="swiper-pagination shadow-pagination" style="bottom: 10px; text-align: center;"></div>
+                      </div>
+                  </div>
+                  <span class="dk pk ak">💡 <em>Click the code area below to select all the text (auto-select).</em></span>
+                  <textarea class="vd sg ci ic jc" style="font-family: monospace; font-size: 13px; color: #D1D8E0; background-color: #181C31; border: 1px solid #3C4556; resize: vertical; cursor: pointer; outline: none; white-space: pre;" readonly onclick="this.select()" rows="25">
+&lt;!-- Swiper Slider Container --&gt;
+&lt;div class="swiper mySwiper-showroom ic" style="padding-bottom: 40px; position: relative; overflow: hidden;"&gt;
+    &lt;div class="swiper-wrapper"&gt;
+        &lt;!-- Slide 1 --&gt;
+        &lt;div class="swiper-slide hh rm _g ch pm sg ci" style="padding: 30px; box-sizing: border-box;"&gt;
+            &lt;span class="gh lk rg ti vi ak fk" style="display:inline-block; margin-bottom:10px;"&gt;Milestone 1&lt;/span&gt;
+            &lt;h4 class="sj wj fk kk wm zb"&gt;Slide Title 1&lt;/h4&gt;
+            &lt;p class="dk pk"&gt;Text content...&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;!-- Slide 2 --&gt;
+        &lt;div class="swiper-slide hh rm _g ch pm sg ci" style="padding: 30px; box-sizing: border-box;"&gt;
+            &lt;span class="gh lk rg ti vi ak fk" style="display:inline-block; margin-bottom:10px;"&gt;Milestone 2&lt;/span&gt;
+            &lt;h4 class="sj wj fk kk wm zb"&gt;Slide Title 2&lt;/h4&gt;
+            &lt;p class="dk pk"&gt;Text content...&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Navigation Dots --&gt;
+    &lt;div class="swiper-pagination" style="bottom: 10px; text-align: center;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Initialization Script --&gt;
+&lt;script&gt;
+  document.addEventListener("DOMContentLoaded", function() {
+    if (typeof Swiper !== 'undefined') {
+       new Swiper('.mySwiper-showroom', {
+         loop: true,
+         spaceBetween: 20,
+         pagination: { el: '.swiper-pagination', clickable: true }
+       });
+    }
+  });
+&lt;/script&gt;</textarea>
+
+                </div>
+                </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="i pg gh ji">
+        <img class="h p q" src="/images/shape-16.svg" alt="Bg Shape" />
+          <div class="bb ye i z-10 ki xn dr">
+            <div class="tc uf sn tn un gg">
+              <div class="animate_left to/2">
+                <h2 class="fk vj zp pr lk ac">
+                    Quran Web3
+                </h2>
+                <p class="lk">
+                    By embracing Web3 principles, the project aims to enhance accessibility, preservation, and knowledge sharing of the Quran.
+                </p>
+              </div>
+              <div class="animate_right bf">
+                <a href="https://github.com/quran-web3" target="_blank" class="vc ek kk hh rg ol il cm gi hi">
+                    Github
+                </a>
+              </div>
+             </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="bb ze ki xn 2xl:ud-px-0">
+          <div class="ji gp">
+            <div class="tc uf ap gg fp">
+              <div class="animate_top zd/2 to/4">
+                <a href="/">
+                  <img src="/images/logo-light.png" alt="Logo" class="om" />
+                  <img src="/images/logo-dark.png" alt="Logo" class="xc nm" />
+                </a>
+                <p class="lc fb">Revolutionizing Quranic studies through Web3, ensuring decentralization, transparency, and collaborative knowledge-sharing.</p>
+              </div>
+              <div class="vd ro tc sf rn un gg vn">
+                <div class="animate_top">
+                  <h4 class="kk wm tj ec">Platform</h4>
+                  <ul>
+                    <li><a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" class="sc xl vb">Quran-Web3.NFT </a></li>
+                    <li><a href="https://polygonscan.com/token/0x74814b153519f3d77d5521cd185dd3071b6a017a" target="_blank" class="sc xl vb">605 Pages NFT</a></li>
+                    <li>
+                      <a href="/mint.html" class="sc xl vb">
+                        Quran-Web3.NFT 
+                        <span class="sc ek uj lk nh rg zi _i nc">Mint Coming Soon</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="animate_top">
+                  <h4 class="kk wm tj ec">Resources</h4>
+                  <ul>
+                    <li><a href="https://github.com/quran-web3/quran-web3.nft/projects" target="_blank" class="sc xl vb">Progress</a></li>
+                    <li><a href="https://github.com/quran-web3/quran-web3.nft/releases" target="_blank" class="sc xl vb">Releases</a></li>
+                    <li><a href="https://github.com/quran-web3/quran-web3.nft/discussions" target="_blank" class="sc xl vb">Discussions</a></li>
+                  </ul>
+                </div>
+                <div class="animate_top">
+                  <h4 class="kk wm tj ec">Network</h4>
+                  <ul>
+                    <li><a href="https://ud.me/quran-web3.nft" target="_blank" class="sc xl vb">Unstoppable Domains</a></li>
+                    <li><a href="https://github.com/quran-web3" target="_blank" class="sc xl vb">Github</a></li>
+                    <li><a href="https://twitter.com/quran_web3" target="_blank" class="sc xl vb">Twitter (X)</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
+            <div class="animate_top">
+              <ul class="tc wf gg">
+              <li><a href="/privacy-policy.html" class="xl">Privacy Policy</a></li>
+              <li><a href="/support.html" class="xl">Support</a></li>
+              </ul>
+            </div>
+            <div class="animate_top">
+              <p>&copy; 2026 Quran Web3. All rights reserved</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <button
+        class="xc wf xf ie ld vg sr gh tr g sa ta _a"
+        @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+        @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false"
+        :class="{ 'uc' : scrollTop }"
+      >
+        <svg class="uh se qd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+        </svg>
+      </button>
+
+      <script defer src="/bundle.js"></script>
+      <script>
+      document.addEventListener("DOMContentLoaded", function() {
+      if (typeof Swiper !== 'undefined') {
+           new Swiper('.mySwiper-showroom', {
+             loop: true,
+             spaceBetween: 20,
+             pagination: { el: '.swiper-pagination', clickable: true }
+           });
+        }
+      });
+    </script>
+  </body>
+</html>

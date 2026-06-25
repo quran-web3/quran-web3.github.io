@@ -1,0 +1,10 @@
+title: Quran Web3
+description: Decentralized Quran & NFT
+permalink: /blog/:title/
+timezone: Asia/Jakarta
+future: false
+plugins:
+  - jekyll-paginate
+
+paginate: 6
+paginate_path: "/blog/page:num/"

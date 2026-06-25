@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | Quran Web3</title>
+    <link rel="icon" href="/favicon.png">
+    <link href="/style.css" rel="stylesheet">
+  </head>
+  <body
+        x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+        x-init="
+             darkMode = JSON.parse(localStorage.getItem('darkMode'));
+             $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+        :class="{'b eh': darkMode === true}"
+      >
+        <header
+          class="g s r vd ya cj"
+          :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+          @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+        >
+          <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+            <div class="vd to/4 tc wf yf">
+              <a href="/">
+                <img class="om" src="/images/logo-light.png" alt="Logo Light" />
+                <img class="xc nm" src="/images/logo-dark.png" alt="Logo Dark" />
+              </a>
+              <button class="po rc" @click="navigationOpen = !navigationOpen">
+                <span class="rc i pf re pd">
+                  <span class="du-block h q vd yc">
+                    <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+                    <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+                    <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+                  </span>
+                  <span class="du-block h q vd yc lf">
+                    <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+                    <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div
+              class="vd wo/4 sd qo f ho oo wf yf"
+              :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
+            >
+                <nav>
+                  <ul class="tc _o sf yo cg ep">
+                    <li><a href="/" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
+                    <li><a href="/#mint" class="xl">Mint</a></li>
+                    <li><a href="/blog/" class="xl">Blog</a></li>
+                    <li><a href="/#donate" class="xl">Donate</a></li>
+                  </ul>
+                </nav>
+                <div class="tc wf ig pb no">
+                  <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
+                    <label class="rc ab i">
+                      <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="pf vd yc uk h r za ab" />
+                      <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
+                      </svg>
+                      <img class="xc nm" src="/images/icon-moon.svg" alt="Moon" />
+                    </label>
+                  </div>
+                  <a href="/wp.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Whitepaper</a>
+                  <a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Web3 Link</a>
+                </div>
+              </div>
+            </div>
+          </header>
+          <main>
+          <section class="gj qp gr hj rp hr">
+            <div class="bb ze ki xn 2xl:ud-px-0">
+              <div class="tc sf yo zf kq">
+                <div class="bb ze">
+                  <div class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
+                    
+                    <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">Privacy Policy</h1>
+                    <p style="text-align: center;" class="ob">Last updated: June 24, 2026</p>
+                    <hr class="cb ch pm" />
+                    
+                    <h3 class="kk wm tj ec">1. Information We Collect</h3>
+                    <p style="text-align: justify;" class="ob">
+                      As a Web3-based platform, Quran Web3 does not collect personally identifiable information such as your name, email address, or phone number, unless you voluntarily provide it through interactions on our discussion forums or support channels. However, when you interact with our smart contracts, your digital wallet address and public transaction history are permanently recorded on the blockchain network.
+                    </p>
+
+                    <h3 class="kk wm tj ec jc">2. Blockchain Public Data Use</h3>
+                    <p style="text-align: justify;" class="ob">
+                      Transaction data, NFT ownership (605 Pages NFT), and minting interactions are completely public and governed by the architecture of a decentralized blockchain network (such as the Polygon Network). We use this public information solely to coordinate platform features, display your digital asset ownership on the web interface, and validate your contributions to the ecosystem.
+                    </p>
+
+                    <h3 class="kk wm tj ec jc">3. Use of Cookies and Local Storage</h3>
+                    <p style="text-align: justify;" class="ob">
+                      We use your browser's local storage (such as <code>localStorage</code>) to store basic user preferences, such as Dark Mode display configuration. This data is stored entirely locally on your device and is not sent to our centralized servers.
+                    </p>
+
+                    <h3 class="kk wm tj ec jc">4. Third Party Services</h3>
+                    <p style="text-align: justify;" class="ob">
+                      Our platform utilizes third-party decentralized infrastructure such as IPFS (InterPlanetary File System) and public blockchain networks. Please understand that we have no control over these protocols or how third-party nodes manage your public blockchain data. We recommend that you review the policies of each network provider or Web3 wallet (such as MetaMask, WalletConnect, etc.) before engaging with us.
+                    </p>
+
+                    <h3 class="kk wm tj ec jc">5. Data Security</h3>
+                    <p style="text-align: justify;" class="ob">
+                      The inherent nature of blockchain technology provides a high level of security, cryptographic encryption, and immutable transparency. You are solely responsible for the security of your wallet's private key. We will never ask for your private key or recovery phrase under any circumstances.
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="i pg gh ji">
+          <img class="h p q" src="/images/shape-16.svg" alt="Bg Shape" />
+            <div class="bb ye i z-10 ki xn dr">
+              <div class="tc uf sn tn un gg">
+                <div class="animate_left to/2">
+                  <h2 class="fk vj zp pr lk ac">
+                      Quran Web3
+                  </h2>
+                  <p class="lk">
+                      By embracing Web3 principles, the project aims to enhance accessibility, preservation, and knowledge sharing of the Quran.
+                  </p>
+                </div>
+                <div class="animate_right bf">
+                  <a href="https://github.com/quran-web3" target="_blank" class="vc ek kk hh rg ol il cm gi hi">
+                      Github
+                  </a>
+                </div>
+               </div>
+            </div>
+          </section>
+        </main>
+        <footer>
+          <div class="bb ze ki xn 2xl:ud-px-0">
+            <div class="ji gp">
+              <div class="tc uf ap gg fp">
+                <div class="animate_top zd/2 to/4">
+                  <a href="/">
+                    <img src="/images/logo-light.png" alt="Logo" class="om" />
+                    <img src="/images/logo-dark.png" alt="Logo" class="xc nm" />
+                  </a>
+                  <p class="lc fb">Revolutionizing Quranic studies through Web3, ensuring decentralization, transparency, and collaborative knowledge-sharing.</p>
+                </div>
+                <div class="vd ro tc sf rn un gg vn">
+                  <div class="animate_top">
+                    <h4 class="kk wm tj ec">Platform</h4>
+                    <ul>
+                      <li><a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" class="sc xl vb">Quran-Web3.NFT </a></li>
+                      <li><a href="https://polygonscan.com/token/0x74814b153519f3d77d5521cd185dd3071b6a017a" target="_blank" class="sc xl vb">605 Pages NFT</a></li>
+                      <li>
+                        <a href="/mint.html" class="sc xl vb">
+                          Quran-Web3.NFT 
+                          <span class="sc ek uj lk nh rg zi _i nc">Mint Coming Soon</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="animate_top">
+                    <h4 class="kk wm tj ec">Resources</h4>
+                    <ul>
+                      <li><a href="https://github.com/quran-web3/quran-web3.nft/projects" target="_blank" class="sc xl vb">Progress</a></li>
+                      <li><a href="https://github.com/quran-web3/quran-web3.nft/releases" target="_blank" class="sc xl vb">Releases</a></li>
+                      <li><a href="https://github.com/quran-web3/quran-web3.nft/discussions" target="_blank" class="sc xl vb">Discussions</a></li>
+                    </ul>
+                  </div>
+                  <div class="animate_top">
+                    <h4 class="kk wm tj ec">Network</h4>
+                    <ul>
+                      <li><a href="https://ud.me/quran-web3.nft" target="_blank" class="sc xl vb">Unstoppable Domains</a></li>
+                      <li><a href="https://github.com/quran-web3" target="_blank" class="sc xl vb">Github</a></li>
+                      <li><a href="https://twitter.com/quran_web3" target="_blank" class="sc xl vb">Twitter (X)</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
+              <div class="animate_top">
+                <ul class="tc wf gg">
+              <li><a href="/privacy-policy.html" class="xl">Privacy Policy</a></li>
+              <li><a href="/support.html" class="xl">Support</a></li>
+                </ul>
+              </div>
+              <div class="animate_top">
+                <p>&copy; 2026 Quran Web3. All rights reserved</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      <button
+        class="xc wf xf ie ld vg sr gh tr g sa ta _a"
+        @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+        @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false"
+        :class="{ 'uc' : scrollTop }"
+        >
+        <svg class="uh se qd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+        </svg>
+      </button>
+    <script defer src="/bundle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whitepaper | Quran Web3</title>
+    <link rel="icon" href="/favicon.png">
+    <link href="/style.css" rel="stylesheet">
+  </head>
+  <body
+        x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+        x-init="
+             darkMode = JSON.parse(localStorage.getItem('darkMode'));
+             $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+        :class="{'b eh': darkMode === true}"
+      >
+        <header
+          class="g s r vd ya cj"
+          :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+          @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+        >
+          <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+            <div class="vd to/4 tc wf yf">
+              <a href="/">
+                <img class="om" src="/images/logo-light.png" alt="Logo Light" />
+                <img class="xc nm" src="/images/logo-dark.png" alt="Logo Dark" />
+              </a>
+              <button class="po rc" @click="navigationOpen = !navigationOpen">
+                <span class="rc i pf re pd">
+                  <span class="du-block h q vd yc">
+                    <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+                    <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+                    <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+                  </span>
+                  <span class="du-block h q vd yc lf">
+                    <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+                    <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div
+              class="vd wo/4 sd qo f ho oo wf yf"
+              :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
+            >
+                <nav>
+                  <ul class="tc _o sf yo cg ep">
+                    <li><a href="/" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
+                    <li><a href="/#mint" class="xl">Mint</a></li>
+                    <li><a href="/blog/" class="xl">Blog</a></li>
+                    <li><a href="/#donate" class="xl">Donate</a></li>
+                  </ul>
+                </nav>
+                <div class="tc wf ig pb no">
+                  <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
+                    <label class="rc ab i">
+                      <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="pf vd yc uk h r za ab" />
+                      <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
+                      </svg>
+                      <img class="xc nm" src="/images/icon-moon.svg" alt="Moon" />
+                    </label>
+                  </div>
+                  <a href="/wp.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Whitepaper</a>
+                  <a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Web3 Link</a>
+                </div>
+              </div>
+            </div>
+          </header>
+          <main>
+            <section class="gj qp gr hj rp hr">
+              <div class="bb ze ki xn 2xl:ud-px-0">
+                <div class="tc sf yo zf kq">
+                  <div class="bb ze">
+                    <div class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
+
+                        <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">WHITEPAPER: THE QURAN WEB3 PROJECT</h1><br />
+                        
+                        <h3 class="sj ck fk kk wm ac">Abstract:</h3>
+                        <p class="dk pk ac">The Quran Web3 Project represents a groundbreaking fusion of spiritual wisdom and cutting-edge technology. It seeks to revolutionize how individuals access and engage with the Quran by harnessing the power of Web3 and blockchain innovation. With a core mission to enhance transparency, accessibility, and collaboration within the Quranic community, this project is dedicated to preserving and disseminating the divine teachings to a global audience.</p>
+                        <p class="dk pk ac">The project leverages Web3 principles, introducing decentralization, transparency, and user-centric design to the realm of Quranic study. It provides a secure and unimpeded gateway to Quranic resources, ensuring the integrity of information and preventing censorship. By fostering a dynamic ecosystem for knowledge-sharing and collaboration, it empowers scholars, researchers, and enthusiasts to collectively explore the Quran's wisdom and nuances.</p>
+                        <p class="dk pk ac">Furthermore, the integration of NFTs adds a unique dimension to the project. Limited-edition Quranic art NFTs not only showcase the beauty of the Quran but also enable individuals to support charitable causes aligned with Quranic values.</p>
+                        <p class="dk pk fb">This whitepaper unveils the comprehensive vision of the Quran Web3 Project, highlighting its key features, technology stack, and the transformative impact it aims to bring to the world of Quranic studies. We invite you to join us in this innovative journey as we embrace the profound wisdom of the Quran and strive for a more accessible, collaborative, and spiritually enriching future.</p>
+                        
+                        <h3 class="sj ck fk kk wm ac">Introduction:</h3>
+                        <ol class="tc sf cg ac dk pk fb">
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Project Overview</b><br />
+                                    The Quran Web3 Project marks a significant step forward in the realm of Quranic studies. At its core, this initiative seeks to combine the timeless wisdom of the Quran with the transformative capabilities of Web3 technology. Web3 represents a paradigm shift, encompassing blockchain networks, decentralized applications, and smart contracts, all of which emphasize transparency, user empowerment, and trustless interactions. By marrying the Quran with Web3, we are venturing into uncharted territory, aiming to create a harmonious fusion of spirituality and technology.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Mission and Vision</b><br />
+                                    Our mission is to provide an inclusive, secure, and transparent platform for individuals to access, study, and engage with the Quran. By harnessing the power of decentralization and collaborative knowledge-sharing, we aspire to make Quranic resources accessible to a global audience while ensuring their authenticity and integrity. We aim to bridge the gap between tradition and innovation, offering a space where scholars, researchers, and enthusiasts can unite in their quest to explore the depths of Quranic knowledge. Additionally, our vision extends beyond the digital realm, with the integration of NFTs to showcase the artistic beauty of the Quran and support charitable causes. In doing so, we hope to create a bridge between the spiritual and the digital, where the profound teachings of the Quran can thrive in the Web3 era.</p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <h3 class="sj ck fk kk wm ac">Problem Statement:</h3>
+                        <ol class="tc sf cg ac dk pk fb">
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Challenges in Quranic Studies</b><br />
+                                    Traditional methods of studying and accessing Quranic resources face numerous challenges in the digital age. The static nature of printed materials and centralized digital platforms often restricts the accessibility of Quranic knowledge. Geographical boundaries and language barriers hinder a more inclusive understanding of the Quran's teachings. Moreover, the lack of standardized, digitally verifiable sources creates uncertainties regarding the authenticity of Quranic interpretations and commentaries.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>The Role of Web3 Technology</b><br />
+                                    Web3 technology offers a solution to these challenges by ushering in a new era of decentralized, transparent, and collaborative systems. The Quran Web3 Project recognizes the potential of this technology to transform Quranic studies, creating a more accessible, trustworthy, and inclusive environment for individuals worldwide. Our goal is to leverage the power of blockchain, smart contracts, and decentralized applications to address these challenges and provide a platform that empowers users to explore, understand, and engage with the Quran in the digital age.</p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <h3 class="sj ck fk kk wm ac">Solution Overview:</h3>
+                        <ol class="tc sf cg ac dk pk fb">
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Web3 and Quranic Studies</b><br />
+                                    The Quran Web3 Project is founded on the belief that Web3 technology can be harnessed to revolutionize the field of Quranic studies. At its core, this initiative leverages the principles of decentralization, transparency, and collaboration to address the challenges that traditional methods of Quranic study face in the digital age.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Advantages of Web3 Integration</b><br />
+                                    By integrating Web3 technology, we introduce several transformative advantages:</p>
+                                </div>
+                                <ol class="tc sf ag pi jc">
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">1. </span>
+                                            <p><b>Decentralization:</b> Traditional Quranic resources, whether in print or digital form, often suffer from centralization, limiting accessibility and subjecting content to control or censorship. In contrast, Web3 decentralization ensures that Quranic materials are stored on a distributed network, which not only preserves data integrity but also resists censorship, making it accessible to a global audience.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">2. </span>
+                                            <p><b>Transparency:</b> Web3 technology provides an immutable record of Quranic resources, ensuring their authenticity. Blockchain technology allows users to verify the provenance and trustworthiness of translations, interpretations, and commentaries, enhancing confidence in the materials accessed.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">3. </span>
+                                            <p><b>Accessibility:</b> Leveraging Web3, our platform ensures global accessibility to Quranic resources. This accessibility transcends geographical boundaries and language barriers, allowing individuals worldwide to engage with the Quran, promoting a deeper understanding of its teachings.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                        <p class="dk pk fb">In summary, the Quran Web3 Project brings a technologically innovative, accessible, and collaborative approach to Quranic studies, bridging the gap between tradition and the digital age. By combining the spiritual wisdom of the Quran with the transformative capabilities of Web3, we aspire to create a harmonious fusion that benefits individuals and communities worldwide.</p>
+
+                        <h3 class="sj ck fk kk wm ac">Technology Stack:</h3>
+                        <ol class="tc sf cg ac dk pk fb">
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Blockchain and Decentralization</b><br />
+                                    At the heart of the Quran Web3 Project is the innovative use of blockchain technology. Blockchain is a distributed ledger technology that underpins decentralization, ensuring that no single entity has control over the Quranic resources, and enhancing data integrity. Our platform leverages the Polygon blockchain, which is known for its security and robust smart contract capabilities. Through blockchain, we create a transparent and tamper-proof record of Quranic materials, fostering trust and accessibility.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Smart Contracts</b><br />
+                                    Smart contracts, powered by blockchain, play a pivotal role in ensuring transparent and secure interactions within our ecosystem. These self-executing contracts automate various processes and transactions, such as ensuring that contributors are fairly rewarded for their scholarly insights and interpretations. This blockchain-based automation ensures trust and efficiency within the platform.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Encryption and Data Security</b><br />
+                                    Security is paramount in the Quran Web3 Project. We employ state-of-the-art encryption techniques to protect the data and interactions on our platform. This guarantees that user data and Quranic resources are secure from unauthorized access, ensuring privacy and the integrity of the content.</p>
+                                </div>
+                            </li>
+                        </ol>
+                        <p class="dk pk fb">Our technology stack is carefully chosen to align with the core principles of the project, emphasizing decentralization, transparency, collaboration, and security, thus providing a reliable and accessible platform for Quranic studies.</p>
+
+                        <h3 class="sj ck fk kk wm ac">Decentralization and Transparency:</h3>
+                        <ol class="tc sf cg ac dk pk fb">
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Blockchain and Decentralization</b><br />
+                                    The Quran Web3 Project harnesses the power of blockchain technology to introduce decentralization to Quranic studies. Traditional approaches are often characterized by centralization, where Quranic resources are controlled by a single entity, limiting accessibility and posing censorship risks. Our platform, on the other hand, leverages the Polygon blockchain for its decentralized and secure nature.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Advantages of Decentralization</b></p>
+                                </div>
+                                <ol class="tc sf ag pi jc">
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">1. </span>
+                                            <p><b>Data Integrity:</b> Quranic materials are stored on a distributed network of nodes, ensuring data integrity and reliability. This immutable ledger guarantees the authenticity of Quranic translations, interpretations, and commentaries.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">2. </span>
+                                            <p><b>Censorship Resistance:</b> Decentralization prevents censorship. Quranic resources remain accessible, even in regions with restricted access to such materials. Users can explore, learn, and engage with the Quran without the threat of content removal.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Transparency through Blockchain</b><br />
+                                    Our platform utilizes blockchain technology to introduce transparency into the realm of Quranic studies. This transparency ensures that Quranic materials are reliable and verifiable:</p>
+                                </div>
+                                <ol class="tc sf ag pi jc">
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">1. </span>
+                                            <p><b>Immutable Record:</b> Blockchain provides an immutable and tamper-proof record of Quranic resources. Users can verify the provenance and authenticity of the materials they access, instilling confidence in the content.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">2. </span>
+                                            <p><b>Smart Contracts:</b> Smart contracts, which are self-executing contracts on the blockchain, automate various processes within the platform. These contracts ensure that contributions, rewards, and interactions are transparent, trustless, and efficient.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                        <p class="dk pk fb">The Quran Web3 Project's commitment to decentralization and transparency is foundational to its mission. By embracing these principles, we empower individuals to explore the Quran's wisdom and teachings in an accessible, secure, and trustworthy manner.</p>
+
+                        <h3 class="sj ck fk kk wm ac">Accessibility and Collaboration:</h3>
+                        <ol class="tc sf cg ac dk pk fb">
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Global Accessibility</b><br />
+                                    The Quran Web3 Project is dedicated to ensuring the Quranic resources are accessible to individuals worldwide, transcending geographical and linguistic barriers. Our commitment to accessibility means that anyone, regardless of their location or language, can engage with the Quran. Key aspects of accessibility include:</p>
+                                </div>
+                                <ol class="tc sf ag pi jc">
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">1. </span>
+                                            <p><b>Language Diversity:</b> Providing Quranic resources in multiple languages to cater to a global audience.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">2. </span>
+                                            <p><b>User-Friendly Interface:</b> Designing an intuitive user interface that accommodates users with various levels of digital literacy.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">3. </span>
+                                            <p><b>Mobile Accessibility:</b> Offering a user-friendly mobile web, ensuring that users can access the Quran on-the-go.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Collaborative Knowledge Sharing</b><br />
+                                    Collaboration is at the heart of the Quran Web3 Project, fostering an environment where individuals come together to explore, understand, and share the wisdom of the Quran. The project empowers users with opportunities for collaboration in various ways:</p>
+                                </div>
+                                <ol class="tc sf ag pi jc">
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">1. </span>
+                                            <p><b>Discussion Forums:</b> Engage in meaningful discussions and share insights with a diverse online community. These forums serve as hubs for scholarly discussions, reflections, and knowledge sharing.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                        <p class="dk pk fb">By promoting global accessibility and fostering collaboration, the Quran Web3 Project aims to create a dynamic ecosystem that encourages the exchange of ideas, insights, and knowledge while making the Quran an accessible and engaging experience for all.</p>
+
+                        <h3 class="sj ck fk kk wm ac">Preservation of Quranic Resources:</h3>
+                        <ol class="tc sf cg ac dk pk fb">
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Safeguarding the Quran</b><br />
+                                    The Quran is a timeless and sacred text, and its preservation is of paramount importance. The Quran Web3 Project takes this responsibility seriously and employs state-of-the-art techniques to ensure the safeguarding of Quranic resources:</p>
+                                </div>
+                                <ol class="tc sf ag pi jc">
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">1. </span>
+                                            <p><b>Decentralized Storage:</b> Utilizing decentralized storage solutions ensures that Quranic materials are not stored in a single location, minimizing the risk of loss or damage.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">2. </span>
+                                            <p><b>Redundancy:</b> Implementing data redundancy across the network ensures that multiple copies of Quranic resources are securely maintained, reducing the risk of data loss.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Long-Term Preservation</b><br />
+                                    The Quran Web3 Project is not only concerned with the immediate accessibility of Quranic resources but also with their long-term preservation. We are committed to:</p>
+                                </div>
+                                <ol class="tc sf ag pi jc">
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">1. </span>
+                                            <p><b>Data Durability:</b> Ensuring that Quranic resources are stored with durability in mind, making them available for future generations.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">2. </span>
+                                            <p><b>Version Control:</b> Implementing version control mechanisms to keep track of changes and ensure the integrity of Quranic texts.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                        <p class="dk pk fb">In embracing decentralization and transparency, our project secures the Quranic resources against potential loss, deterioration, or tampering, thus preserving the sacred knowledge for generations to come.</p>
+
+                        <h3 class="sj ck fk kk wm ac">NFT Integration:</h3>
+                        <ol class="tc sf cg ac dk pk fb">
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Quranic Art NFTs</b><br />
+                                    The Quran Web3 Project introduces a unique dimension to the platform through the integration of Non-Fungible Tokens (NFTs). These NFTs represent ownership of distinct, limited-edition digital artworks inspired by Quranic calligraphy, verses, and themes. Our approach to NFT integration includes:</p>
+                                </div>
+                                <ol class="tc sf ag pi jc">
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">1. </span>
+                                            <p><b>Artistic Beauty:</b> Showcase the artistic beauty of the Quran through stunning digital artworks, created by talented artists who draw inspiration from the Quranic verses.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">2. </span>
+                                            <p><b>Limited Edition Ownership:</b> Each Quranic Art NFT is a unique and limited edition, providing owners with a tangible connection to the Quran's verses. NFT ownership represents exclusivity and rarity.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">3. </span>
+                                            <p><b>Digital Collectibles:</b> Quranic Art NFTs serve as digital collectibles that allow individuals to own and display these artworks in their digital collections.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <div class="tc">
+                                    <span class="mk ub gk bf">•</span>
+                                    <p><b>Provenance and Ownership</b><br />
+                                    Transparency and provenance are essential aspects of our NFT integration:</p>
+                                </div>
+                                <ol class="tc sf ag pi jc">
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">1. </span>
+                                            <p><b>Immutable Ownership Records:</b> Blockchain technology provides immutable records of NFT ownership, ensuring transparency and trustworthiness in the ownership chain.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tc">
+                                            <span class="kk wm fk ub bf">2. </span>
+                                            <p><b>Verified Authenticity:</b> NFT ownership is verifiable, providing confidence in the authenticity and rarity of Quranic artworks.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                        <p class="dk pk fb">The Quran Web3 Project is designed to accommodate a diverse set of use cases, making it a versatile platform that serves a wide array of users. Whether you are a scholar, student, or an individual seeking spiritual growth and knowledge, our platform is designed to meet your needs.</p>
+                      
+                    </div>
+                  </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="i pg gh ji">
+      <img class="h p q" src="/images/shape-16.svg" alt="Bg Shape" />
+        <div class="bb ye i z-10 ki xn dr">
+          <div class="tc uf sn tn un gg">
+            <div class="animate_left to/2">
+              <h2 class="fk vj zp pr lk ac">
+                  Quran Web3
+              </h2>
+              <p class="lk">
+                  By embracing Web3 principles, the project aims to enhance accessibility, preservation, and knowledge sharing of the Quran.
+              </p>
+            </div>
+            <div class="animate_right bf">
+              <a href="https://github.com/quran-web3" target="_blank" class="vc ek kk hh rg ol il cm gi hi">
+                  Github
+              </a>
+            </div>
+           </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="bb ze ki xn 2xl:ud-px-0">
+        <div class="ji gp">
+          <div class="tc uf ap gg fp">
+            <div class="animate_top zd/2 to/4">
+              <a href="/">
+                <img src="/images/logo-light.png" alt="Logo" class="om" />
+                <img src="/images/logo-dark.png" alt="Logo" class="xc nm" />
+              </a>
+              <p class="lc fb">Revolutionizing Quranic studies through Web3, ensuring decentralization, transparency, and collaborative knowledge-sharing.</p>
+            </div>
+            <div class="vd ro tc sf rn un gg vn">
+              <div class="animate_top">
+                <h4 class="kk wm tj ec">Platform</h4>
+                <ul>
+                  <li><a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" class="sc xl vb">Quran-Web3.NFT </a></li>
+                  <li><a href="https://polygonscan.com/token/0x74814b153519f3d77d5521cd185dd3071b6a017a" target="_blank" class="sc xl vb">605 Pages NFT</a></li>
+                  <li>
+                    <a href="/mint.html" class="sc xl vb">
+                      Quran-Web3.NFT 
+                      <span class="sc ek uj lk nh rg zi _i nc">Mint Coming Soon</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="animate_top">
+                <h4 class="kk wm tj ec">Resources</h4>
+                <ul>
+                  <li><a href="https://github.com/quran-web3/quran-web3.nft/projects" target="_blank" class="sc xl vb">Progress</a></li>
+                  <li><a href="https://github.com/quran-web3/quran-web3.nft/releases" target="_blank" class="sc xl vb">Releases</a></li>
+                  <li><a href="https://github.com/quran-web3/quran-web3.nft/discussions" target="_blank" class="sc xl vb">Discussions</a></li>
+                </ul>
+              </div>
+              <div class="animate_top">
+                <h4 class="kk wm tj ec">Network</h4>
+                <ul>
+                  <li><a href="https://ud.me/quran-web3.nft" target="_blank" class="sc xl vb">Unstoppable Domains</a></li>
+                  <li><a href="https://github.com/quran-web3" target="_blank" class="sc xl vb">Github</a></li>
+                  <li><a href="https://twitter.com/quran_web3" target="_blank" class="sc xl vb">Twitter (X)</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
+          <div class="animate_top">
+            <ul class="tc wf gg">
+              <li><a href="/privacy-policy.html" class="xl">Privacy Policy</a></li>
+              <li><a href="/support.html" class="xl">Support</a></li>
+            </ul>
+          </div>
+          <div class="animate_top">
+            <p>&copy; 2026 Quran Web3. All rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+      <button
+        class="xc wf xf ie ld vg sr gh tr g sa ta _a"
+        @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+        @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false"
+        :class="{ 'uc' : scrollTop }"
+      >
+      <svg class="uh se qd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+      </svg>
+    </button>
+  <script defer src="/bundle.js"></script>
+  </body>
+</html>

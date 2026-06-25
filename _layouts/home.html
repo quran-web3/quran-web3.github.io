@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore the decentralized world of the Quran with our Web3 project. Discover NFTs for Quranic verses, smart contracts for content authenticity, and a unique Islamic blockchain experience.">
+    <meta name="keywords" content="decentralized Quran platform, Quran NFTs, Islamic blockchain project, smart contracts, Web3 Quran application, blockchain Tafsir, Islamic crypto collectibles, Quran tokenization, NFTs for Quranic verses, blockchain Quranic authentication">
+    <meta name="author" content="quran-web3">
+    <title>Quran Web3 | Decentralized Quran & NFT</title>
+    <link rel="icon" href="{{ '/favicon.png' | relative_url }}">
+    <link href="{{ '/style.css' | relative_url }}" rel="stylesheet">
+  </head>
+  <body
+    x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+    x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    :class="{'b eh': darkMode === true}"
+  >
+    <header
+  class="g s r vd ya cj"
+  :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+  @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+>
+  <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+    <div class="vd to/4 tc wf yf">
+      <a href="{{ '/' | relative_url }}">
+        <img class="om" src="{{ '/images/logo-light.png' | relative_url }}" alt="Logo Light" />
+        <img class="xc nm" src="{{ '/images/logo-dark.png' | relative_url }}" alt="Logo Dark" />
+      </a>
+      <button class="po rc" @click="navigationOpen = !navigationOpen">
+        <span class="rc i pf re pd">
+          <span class="du-block h q vd yc">
+            <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+            <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+            <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+          </span>
+          <span class="du-block h q vd yc lf">
+            <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+            <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+          </span>
+        </span>
+      </button>
+      </div>
+    <div
+      class="vd wo/4 sd qo f ho oo wf yf"
+      :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
+    >
+      <nav>
+        <ul class="tc _o sf yo cg ep">
+              <li><a href="{{ '/' | relative_url }}" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
+              <li><a href="{{ '/#mint' | relative_url }}" class="xl">Mint</a></li>
+              <li><a href="{{ '/#blog' | relative_url }}" class="xl">Blog</a></li>
+              <li><a href="{{ '/#donate' | relative_url }}" class="xl">Donate</a></li>
+        </ul>
+      </nav>
+      <div class="tc wf ig pb no">
+        <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
+          <label class="rc ab i">
+            <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="pf vd yc uk h r za ab" />
+               <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
+                </svg>
+                <img class="xc nm" src="{{ '/images/icon-moon.svg' | relative_url }}" alt="Moon" />
+              </label>
+            </div>
+            <a href="{{ '/wp.html' | relative_url }}" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Whitepaper</a>
+            <a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Web3 Link</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="gj do ir hj sp jr i pg">
+        <div class="xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r">
+          <img src="{{ '/images/shape-01.svg' | relative_url }}" alt="shape" class="xc 2xl:ud-block h t -ud-left-[10%] ua" />
+          <img src="{{ '/images/shape-02.svg' | relative_url }}" alt="shape" class="xc 2xl:ud-block h u p va" />
+          <img src="{{ '/images/shape-03.svg' | relative_url }}" alt="shape" class="xc 2xl:ud-block h v w va" />
+          <img src="{{ '/images/shape-04.svg' | relative_url }}" alt="shape" class="h q r" />
+          <img src="{{ '/images/hero.png' | relative_url }}" alt="Quran" class="h q r ua" />
+        </div>
+        <div class="bb ze ki xn 2xl:ud-px-0">
+          <div class="tc _o">
+            <div class="animate_left jn/2">
+              <h1 class="fk vj zp or kk wm wb">Quran Web3</h1>
+              <p class="fq">
+                The Quran Web3 Project merges the teachings of the Quran with the potential of blockchain technology. It creates a decentralized platform where users can securely access Quranic translations, interpretations, and scholarly insights.
+              </p>
+              <div class="tc tf yo zf mb">
+                <a href="{{ '/wp.html' | relative_url }}" class="ek jk lk gh gi hi rg ml il vc _d _l"
+                  >Whitepaper</a
+                >
+                <span class="tc sf">
+                  <a href="https://quran-web3.nft" target="_blank" class="inline-block ek xj kk wm"> Quran-Web3.NFT </a>
+                  <span class="inline-block">Use Brave or Opera Browser</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="i pg qh rm ji hp">
+        <div class="bb ze ki yn 2xl:ud-px-12.5">
+          <div class="tc uf zo xf ap zf bp mq">
+            <div class="animate_top kn to/3 tc cg oq">
+              <div class="tc wf xf cf ae cd rg mh">
+                <img src="{{ '/images/icon-01.svg' | relative_url }}" alt="Icon" />
+              </div>
+              <div>
+                <h4 class="ek yj go kk wm xb">Transparency</h4>
+                <p>Immutable records on the blockchain verify the provenance and authenticity of Quranic resources.</p>
+              </div>
+            </div>
+            <div class="animate_top kn to/3 tc cg oq">
+              <div class="tc wf xf cf ae cd rg nh">
+                <img src="{{ '/images/icon-02.svg' | relative_url }}" alt="Icon" />
+              </div>
+              <div>
+                <h4 class="ek yj go kk wm xb">Global Accessibility</h4>
+                <p>Transcends geographical boundaries and language barriers to promote deeper understanding worldwide.</p>
+              </div>
+            </div>
+            <div class="animate_top kn to/3 tc cg oq">
+              <div class="tc wf xf cf ae cd rg oh">
+                <img src="{{ '/images/icon-03.svg' | relative_url }}" alt="Icon" />
+              </div>
+              <div>
+                <h4 class="ek yj go kk wm xb">Decentralization</h4>
+                <p>Ensures global accessibility to Quranic resources, preserving data integrity and resisting censorship.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="ji gp uq 2xl:ud-py-35 pg">
+        <div class="bb ze ki xn wq">
+          <div class="tc wf gg qq">
+            <div class="animate_left xc gn gg jn/2 i">
+              <div>
+                <img src="{{ '/images/shape-05.svg' | relative_url }}" alt="Shape" class="h -ud-left-5 x" />
+                <img src="{{ '/images/about-01.png' | relative_url }}" alt="About" class="ib" />
+                <img src="{{ '/images/about-02.png' | relative_url }}" alt="About" />
+              </div>
+              <div>
+                <img src="{{ '/images/shape-06.svg' | relative_url }}" alt="Shape" />
+                <img src="{{ '/images/about-03.png' | relative_url }}" alt="About" class="ob gb" />
+                <img src="{{ '/images/shape-07.svg' | relative_url }}" alt="Shape" class="bb" />
+              </div>
+            </div>
+            <div class="animate_right jn/2">
+              <h4 class="ek yj mk gb">The Role of Web3 Technology</h4>
+              <h2 class="fk vj zp pr kk wm qb">Ushering in a new era of decentralized Quranic studies.</h2>
+              <p class="uo">Web3 technology offers a solution to modern challenges by creating a decentralized, transparent, and collaborative system. Our goal is to leverage the power of blockchain and smart contracts to provide a platform that empowers users worldwide.</p>
+              <a href="javascript:void(0);" onclick="openPdfModal()" class="vc wf hg mb">
+                <span class="tc wf xf be dd rg i gh ua">
+                  <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
+                  <img src="{{ '/images/icon-play.svg' | relative_url }}" alt="Play" />
+                </span>
+                <span class="ek xj kk wm">EXPLORE THE PLATFORM</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="i pg ji gp uq">
+        <span class="rc h s r vd fd/5 fh rm"></span>
+        <img src="{{ '/images/shape-08.svg' | relative_url }}" alt="Shape Bg" class="h q r" />
+        <img src="{{ '/images/shape-09.svg' | relative_url }}" alt="Shape" class="of h y z/2" />
+        <img src="{{ '/images/shape-10.svg' | relative_url }}" alt="Shape" class="h _ aa" />
+        <img src="{{ '/images/shape-11.svg' | relative_url }}" alt="Shape" class="of h m ba" />
+        <div
+          x-data="{ sectionTitle: `Platform`}"
+        >
+            <div class="animate_top bb ze rj ki xn vq">
+              <h4
+                      x-text="sectionTitle"
+                      class="fk vj pr kk wm on/5 gq/2 bb _b"
+              >
+              </h4>
+            </div>
+          </div>
+          <div class="bb ze i va ki xn xq jb jo">
+          <div class="tc uf zo xf ap gg cp">
+            <div class="animate_top rj vd kn to/3">
+              <div class="c i pg z-1">
+                <img class="vd" src="{{ '/images/team-01.png' | relative_url }}" alt="Team" />
+                <div class="ef im nl il">
+                  <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
+                  <span class="h s p rc vd hd mh va"></span>
+                  <div class="h s p vd ij jj xa">
+                  </div>
+                </div>
+              </div>
+              <h4 class="yj go kk wm ob zb">Quran-Web3.NFT</h4>
+              <p>Web3 IPFS Quran with NFT domain</p>
+            </div>
+            <div class="animate_top rj vd kn to/3">
+              <div class="c i pg z-1">
+                <img class="vd" src="{{ '/images/team-02.png' | relative_url }}" alt="Team" />
+                <div class="ef im nl il">
+                  <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
+                  <span class="h s p rc vd hd mh va"></span>
+                  <div class="h s p vd ij jj xa">
+                  </div>
+                </div>
+              </div>
+              <h4 class="yj go kk wm ob zb">Quran-Web3.NFT</h4>
+              <p>605 Pages Quran NFTs</p>
+            </div>
+            <div class="animate_top rj vd kn to/3">
+              <div class="c i pg z-1">
+                <img class="vd" src="{{ '/images/team-03.png' | relative_url }}" alt="Team" />
+                <div class="ef im nl il">
+                  <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
+                  <span class="h s p rc vd hd mh va"></span>
+                  <div class="h s p vd ij jj xa">
+                  </div>
+                </div>
+              </div>
+              <h4 class="yj go kk wm ob zb">Quran-Web3.NFT</h4>
+              <p>Complete Quran in single NFT</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="lj tp kr">
+        <div class="bb ze ki xn yq mb en">
+          <div class="wc qf pn xo ng">
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="{{ '/images/icon-04.svg' | relative_url }}" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Polygon Blockchain</h4>
+              <p>Leveraging the Polygon blockchain, known for its security and robust smart contract capabilities.</p>
+            </div>
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="{{ '/images/icon-06.svg' | relative_url }}" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Smart Contracts</h4>
+              <p>Self-executing contracts automate processes ensuring fair rewards and efficient interactions.</p>
+            </div>
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="{{ '/images/icon-05.svg' | relative_url }}" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Data Encryption</h4>
+              <p>State-of-the-art encryption protects user data and interactions from unauthorized access.</p>
+            </div>
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="{{ '/images/icon-05.svg' | relative_url }}" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Decentralized Storage</h4>
+              <p>Minimizes risk of loss by ensuring materials are not stored in a single centralized location.</p>
+            </div>
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="{{ '/images/icon-06.svg' | relative_url }}" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Immutable Records</h4>
+              <p>Blockchain provides an immutable and tamper-proof record of Quranic resources.</p>
+            </div>
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="{{ '/images/icon-07.svg' | relative_url }}" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Long-Term Preservation</h4>
+              <p>Data durability and version control ensure Quranic resources are available for future generations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="mint" class="pg pj vp mr oj wp nr">
+        <div class="bb ze ki xn 2xl:ud-px-0 jb" x-data="{filterTab: 1}">
+          <div
+            x-data="{ sectionTitle: `Quran-Web3 NFT Collection`, sectionTitleText: `Explore the complete 114 Surahs, enriched with 9 translations and precise Tajweed rules. Set to be deployed on the Polygon network, this collection represents a new era of decentralized Quranic preservation. Minting status: Coming Soon.`}"
+          >
+            <div class="animate_top bb ze rj ki xn vq" style="margin-bottom: 3.5rem;">
+                <h2
+                        x-text="sectionTitle"
+                        class="fk vj pr kk wm on/5 gq/2 bb _b"
+                >
+                </h2>
+                <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+            </div>
+          </div>
+          <div
+            class="projects-tab _e bb tc uf wf xf cg rg hh rm vk xm si ti fc"
+          >
+            <button
+              data-filter="*"
+              @click="filterTab = 1"
+              :class="{ 'gh lk' : filterTab === 1 }"
+              class="project-tab-btn ek rg ml il vi mi"
+            >
+              Quran-Web3.NFT
+            </button>
+          </div>
+          <div class="projects-wrapper tc -ud-mx-5">
+            <div class="project-sizer"></div>
+            <div class="project-item wi fb vd jn/2 to/3 branding ecommerce">
+              <div class="c i pg sg z-1">
+                <img src="{{ '/images/project-01.png' | relative_url }}" alt="Front Cover" />
+                <div 
+                  class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
+                >
+                  <h4 class="ek tj kk hc">Front Cover</h4>
+                  <p>Coming Soon</p>
+                  <a
+                    class="c tc wf xf ie ld rg _g dh ml il ph jm km jc"
+                    href="{{ '/mint.html' | relative_url }}"
+                  >
+                    <svg class="th lm ml il" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-item wi fb vd jn/2 to/3 digital">
+              <div class="c i pg sg z-1">
+                <img src="{{ '/images/project-02.png' | relative_url }}" alt="Front Cover to Open" />
+                <div
+                  class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
+                >
+                  <h4 class="ek tj kk hc">Front Cover to Open</h4>
+                  <p>Coming Soon</p>
+                  <a
+                    class="c tc wf xf ie ld rg _g dh ml il ph jm km jc"
+                    href="{{ '/mint.html' | relative_url }}"
+                  >
+                    <svg class="th lm ml il" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-item wi fb vd jn/2 to/3 branding ecommerce">
+              <div class="c i pg sg z-1">
+                <img src="{{ '/images/project-04.png' | relative_url }}" alt="The Surah Page Opens" />
+                <div
+                  class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
+                >
+                  <h4 class="ek tj kk hc">The Surah Page Opens</h4>
+                  <p>Coming Soon</p>
+                  <a
+                    class="c tc wf xf ie ld rg _g dh ml il ph jm km jc"
+                    href="{{ '/mint.html' | relative_url }}"
+                  >
+                    <svg class="th lm ml il" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-item wi fb vd vo/3 digital ecommerce">
+              <div class="c i pg sg z-1">
+                <img src="{{ '/images/project-03.png' | relative_url }}" alt="Main Page Header" />
+                <div
+                  class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
+                >
+                  <h4 class="ek tj kk hc">Main Page Header</h4>
+                  <p>Coming Soon</p>
+                  <a
+                    class="c tc wf xf ie ld rg _g dh ml il ph jm km jc"
+                    href="{{ '/mint.html' | relative_url }}"
+                  >
+                    <svg class="th lm ml il" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="i pg qh rm ji hp" id="metrics">
+        <img src="{{ '/images/shape-11.svg' | relative_url }}" alt="Shape" class="of h ga ha ke" />
+        <img src="{{ '/images/shape-07.svg' | relative_url }}" alt="Shape" class="h ia o ae jf" />
+        <img src="{{ '/images/shape-14.svg' | relative_url }}" alt="Shape" class="h ja ka" />
+        <img src="{{ '/images/shape-15.svg' | relative_url }}" alt="Shape" class="h q p" />
+        <div class="bb ze i va ki xn br">
+          <div
+            x-data="{ sectionTitle: `IPFS Deployment Metrics`, sectionTitleText: `Track our current milestone in pinning the Holy Quran onto the decentralized web.`}"
+          >
+            <div class="animate_top bb ze rj ki xn vq" style="margin-bottom: 3.5rem;">
+                <h2
+                        x-text="sectionTitle"
+                        class="fk vj pr kk wm on/5 gq/2 bb _b"
+                >
+                </h2>
+                <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+            </div>
+          </div>
+          <div class="tc uf sn tn xf un gg">
+            <div class="animate_top me/5 ln rj">
+              <h2 class="gk vj zp or kk wm hc">7</h2>
+              <p class="ek bk aq">Pages Pinned</p>
+            </div>
+            <div class="animate_top me/5 ln rj">
+              <h2 class="gk vj zp or kk wm hc">3</h2>
+              <p class="ek bk aq">Juz Completed</p>
+            </div>
+            <div class="animate_top me/5 ln rj">
+              <h2 class="gk vj zp or kk wm hc">2</h2>
+              <p class="ek bk aq">Surahs In Progress</p>
+            </div>
+            <div class="animate_top me/5 ln rj">
+              <h2 class="gk vj zp or kk wm hc">2</h2>
+              <p class="ek bk aq">Surahs Completed</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="blog" class="ji gp uq">
+        <div
+          x-data="{ sectionTitle: `Updates & Info`}"
+        >
+            <div class="animate_top bb ze rj ki xn vq">
+              <h4
+                      x-text="sectionTitle"
+                      class="fk vj pr kk wm on/5 gq/2 bb _b"
+              >
+              </h4>
+            <div class="tc wf xf bg" style="margin-top: 30px; width: 100%;">
+              <a href="{{ '/blog/' | relative_url }}" class="vc ek rg lk gh sl ml il gi hi" style="display: inline-block; padding: 12px 35px;">
+                View Blog
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="bb ye ki xn vq jb jo">
+          <div class="tc uf zo xf ap zf iq">
+            {% if site.posts.size == 0 %}
+              <div class="animate_top sg vk rm xm yh text-center w-full" style="padding: 40px;">
+                <p class="kk wm xl">No Post Yet</p>
+              </div>
+            {% endif %}
+            {% for post in site.posts limit:3 %}
+            <div class="animate_top sg vk rm xm vd kn to/3">
+              <div class="c rc i z-1 pg">
+                <img class="w-full" src="{{ post.image | default: 'images/blog-big.png' | relative_url }}" alt="{{ post.title }}" />
+                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
+                  <a href="{{ post.url | relative_url }}" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
+                </div>
+              </div>
+              <div class="yh">
+                <div class="tc uf wf ag jq">
+                  <div class="tc wf ag">
+                    <img src="{{ '/images/icon-man.svg' | relative_url }}" alt="User" />
+                    <p>{{ post.author | default: "Zamil" }}</p>
+                  </div>
+                  <div class="tc wf ag">
+                    <img src="{{ '/images/icon-calender.svg' | relative_url }}" alt="Calender" />
+                    <p>{{ post.date | date: "%b %d" }}</p>
+                  </div>
+                </div>
+                <h4 class="ek tj ml il kk wm xl eq lb">
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h4>
+              </div>
+            </div>
+            {% endfor %}
+          </div> 
+        </div>
+      </section>
+      <section class="hj rp hr">
+        <div class="bb ze ki xn ar">
+          <div class="animate_top jb cq sg vk rm xm">
+            <div class="swiper testimonial-01">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="i hh rm sg vk xm bi qj">
+                    <span class="rc je md/2 gh xg h q r"></span>
+                    <span class="rc je md/2 mh yg h q p"></span>
+                    <div class="tc sf rn tn un zf dp">
+                      <img class="bf" src="{{ '/images/testimonial.png' | relative_url }}" alt="Zamil Hasballah" />
+                      <div>
+                        <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
+                        <p class="ek ik xj _p kc fb">
+                          Successfully pinning a surah (al-Fatihah) to IPFS. This also ensures that all functions are running smoothly. Open quran-web3.nft in the Brave or Opera browser to see the results.
+                        </p>
+                        <div class="tc yf vf">
+                          <div>
+                            <span class="rc ek xj kk wm zb">Zamil Hasballah</span>
+                            <span class="rc">Dev Log #1 • IPFS Integration</span>
+                          </div>
+                          <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="i hh rm sg vk xm bi qj">
+                    <span class="rc je md/2 gh xg h q r"></span>
+                    <span class="rc je md/2 mh yg h q p"></span>
+                    <div class="tc sf rn tn un zf dp">
+                      <img class="bf" src="{{ '/images/testimonial.png' | relative_url }}" alt="Zamil Hasballah" />
+                      <div>
+                        <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
+                        <p class="ek ik xj _p kc fb">
+                          This week's hurdle: ensuring stable IPFS pinning. Retrieving data can be a bit slow if nearby nodes are offline, but I'm actively researching ways to optimize our gateway for faster loads.
+                        </p>
+                        <div class="tc yf vf">
+                          <div>
+                            <span class="rc ek xj kk wm zb">Zamil Hasballah</span>
+                            <span class="rc">Dev Log #2 • Technical Challenge</span>
+                          </div>
+                          <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="i hh rm sg vk xm bi qj">
+                    <span class="rc je md/2 gh xg h q r"></span>
+                    <span class="rc je md/2 mh yg h q p"></span>
+                    <div class="tc sf rn tn un zf dp">
+                      <img class="bf" src="{{ '/images/testimonial.png' | relative_url }}" alt="Zamil Hasballah" />
+                      <div>
+                        <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
+                        <p class="ek ik xj _p kc fb">
+                          Started drafting the smart contracts for the Quran-Web3.NFT single. The concept isn't just digital art; it acts as an immutable proof of contribution to this Web3 ecosystem.
+                        </p>
+                        <div class="tc yf vf">
+                          <div>
+                            <span class="rc ek xj kk wm zb">Zamil Hasballah</span>
+                            <span class="rc">Dev Log #3 • NFT Smart Contracts</span>
+                          </div>
+                          <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="i hh rm sg vk xm bi qj">
+                    <span class="rc je md/2 gh xg h q r"></span>
+                    <span class="rc je md/2 mh yg h q p"></span>
+                    <div class="tc sf rn tn un zf dp">
+                      <img class="bf" src="{{ '/images/testimonial.png' | relative_url }}" alt="Zamil Hasballah" />
+                      <div>
+                        <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
+                        <p class="ek ik xj _p kc fb">
+                          Sometimes I pause while coding and reflect. Decentralization perfectly mirrors the early transmission of the Quran: from person to person (node to node), preserved collectively by the Ummah.
+                        </p>
+                        <div class="tc yf vf">
+                          <div>
+                            <span class="rc ek xj kk wm zb">Zamil Hasballah</span>
+                            <span class="rc">Dev Log #4 • Spiritual Thoughts</span>
+                          </div>
+                          <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="i hh rm sg vk xm bi qj">
+                    <span class="rc je md/2 gh xg h q r"></span>
+                    <span class="rc je md/2 mh yg h q p"></span>
+                    <div class="tc sf rn tn un zf dp">
+                      <img class="bf" src="{{ '/images/testimonial.png' | relative_url }}" alt="Zamil Hasballah" />
+                      <div>
+                        <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
+                        <p class="ek ik xj _p kc fb">
+                          Today’s focus is strictly on UI/UX. Web3 can be intimidating for beginners. The ultimate goal of Quran-Web3 is to make accessing decentralized tech as simple as opening a physical book.
+                        </p>
+                        <div class="tc yf vf">
+                          <div>
+                            <span class="rc ek xj kk wm zb">Zamil Hasballah</span>
+                            <span class="rc">Dev Log #5 • User Experience</span>
+                          </div>
+                          <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="i hh rm sg vk xm bi qj">
+                    <span class="rc je md/2 gh xg h q r"></span>
+                    <span class="rc je md/2 mh yg h q p"></span>
+                    <div class="tc sf rn tn un zf dp">
+                      <img class="bf" src="{{ '/images/testimonial.png' | relative_url }}" alt="Zamil Hasballah" />
+                      <div>
+                        <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
+                        <p class="ek ik xj _p kc fb">
+                          Structuring NFT metadata to align seamlessly with Tafsir and Tajweed rules requires immense precision. Every token deployed must carry deep educational value, not just crypto hype.
+                        </p>
+                        <div class="tc yf vf">
+                          <div>
+                            <span class="rc ek xj kk wm zb">Zamil Hasballah</span>
+                            <span class="rc">Dev Log #6 • Data Integrity</span>
+                          </div>
+                          <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="i hh rm sg vk xm bi qj">
+                    <span class="rc je md/2 gh xg h q r"></span>
+                    <span class="rc je md/2 mh yg h q p"></span>
+                    <div class="tc sf rn tn un zf dp">
+                      <img class="bf" src="{{ '/images/testimonial.png' | relative_url }}" alt="Zamil Hasballah" />
+                      <div>
+                        <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
+                        <p class="ek ik xj _p kc fb">
+                          Finally deployed a dedicated IPFS Gateway! Reading access across the DApp is now significantly faster. Alhamdulillah, a major technical roadblock has been cleared today.
+                        </p>
+                        <div class="tc yf vf">
+                          <div>
+                            <span class="rc ek xj kk wm zb">Zamil Hasballah</span>
+                            <span class="rc">Dev Log #7 • Milestone Achieved</span>
+                          </div>
+                          <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="donate" x-data="setup()" class="i pg fh rm ji gp uq">
+        <img src="{{ '/images/shape-06.svg' | relative_url }}" alt="Shape" class="h aa y" />
+        <img src="{{ '/images/shape-03.svg' | relative_url }}" alt="Shape" class="h ca u" />
+        <img src="{{ '/images/shape-07.svg' | relative_url }}" alt="Shape" class="h w da ee" />
+        <img src="{{ '/images/shape-12.svg' | relative_url }}" alt="Shape" class="h p s" />
+        <img src="{{ '/images/shape-13.svg' | relative_url }}" alt="Shape" class="h r q" />
+        <div
+          x-data="{ sectionTitle: `Support Our Project`, sectionTitleText: `Choose your preferred crypto asset to copy the wallet address or scan the QR Code.`}"
+        >
+          <div class="animate_top bb ze rj ki xn vq">
+              <h2
+                      x-text="sectionTitle"
+                      class="fk vj pr kk wm on/5 gq/2 bb _b"
+              >
+              </h2>
+              <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+          </div>
+        </div>
+        <div class="tc wf xf jb bg uf">
+          <span class="ek kk wm ak">Crypto Coins</span>
+          <button class="i rg gm bf" x-cloak @click="billPlan = (billPlan === 'monthly' ? 'annually' : 'monthly')">
+            <div class="fe id bl gh rg xk outline-none"></div>
+            <div
+              class="h vc wf xf ge jd cl jl ml mf hh rg yk ea fa"
+              :class="{ 'ff': billPlan === 'monthly', 'gf': billPlan === 'annually' }"
+            ></div>
+          </button>
+          <span class="ek kk wm ak">Smart Chains</span>
+        </div>
+        <div class="bb ze i va ki xn yq bc">
+          <div class="tc uf zo xf ap jg">
+            <template x-for="(plan, i) in plans" x-key="i">
+              <div 
+                x-show="plan.type === billPlan" 
+                x-transition
+                class="tc sf wf yf rj sg hh sm vk xm hi nj oj vd kn to/3"
+              >
+                <h4 x-text="plan.name" class="wj kk wm fb"></h4>
+                <img :src="plan.qr" :alt="`QR Code ${plan.name}`" class="bb gb" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 8px; border: 2px solid #D8E1ED;" />
+                <textarea readonly :value="plan.address" class="vd di _g ch sg rj gb kk" style="resize: none; height: 60px; font-size: 13px; background-color: #F4F7FA; outline: none; word-break: break-all;"></textarea>
+                <button @click="navigator.clipboard.writeText(plan.address); alert(plan.name + ' address copied successfully!')" class="vd ek rg lk ml il gi gh sl" style="margin-top: auto;">
+                  Copy Address
+                </button>
+              </div>
+            </template>
+          </div>
+        </div>
+      </section>
+      <section class="i pg gh ji">
+        <img class="h p q" src="{{ '/images/shape-16.svg' | relative_url }}" alt="Bg Shape" />
+          <div class="bb ye i z-10 ki xn dr">
+            <div class="tc uf sn tn un gg">
+              <div class="animate_left to/2">
+                <h2 class="fk vj zp pr lk ac">
+                    Quran Web3
+                </h2>
+                <p class="lk">
+                    By embracing Web3 principles, the project aims to enhance accessibility, preservation, and knowledge sharing of the Quran.
+                </p>
+              </div>
+              <div class="animate_right bf">
+                <a href="https://github.com/quran-web3" target="_blank" class="vc ek kk hh rg ol il cm gi hi">
+                    Github
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    <footer>
+      <div class="bb ze ki xn 2xl:ud-px-0">
+        <div class="ji gp">
+          <div class="tc uf ap gg fp">
+            <div class="animate_top zd/2 to/4">
+              <a href="{{ '/' | relative_url }}">
+                <img src="{{ '/images/logo-light.png' | relative_url }}" alt="Logo" class="om" />
+                <img src="{{ '/images/logo-dark.png' | relative_url }}" alt="Logo" class="xc nm" />
+              </a>
+              <p class="lc fb">Revolutionizing Quranic studies through Web3, ensuring decentralization, transparency, and collaborative knowledge-sharing.</p>
+            </div>
+            <div class="vd ro tc sf rn un gg vn">
+              <div class="animate_top">
+                <h4 class="kk wm tj ec">Platform</h4>
+                <ul>
+                  <li><a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" class="sc xl vb">Quran-Web3.NFT </a></li>
+                  <li><a href="https://polygonscan.com/token/0x74814b153519f3d77d5521cd185dd3071b6a017a" target="_blank" class="sc xl vb">605 Pages NFT</a></li>
+                  <li>
+                    <a href="{{ '/mint.html' | relative_url }}" class="sc xl vb">
+                      Quran-Web3.NFT 
+                      <span class="sc ek uj lk nh rg zi _i nc">Mint Coming Soon</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="animate_top">
+                <h4 class="kk wm tj ec">Resources</h4>
+                <ul>
+                  <li><a href="https://github.com/quran-web3/quran-web3.nft/projects" target="_blank" class="sc xl vb">Progress</a></li>
+                  <li><a href="https://github.com/quran-web3/quran-web3.nft/releases" target="_blank" class="sc xl vb">Releases</a></li>
+                  <li><a href="https://github.com/quran-web3/quran-web3.nft/discussions" target="_blank" class="sc xl vb">Discussions</a></li>
+                </ul>
+              </div>
+              <div class="animate_top">
+                <h4 class="kk wm tj ec">Network</h4>
+                <ul>
+                  <li><a href="https://ud.me/quran-web3.nft" target="_blank" class="sc xl vb">Unstoppable Domains</a></li>
+                  <li><a href="https://github.com/quran-web3" target="_blank" class="sc xl vb">Github</a></li>
+                  <li><a href="https://twitter.com/quran_web3" target="_blank" class="sc xl vb">Twitter (X)</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
+          <div class="animate_top">
+            <ul class="tc wf gg">
+              <li><a href="{{ '/privacy-policy.html' | relative_url }}" class="xl">Privacy Policy</a></li>
+              <li><a href="{{ '/support.html' | relative_url }}" class="xl">Support</a></li>
+            </ul>
+          </div>
+          <div class="animate_top">
+            <p>&copy; 2026 Quran Web3. All rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <button
+      class="xc wf xf ie ld vg sr gh tr g sa ta _a"
+      @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+      @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false"
+      :class="{ 'uc' : scrollTop }"
+    >
+      <svg class="uh se qd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+      </svg>
+    </button>
+    <div id="customPdfModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 99999; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
+      <div style="position: relative; width: 90%; max-width: 1100px; height: 85vh; background: #111; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+        <button onclick="closePdfModal()" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.1); color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 18px; z-index: 100000; display: flex; align-items: center; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">✕</button>
+        <iframe src="{{ '/images/whitepaper.pdf' | relative_url }}" style="width: 100%; height: 100%; border: none;"></iframe>
+      </div>
+    </div>
+    <script>
+      function openPdfModal() {
+        const modal = document.getElementById('customPdfModal');
+        modal.style.display = 'flex';
+        setTimeout(() => { modal.style.opacity = '1'; }, 10);
+        document.body.style.overflow = 'hidden';
+      }
+      function closePdfModal() {
+        const modal = document.getElementById('customPdfModal');
+        modal.style.opacity = '0';
+        setTimeout(() => { modal.style.display = 'none'; }, 300);
+        document.body.style.overflow = 'auto';
+      }
+      document.getElementById('customPdfModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closePdfModal();
+        }
+      });
+      const setup = () => {
+        return {
+          isNavOpen: false,
+          billPlan: 'monthly',
+          plans: [
+            {
+              name: 'Bitcoin (BTC)',
+              type: 'monthly',
+              qr: '{{ "/images/qr-btc.png" | relative_url }}',
+              address: 'bc1q0qr0vxp5lgq7knm3va8wpm8j0wrd8nx5kujnyz'
+            },
+            {
+              name: 'Monero (XMR)',
+              type: 'monthly',
+              qr: '{{ "/images/qr-xmr.png" | relative_url }}',
+              address: '43aHCRW4PjjEzCG5wghAVhSgtqG4zYjKoU5xCRw1CSzY14tfWA2X6JyLsWW3qTALohRwXua2rvsBCizGnBD5m2uPSRej6xX'
+            },
+            {
+              name: 'Dogecoin (DOGE)',
+              type: 'monthly',
+              qr: '{{ "/images/qr-doge.png" | relative_url }}',
+              address: 'DQGX9QvjhBiLdRAR2uWTQFP3SSkiJqb3Jn'
+            },
+            {
+              name: 'EVM Compatible Chains',
+              type: 'annually',
+              qr: '{{ "/images/qr-eth.png" | relative_url }}',
+              address: '0x600436b66baaffdc77c2dc7709e185fff23e9b04'
+            },
+            {
+              name: 'Solana Network (SOL / USDT)',
+              type: 'annually',
+              qr: '{{ "/images/qr-sol.png" | relative_url }}',
+              address: '57xwUy8GFUk3CnuHJpZkJxgD1UcM2it1EdPDFZf9UqSj'
+            },
+            {
+              name: 'Tron Network (TRX / USDT)',
+              type: 'annually',
+              qr: '{{ "/images/qr-trx.png" | relative_url }}',
+              address: 'TDbQaV5tm7PEdp3ie3EoaK3GEgGFsnCs8f'
+            }
+          ],
+        };
+      };
+    </script>
+    <script defer src="{{ '/bundle.js' | relative_url }}"></script>
+  </body>
+</html>

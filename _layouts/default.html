@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }} | Quran Web3</title>
+    <link rel="icon" href="{{ '/favicon.png' | relative_url }}">
+    <link href="{{ '/style.css' | relative_url }}" rel="stylesheet">
+    <style>
+      .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #e5e7eb;
+      }
+      .nav-box {
+        max-width: 48%;
+      }
+      .nav-label {
+        font-size: 0.85rem;
+        opacity: 0.7;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .nav-title {
+        font-weight: bold;
+        display: block;
+        margin-top: 4px;
+      }
+    </style>
+  </head>
+  <body
+    x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+    x-init="
+      darkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : false;
+      $watch('darkMode', value => {
+        localStorage.setItem('darkMode', JSON.stringify(value));
+        const theme = value ? 'dark_tritanopia' : 'light_tritanopia';
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: theme } } }, 'https://giscus.app');
+        }
+      })
+    "
+    :class="{'b eh': darkMode === true}"
+  >
+    <header
+      class="g s r vd ya cj"
+      :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+      @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+    >
+      <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+        <div class="vd to/4 tc wf yf">
+          <a href="{{ '/' | relative_url }}">
+            <img class="om" src="{{ '/images/logo-light.png' | relative_url }}" alt="Logo Light" />
+            <img class="xc nm" src="{{ '/images/logo-dark.png' | relative_url }}" alt="Logo Dark" />
+          </a>
+          <button class="po rc" @click="navigationOpen = !navigationOpen">
+            <span class="rc i pf re pd">
+              <span class="du-block h q vd yc">
+                <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+                <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+                <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+              </span>
+              <span class="du-block h q vd yc lf">
+                <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+                <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+              </span>
+            </span>
+          </button>
+        </div>
+        <div
+          class="vd wo/4 sd qo f ho oo wf yf"
+          :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
+        >
+          <nav>
+            <ul class="tc _o sf yo cg ep">
+              <li><a href="{{ '/' | relative_url }}" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
+              <li><a href="{{ '/#mint' | relative_url }}" class="xl">Mint</a></li>
+              <li><a href="{{ '/blog/' | relative_url }}" class="xl">Blog</a></li>
+              <li><a href="{{ '/#donate' | relative_url }}" class="xl">Donate</a></li>
+            </ul>
+          </nav>
+          <div class="tc wf ig pb no">
+            <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
+              <label class="rc ab i">
+                <input type="checkbox" :checked="darkMode" @change="darkMode = !darkMode" class="pf vd yc uk h r za ab" />
+                <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
+                </svg>
+                <img class="xc nm" src="{{ '/images/icon-moon.svg' | relative_url }}" alt="Moon" />
+              </label>
+            </div>
+            <a href="{{ '/wp.html' | relative_url }}" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Whitepaper</a>
+            <a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Web3 Link</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="gj qp gr hj rp hr">
+        <div class="bb ze ki xn 2xl:ud-px-0">
+          {% if page.categories %}
+            <div class="animate_left to/2" style="margin-bottom: 40px; width: 100%; display: block; overflow: hidden;">
+              <ul id="breadcrumb">
+                <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+                {% for category in page.categories %}
+                <li>
+                  <a href="{{ '/blog/' | append: category | append: '/' | relative_url }}" style="text-transform: capitalize;">
+                    {{ category }}
+                  </a>
+                </li>
+                {% endfor %}
+                <li><a href="#">{{ page.title }}</a></li>
+              </ul>
+            </div>
+            {% endif %}
+          <div class="tc sf yo zf kq">
+            <div class="ro">
+              <div class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
+                {% if page.image %}
+                <center><img src="{{ page.image | relative_url }}" style="max-width:100%; border-radius: 8px;" alt="{{ page.title }}" /></center>
+                <br />
+                {% endif %}
+                <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">{{ page.title }}</h1><br />
+                <ul class="tc uf cg 2xl:ud-gap-15 fb">
+                  <li><span class="rc kk wm">Author: </span> {{ page.author | default: "Zamil" }}</li>
+                  <li><span class="rc kk wm">Published On: </span> {{ page.date | date: "%B %d, %Y" }}</li>
+                  <li><span class="rc kk wm">Category: </span><span style="text-transform: capitalize;">{{ page.categories | join: ", " | default: "updates" }}</span></li>
+                </ul>
+                <div class="blog-content">
+                  {{ content }}
+                </div>
+                <ul class="tc wf bg sb" style="margin-top: 40px;">
+                  <li><p class="sj kk wm tb">Share On:</p></li>
+                  <li>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | cgi_escape }}" target="_blank" rel="noopener noreferrer" title="Share on Facebook" class="tc wf xf yd ad rg ml il ih wk">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_47_28)">
+                      <path d="M11.6663 11.25H13.7497L14.583 7.91663H11.6663V6.24996C11.6663 5.39163 11.6663 4.58329 13.333 4.58329H14.583V1.78329C14.3113 1.74746 13.2855 1.66663 12.2022 1.66663C9.93967 1.66663 8.33301 3.04746 8.33301 5.58329V7.91663H5.83301V11.25H8.33301V18.3333H11.6663V11.25Z" fill="white"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_47_28">
+                      <rect width="20" height="20" fill="white"/>
+                      </clipPath>
+                      </defs>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/intent/tweet?text={{ page.title | cgi_escape }}&url={{ page.url | absolute_url | cgi_escape }}" target="_blank" rel="noopener noreferrer" title="Share on Twitter" class="tc wf xf yd ad rg ml il jh wk">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_47_47)">
+                      <path d="M18.4683 4.71327C17.8321 4.99468 17.1574 5.1795 16.4666 5.26161C17.1947 4.82613 17.7397 4.14078 17.9999 3.33327C17.3166 3.73994 16.5674 4.02494 15.7866 4.17911C15.2621 3.61792 14.5669 3.24574 13.809 3.12043C13.0512 2.99511 12.2732 3.12368 11.596 3.48615C10.9187 3.84862 10.3802 4.42468 10.0642 5.12477C9.74812 5.82486 9.67221 6.60976 9.84825 7.35744C8.46251 7.28798 7.10686 6.92788 5.86933 6.30049C4.63179 5.67311 3.54003 4.79248 2.66492 3.71577C2.35516 4.24781 2.19238 4.85263 2.19326 5.46827C2.19326 6.67661 2.80826 7.74411 3.74326 8.36911C3.18993 8.35169 2.64878 8.20226 2.16492 7.93327V7.97661C2.16509 8.78136 2.44356 9.56129 2.95313 10.1842C3.46269 10.807 4.17199 11.2345 4.96075 11.3941C4.4471 11.5333 3.90851 11.5538 3.38576 11.4541C3.60814 12.1468 4.04159 12.7526 4.62541 13.1867C5.20924 13.6208 5.9142 13.8614 6.64159 13.8749C5.91866 14.4427 5.0909 14.8624 4.20566 15.1101C3.32041 15.3577 2.39503 15.4285 1.48242 15.3183C3.0755 16.3428 4.93 16.8867 6.82409 16.8849C13.2349 16.8849 16.7408 11.5741 16.7408 6.96827C16.7408 6.81827 16.7366 6.66661 16.7299 6.51827C17.4123 6.02508 18.0013 5.41412 18.4691 4.71411L18.4683 4.71327Z" fill="white"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | cgi_escape }}" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn" class="tc wf xf yd ad rg ml il lh wk">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_47_53)">
+                      <path d="M5.78353 4.16665C5.78331 4.60867 5.6075 5.03251 5.29478 5.34491C4.98207 5.65732 4.55806 5.8327 4.11603 5.83248C3.674 5.83226 3.25017 5.65645 2.93776 5.34373C2.62536 5.03102 2.44997 4.60701 2.4502 4.16498C2.45042 3.72295 2.62622 3.29912 2.93894 2.98671C3.25166 2.67431 3.67567 2.49892 4.1177 2.49915C4.55972 2.49937 4.98356 2.67517 5.29596 2.98789C5.60837 3.30061 5.78375 3.72462 5.78353 4.16665ZM5.83353 7.06665H2.5002V17.5H5.83353V7.06665ZM11.1002 7.06665H7.78353V17.5H11.0669V12.025C11.0669 8.97498 15.0419 8.69165 15.0419 12.025V17.5H18.3335V10.8916C18.3335 5.74998 12.4502 5.94165 11.0669 8.46665L11.1002 7.06665Z" fill="white"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_47_53">
+                      <rect width="20" height="20" fill="white"/>
+                      </clipPath>
+                      </defs>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+                <nav class="post-navigation">
+                  <div class="nav-box prev-post">
+                    {% if page.previous %}
+                      <span class="nav-label text-stone-500">← Previous Post</span>
+                      <a class="nav-title ek kk wm" href="{{ page.previous.url | relative_url }}">
+                        {{ page.previous.title }}
+                      </a>
+                    {% endif %}
+                  </div>
+                  <div class="nav-box next-post" style="text-align: right;">
+                    {% if page.next %}
+                      <span class="nav-label text-stone-500">Next Post →</span>
+                      <a class="nav-title ek kk wm" href="{{ page.next.url | relative_url }}">
+                        {{ page.next.title }}
+                      </a>
+                    {% endif %}
+                  </div>
+                </nav>
+              </div>
+              <div id="giscus-container" style="margin-top: 30px;"></div>
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  const isDarkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : false;
+                  const initialTheme = isDarkMode ? 'dark_tritanopia' : 'light_tritanopia';
+                  const script = document.createElement('script');
+                  script.src = "https://giscus.app/client.js";
+                  script.setAttribute('data-repo', "quran-web3/quran-web3.github.io");
+                  script.setAttribute('data-repo-id', "R_kgDOKBMu6g");
+                  script.setAttribute('data-category', "General");
+                  script.setAttribute('data-category-id', "DIC_kwDOKBMu6s4C_hvk");
+                  script.setAttribute('data-mapping', "specific");
+                  script.setAttribute('data-term', "{{ page.title }}"); 
+                  script.setAttribute('data-strict', "0");
+                  script.setAttribute('data-reactions-enabled', "1");
+                  script.setAttribute('data-emit-metadata', "0");
+                  script.setAttribute('data-input-position', "bottom");
+                  script.setAttribute('data-theme', initialTheme);
+                  script.setAttribute('data-lang', "en");
+                  script.setAttribute('crossorigin', "anonymous");
+                  script.async = true;
+                  document.getElementById('giscus-container').appendChild(script);
+                });
+              </script>
+            </div>
+            <div class="jn/2 so">
+              <div class="animate_top fb i hh rm sg vk xm bi qj">
+                <h4 class="tj kk wm qb">Recent Posts</h4>
+                <div>
+                  {% for post in site.posts limit:3 %}
+                    <div class="tc fg 2xl:ud-gap-6 {% unless forloop.last %}qb{% endunless %}">
+                      {% if post.image %}
+                        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" />
+                      {% else %}
+                        <img src="{{ '/images/blog-small.png' | relative_url }}" alt="Blog" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" />
+                      {% endif %}
+                      <div class="ml il">
+                        <h5 class="wj kk wm xl bn">
+                          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h5>
+                        <small style="opacity: 0.6; font-size: 0.75rem;" class="kk wm">{{ post.date | date: "%B %d, %Y" }}</small>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="animate_top fb i hh rm sg vk xm bi qj">
+                <h4 class="tj kk wm qb">Categories</h4>
+                <ul>
+                  {% for category in site.categories %}
+                    <li class="ql vb du-ease-in-out il xl">
+                      <a href="{{ '/blog/' | relative_url }}{{ category[0] | slugify }}/">{{ category[0] | capitalize }} ({{ category[1].size }})</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="animate_top i hh rm sg vk xm bi qj">
+                <h4 class="tj kk wm qb">Related Posts</h4>
+                <div>
+                  {% assign max_related = 3 %}
+                  {% assign counter = 0 %}
+                  {% for post in site.posts %}
+                    {% if post.url != page.url and post.category == page.category %}
+                      <div class="tc fg 2xl:ud-gap-6 {% if counter < 2 %}qb{% endif %}">
+                        {% if post.image %}
+                          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" />
+                        {% else %}
+                          <img src="{{ '/images/blog-small.png' | relative_url }}" alt="Blog" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" />
+                        {% endif %}
+                        <h5 class="wj kk wm xl bn ml il">
+                          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h5>
+                      </div>
+                      {% assign counter = counter | plus: 1 %}
+                      {% if counter == max_related %}{% break %}{% endif %}
+                    {% endif %}
+                  {% endfor %}
+                  {% if counter == 0 %}
+                    {% for post in site.related_posts limit:max_related %}
+                      <div class="tc fg 2xl:ud-gap-6 {% unless forloop.last %}qb{% endunless %}">
+                        {% if post.image %}
+                          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" />
+                        {% else %}
+                          <img src="{{ '/images/blog-small.png' | relative_url }}" alt="Blog" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" />
+                        {% endif %}
+                        <h5 class="wj kk wm xl bn ml il">
+                          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h5>
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="i pg gh ji">
+        <img class="h p q" src="{{ '/images/shape-16.svg' | relative_url }}" alt="Bg Shape" />
+          <div class="bb ye i z-10 ki xn dr">
+            <div class="tc uf sn tn un gg">
+              <div class="animate_left to/2">
+                <h2 class="fk vj zp pr lk ac">
+                  Quran Web3
+                </h2>
+                <p class="lk">
+                  By embracing Web3 principles, the project aims to enhance accessibility, preservation, and knowledge sharing of the Quran.
+                </p>
+              </div>
+              <div class="animate_right bf">
+                <a href="https://github.com/quran-web3" target="_blank" class="vc ek kk hh rg ol il cm gi hi">
+                  Github
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    <footer>
+      <div class="bb ze ki xn 2xl:ud-px-0">
+        <div class="ji gp">
+          <div class="tc uf ap gg fp">
+            <div class="animate_top zd/2 to/4">
+              <a href="{{ '/' | relative_url }}">
+                <img src="{{ '/images/logo-light.png' | relative_url }}" alt="Logo" class="om" />
+                <img src="{{ '/images/logo-dark.png' | relative_url }}" alt="Logo" class="xc nm" />
+              </a>
+              <p class="lc fb">Revolutionizing Quranic studies through Web3, ensuring decentralization, transparency, and collaborative knowledge-sharing.</p>
+            </div>
+            <div class="vd ro tc sf rn un gg vn">
+              <div class="animate_top">
+                <h4 class="kk wm tj ec">Platform</h4>
+                <ul>
+                  <li><a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" class="sc xl vb">Quran-Web3.NFT </a></li>
+                  <li><a href="https://polygonscan.com/token/0x74814b153519f3d77d5521cd185dd3071b6a017a" target="_blank" class="sc xl vb">605 Pages NFT</a></li>
+                  <li>
+                    <a href="{{ '/mint.html' | relative_url }}" class="sc xl vb">
+                      Quran-Web3.NFT 
+                      <span class="sc ek uj lk nh rg zi _i nc">Mint Coming Soon</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="animate_top">
+                <h4 class="kk wm tj ec">Resources</h4>
+                <ul>
+                  <li><a href="https://github.com/quran-web3/quran-web3.nft/projects" target="_blank" class="sc xl vb">Progress</a></li>
+                  <li><a href="https://github.com/quran-web3/quran-web3.nft/releases" target="_blank" class="sc xl vb">Releases</a></li>
+                  <li><a href="https://github.com/quran-web3/quran-web3.nft/discussions" target="_blank" class="sc xl vb">Discussions</a></li>
+                </ul>
+              </div>
+              <div class="animate_top">
+                <h4 class="kk wm tj ec">Network</h4>
+                <ul>
+                  <li><a href="https://ud.me/quran-web3.nft" target="_blank" class="sc xl vb">Unstoppable Domains</a></li>
+                  <li><a href="https://github.com/quran-web3" target="_blank" class="sc xl vb">Github</a></li>
+                  <li><a href="https://twitter.com/quran_web3" target="_blank" class="sc xl vb">Twitter (X)</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
+          <div class="animate_top">
+            <ul class="tc wf gg">
+              <li><a href="{{ '/privacy-policy.html' | relative_url }}" class="xl">Privacy Policy</a></li>
+              <li><a href="{{ '/support.html' | relative_url }}" class="xl">Support</a></li>
+            </ul>
+          </div>
+          <div class="animate_top">
+            <p>&copy; 2026 Quran Web3. All rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <button
+      class="xc wf xf ie ld vg sr gh tr g sa ta _a"
+      @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+      @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false"
+      :class="{ 'uc' : scrollTop }"
+    >
+      <svg class="uh se qd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+      </svg>
+    </button>
+    <script defer src="{{ '/bundle.js' | relative_url }}"></script>
+  </body>
+</html>
