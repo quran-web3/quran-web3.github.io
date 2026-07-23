@@ -1,5 +1,3 @@
-2026-04-17-zk-snark-under-the-hood-part-2.md
-
 ---
 layout: default
 title: "Zk-SNARKs: Under the Hood Part 2"
