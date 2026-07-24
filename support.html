@@ -74,112 +74,83 @@
               <div class="tc sf yo zf kq">
                 <div class="bb ze">
                   
-                  <!-- Main Post Section Style Wrapper -->
-                  <div class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
-                    
-                    <!-- Header Title -->
-                    <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">Support Center</h1>
-                    <p style="text-align: center;" class="ob fb">Have questions or issues with our decentralized platform? Explore the guide and communities below to get the help you need.</p>
-                    
-                    <div class="ah ch pm mb-8 mt-6"></div>
-
-                    <!-- Section 1: Support Channels Grid (Expanded to 4 items) -->
-                    <h2 class="sj ck fk kk wm gb mb-4">Official Help Channels</h2>
-                    <div class="wc qf pn dg cb">
+                    <!-- Main Post Section Style Wrapper -->
+                    <div class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
                       
-                      <!-- Item 1: Discussions -->
-                      <div class="rounded-md border border-stroke dark:border-strokedark p-5 bg-white dark:bg-blacksection">
-                        <span class="gh lk rg ti vi ak fk mb-2" style="display: inline-block;">Community</span>
-                        <h4 class="kk wm tj ec">GitHub Discussions</h4>
-                        <p class="ob">The main channel for discussing bugs, data contributions, feature suggestions, and technical guides with the developer community.</p>
-                        <br />
-                        <a href="https://github.com/quran-web3/quran-web3.nft/discussions" target="_blank" class="vc ek lk gh dk rg gi hi _l">Open Discussion</a>
-                      </div>
-                      
-                      <!-- Item 2: Twitter -->
-                      <div class="rounded-md border border-stroke dark:border-strokedark p-5 bg-white dark:bg-blacksection">
-                        <span class="gh lk rg ti vi ak fk mb-2" style="display: inline-block;">Social Media</span>
-                        <h4 class="kk wm tj ec">Social Media & Community</h4>
-                        <p class="ob">Get the latest updates, minting schedules, IPFS integration, and Polygon network announcements in real-time via the X platform (Twitter).</p>
-                        <br />
-                        <a href="https://twitter.com/quran_web3" target="_blank" class="vc ek lk gh dk rg gi hi _l">Follow Twitter</a>
-                      </div>
+                    <h1 class="sj _j gk kk wm ac" style="text-align: center;">Help & Support</h1>
+                    <p class="dk pk ac" style="text-align: center;">Welcome to the Quran-Web3.Nft Support Center. We are here to help you navigate our decentralized platform and ecosystem.</p>
 
-                      <!-- Item 3: Bug Reports (New) -->
-                      <div class="rounded-md border border-stroke dark:border-strokedark p-5 bg-white dark:bg-blacksection">
-                        <span class="fh sm pk _g ch pm rg ti vi ak fk mb-2" style="display: inline-block; color: #ffffff;">Technical</span>
-                        <h4 class="kk wm tj ec">Issue & Bug Tracker</h4>
-                        <p class="ob">Found a rendering glitch, typo in the database-less Quran text, or a loading error on an IPFS public gateway? Submit a structural issue ticket.</p>
-                        <br />
-                        <a href="https://github.com/quran-web3/quran-web3.nft/issues" target="_blank" class="vc ek lk gh dk rg gi hi _l">Report an Issue</a>
-                      </div>
+                    <hr class="cb ch pm" style="margin: 40px 0;" />
 
-                      <!-- Item 4: Direct Mail (New) -->
-                      <div class="rounded-md border border-stroke dark:border-strokedark p-5 bg-white dark:bg-blacksection">
-                        <span class="nh lk rg wi vi ak fk mb-2" style="display: inline-block;">Inquiries</span>
-                        <h4 class="kk wm tj ec">Direct / Partnership Mail</h4>
-                        <p class="ob">For general development inquiries, sponsorship collaborations, or specific questions that cannot be discussed publically on GitHub forums.</p>
-                        <br />
-                        <a href="mailto:support@quran-web3.nft" class="vc ek lk gh dk rg gi hi _l">Contact Email</a>
-                      </div>
+                    <h2 class="sj ck fk kk wm ac">Get in Touch</h2>
+                    <p class="dk pk ac">As an open-source and community-driven Web3 project, our primary support channels rely on transparent communication. If you need technical assistance or want to share feedback, please reach out through the following platforms:</p>
 
+                    <ul class="tc sf cg ac dk pk">
+                      <li>
+                        <div class="tc">
+                          <span class="mk ub gk bf">•</span>
+                          <p><strong class="gk kk wm">GitHub Issues:</strong> Encountered a bug, a broken link, or have a feature request? Please open an issue directly on our GitHub repository. This is the fastest way for developers to track and resolve technical problems.</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="tc">
+                          <span class="mk ub gk bf">•</span>
+                          <p><strong class="gk kk wm">Community Discussions:</strong> Web3 is all about community. Join our discussion boards to ask questions, help fellow users, and share your journey in exploring the integration of blockchain and the Al-Quran.</p>
+                        </div>
+                      </li>
+                    </ul>
+
+                    <hr class="cb ch pm" style="margin: 40px 0;" />
+
+                    <h2 class="sj ck fk kk wm ac">Frequently Asked Questions (FAQ)</h2>
+                    <p class="dk pk ac">Find quick answers to common questions about minting, decentralized storage, and Web3 wallets below.</p>
+
+                    <!-- FAQ Item 1 -->
+                    <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px; margin-bottom: 15px;">
+                        <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
+                            <span>What do I need to connect to the platform?</span>
+                            <span x-text="open ? '−' : '+'" class="ck"></span>
+                        </button>
+                        <div x-show="open" x-transition class="lc bh ch pm dk pk" style="margin-top: 15px; padding-top: 15px;">
+                            To fully interact with our platform, you will need a Web3 wallet (such as MetaMask, Trust Wallet, or any WalletConnect-compatible application). Make sure your wallet is connected to the correct blockchain network and that you have enough native tokens to cover network gas fees for transactions.
+                        </div>
                     </div>
 
-                    <div class="ah ch pm mb-8 mt-10"></div>
+                    <!-- FAQ Item 2 -->
+                    <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px; margin-bottom: 15px;">
+                        <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
+                            <span>Why are the Quran pages stored on IPFS?</span>
+                            <span x-text="open ? '−' : '+'" class="ck"></span>
+                        </button>
+                        <div x-show="open" x-transition class="lc bh ch pm dk pk" style="margin-top: 15px; padding-top: 15px;">
+                            IPFS (InterPlanetary File System) is a decentralized network for storing and sharing data. By hosting the 605 Quran pages as NFTs on IPFS, we ensure that the digital files are immutable, completely decentralized, and permanently accessible without relying on a single, centralized server.
+                        </div>
+                    </div>
 
-                    <!-- Section 2: Interactive FAQ Accordion (Using Alpine.js) -->
-                    <h2 class="sj ck fk kk wm gb mb-2">Frequently Asked Questions</h2>
-                    <p class="ob mb-6">Quick solutions to common technical problems and conceptual misunderstandings about Web3 integration.</p>
+                    <!-- FAQ Item 3 -->
+                    <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px; margin-bottom: 15px;">
+                        <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
+                            <span>Can the developer recover my lost NFT or wallet?</span>
+                            <span x-text="open ? '−' : '+'" class="ck"></span>
+                        </button>
+                        <div x-show="open" x-transition class="lc bh ch pm dk pk" style="margin-top: 15px; padding-top: 15px;">
+                            No. The Web3 ecosystem operates strictly on a self-custody basis. We do not have access to your private keys, seed phrases, or wallet interface. If you lose your recovery phrase, your assets cannot be restored by us or anyone else. Always store your private keys securely offline.
+                        </div>
+                    </div>
 
-                    <div class="tc sf yo cg">
+                    <!-- FAQ Item 4 -->
+                    <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px; margin-bottom: 15px;">
+                        <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
+                            <span>How can I contribute to the Quran-Web3 project?</span>
+                            <span x-text="open ? '−' : '+'" class="ck"></span>
+                        </button>
+                        <div x-show="open" x-transition class="lc bh ch pm dk pk" style="margin-top: 15px; padding-top: 15px;">
+                            We welcome contributions from developers, designers, and enthusiasts! You can contribute by opening Pull Requests for code improvements, translating content, educating others in the "Tech" and "Insights" sections, or simply by giving us feedback on our community channels.
+                        </div>
+                    </div>
                         
-                        <!-- FAQ 1 -->
-                        <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
-                            <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
-                                <span>How do I access this website if the main .io domain is down?</span>
-                                <span x-text="open ? '−' : '+'" class="ck"></span>
-                            </button>
-                            <div x-show="open" x-transition class="lc bh ch pm pt-4 dk pk" style="margin-top: 15px; padding-top: 15px;">
-                                Because this platform runs entirely on the IPFS peer-to-peer network, you can access it through any public IPFS gateway using our Unstoppable Domain or native IPNS hash records. Example backup: <code class="eh lk tg ti vi ak">https://ipfs.io/ipns/quran-web3.nft</code>.
-                            </div>
-                        </div>
 
-                        <!-- FAQ 2 -->
-                        <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
-                            <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
-                                <span>Why does the page load slowly during the first visit?</span>
-                                <span x-text="open ? '−' : '+'" class="ck"></span>
-                            </button>
-                            <div x-show="open" x-transition class="lc bh ch pm pt-4 dk pk" style="margin-top: 15px; padding-top: 15px;">
-                                Dolor sit amet, consectetur adipiscing elit. Static files distributed peer-to-peer require neighboring nodes to look up and cache the content hashes. Once the files are securely pinned and distributed across nodes, load speeds will normalize.
-                            </div>
-                        </div>
-
-                        <!-- FAQ 3 -->
-                        <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
-                            <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
-                                <span>Do I need a Web3 wallet or gas fee just to read the Quran text?</span>
-                                <span x-text="open ? '−' : '+'" class="ck"></span>
-                            </button>
-                            <div x-show="open" x-transition class="lc bh ch pm pt-4 dk pk" style="margin-top: 15px; padding-top: 15px;">
-                                No. Reading, browsing, and studying the content on this platform is 100% free and open-source. A Web3 cryptographic wallet (like MetaMask) is only utilized if you choose to participate in the milestone minting processes or direct donation pipelines.
-                            </div>
-                        </div>
-
-                        <!-- FAQ 4 -->
-                        <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
-                            <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
-                                <span>How can I contribute to data verification or code improvement?</span>
-                                <span x-text="open ? '−' : '+'" class="ck"></span>
-                            </button>
-                            <div x-show="open" x-transition class="lc bh ch pm pt-4 dk pk" style="margin-top: 15px; padding-top: 15px;">
-                                Lorem ipsum dolor sit amet. You can clone our static repository on GitHub, audit the structural formatting codes, and submit a Pull Request. Every updated build hash is strictly tracked and signed for verification transparency.
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="ah ch pm mb-8 mt-10"></div>
+                    <hr class="cb ch pm" style="margin: 40px 0;" />
 
                     <!-- Section 3: Quick Troubleshooting Checklists -->
                     <h2 class="sj ck fk kk wm gb mb-2">Quick Troubleshooting Guide</h2>
@@ -228,46 +199,6 @@
                               </ol>
                           </li>
                         </ol>
-                    </div>
-
-                    <div class="ah ch pm mb-8 mt-10"></div>
-
-                    <!-- Section 4: Network & Hash Verification Status Table -->
-                    <h2 class="sj ck fk kk wm gb mb-2">Network Infrastructure Status</h2>
-                    <p class="ob mb-4">Real-time reference logs for our core decentralized platform build components.</p>
-                    
-                    <div class="fh sm sg ci ac" style="overflow-x: auto;">
-                        <table class="vd dk pk ic" style="min-width: 550px; text-align: left; border-collapse: collapse;">
-                            <thead>
-                                <tr class="ah ch pm">
-                                    <th class="sj fk kk wm pb-2 pt-2 pr-4">Network Component</th>
-                                    <th class="sj fk kk wm pb-2 pt-2 pr-4">Status Type</th>
-                                    <th class="sj fk kk wm pb-2 pt-2 pr-4">Current Availability Log</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="ah ch pm">
-                                    <td class="pb-2 pt-2 pr-4">GitHub Pages Gateway</td>
-                                    <td class="pb-2 pt-2 pr-4"><span class="nh lk rg wi vi ak fk" style="padding: 2px 8px; font-size:11px;">ONLINE</span></td>
-                                    <td class="pb-2 pt-2 pr-4">Operational - Synchronized with Main Branch</td>
-                                </tr>
-                                <tr class="ah ch pm">
-                                    <td class="pb-2 pt-2 pr-4">IPFS Node Distributed Pins</td>
-                                    <td class="pb-2 pt-2 pr-4"><span class="nh lk rg wi vi ak fk" style="padding: 2px 8px; font-size:11px;">ACTIVE</span></td>
-                                    <td class="pb-2 pt-2 pr-4">Propagating across public interplanetary gateways</td>
-                                </tr>
-                                <tr class="ah ch pm">
-                                    <td class="pb-2 pt-2 pr-4">Unstoppable Domain Contract</td>
-                                    <td class="pb-2 pt-2 pr-4"><span class="nh lk rg wi vi ak fk" style="padding: 2px 8px; font-size:11px;">VERIFIED</span></td>
-                                    <td class="pb-2 pt-2 pr-4">Domain pointer resolution record verified on Polygon</td>
-                                </tr>
-                                <tr>
-                                    <td class="pb-2 pt-2 pr-4">Polygon Mint Smart Contract</td>
-                                    <td class="pb-2 pt-2 pr-4"><span class="jh lk rg wi vi ak fk" style="padding: 2px 8px; font-size:11px;">STANDBY</span></td>
-                                    <td class="pb-2 pt-2 pr-4">Testing on Mumbai testnet pipeline / Mainnet coming soon</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
 
                     <div class="ah ch pm mb-8 mt-10"></div>
