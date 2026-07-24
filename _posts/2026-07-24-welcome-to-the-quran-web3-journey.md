@@ -7,7 +7,6 @@ category: "updates"
 image: "images/blog-big.png"
 ---
 
-<div class="fh sm sg ci ac">
     <h1 class="ek vj zp kk wm nb gb rj">The Spark: Bridging Two Worlds</h1>
     
     <p class="dk pk ac rj fb">
@@ -77,4 +76,3 @@ image: "images/blog-big.png"
     <p class="dk pk ac">
         I invite you to explore, share your thoughts, and join the discussion. Let's learn, code, and reflect together on this journey bridging faith and technology.
     </p>
-</div>
