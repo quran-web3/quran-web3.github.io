@@ -3,9 +3,8 @@ layout: default
 title: "Welcome to the Quran-Web3.NFT Journey: Bridging Faith and Tech"
 date: 2026-07-24
 author: "Zamil"
-category: [events, updates, tech]
+category: "updates"
 image: "images/blog-big.png"
-excerpt: "Exploring how modern decentralized technology like Web3 and IPFS can serve sacred text preservation and accessibility."
 ---
 
 <div class="fh sm sg ci ac">
