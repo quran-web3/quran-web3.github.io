@@ -6,13 +6,17 @@ author: "Zamil"
 category: "updates"
 image: "images/blog-big.png"
 ---
+
 <p class="dk pk ac">
   <span class="sj _j gk kk wm" style="float: left; font-size: 50px; line-height: 40px; padding-right: 10px; margin-top: 4px;">A</span>s we prepare for our ultimate goal of a fully decentralized launch on IPFS, the Quran-Web3.NFT project is currently hosted temporarily on Vercel. This testing phase is crucial for us to iron out bugs, improve user experience, and ensure everything runs smoothly. Let's dive into the core features you can try out right now!
 </p>
+
 <h2 class="sj ck fk kk wm ac">Intuitive Navigation & View Modes</h2>
+
 <p class="dk pk ac">
   We want to ensure that accessing the Quran is as seamless as possible. The application features a straightforward tabbed navigation system that lets you jump exactly where you need to be.
 </p>
+
 <ul class="tc sf cg ac dk pk">
   <li>
     <div class="tc">
@@ -27,10 +31,13 @@ image: "images/blog-big.png"
     </div>
   </li>
 </ul>
+
 <h2 class="sj ck fk kk wm ac">Deep Dive into "Page" Mode</h2>
+
 <p class="dk pk ac">
   In "Page" mode, the layout is designed for deep study and reflection, presenting the Quran verse by verse. We have packed this mode with powerful tools for everyday readers and students of knowledge alike.
 </p>
+
 <ol class="tc sf cg ac dk pk">
   <li>
     <div class="tc">
@@ -57,19 +64,25 @@ image: "images/blog-big.png"
     </div>
   </li>
 </ol>
+
 <h2 class="sj ck fk kk wm ac">"Surah" Mode & The Verse Repeater</h2>
+
 <p class="dk pk ac">
   For those focusing on memorization (Hifz), our "Surah" mode includes a highly requested <strong class="gk kk wm">Verse Repeater</strong> feature. You can select a starting verse, an ending verse, and how many times you want the audio to loop.
 </p>
+
 <p class="dk pk ac">
   As a quick dev log update, here is a snippet of the HTML structure we used to build the Verse Repeater modal for Surah Al-Baqarah:
 </p>
+
 <h2 class="sj ck fk kk wm ac">Transparency: Our Data Sources</h2>
+
 <p class="dk pk ac">
   In the spirit of Web3, transparency regarding where our data comes from is an absolute priority. We utilize verified and trusted sources for our Arabic texts, Tafsir, audio, and translations.
 </p>
+
 <div class="fh sm sg ci ac">
-  <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
+  <div x-data="{ open: false }" markdown="0" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
     <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
       <span>Click Here to View All Data Sources & Translations</span>
       <span x-text="open ? '−' : '+'" class="ck"></span>
@@ -103,16 +116,20 @@ image: "images/blog-big.png"
     </div>
   </div>
 </div>
+
 <h3 class="sj zj fk kk wm ac">Try It Out and Share Your Feedback!</h3>
+
 <p class="dk pk ac">
   We are building this project for the Ummah, and your feedback is incredibly valuable during this Vercel testing phase.
 </p>
+
 <blockquote class="hh rm _g ch pm sg ci ic" style="border-left: 4px solid #4E6BFF; padding-left: 20px;">
   <p class="dk pk ac">
     You can access and test the app right now at: <br>
     <a href="https://quran-web3-nft.vercel.app/" target="_blank" class="gk kk wm" style="color: #4E6BFF; text-decoration: none;">https://quran-web3-nft.vercel.app/</a>
   </p>
 </blockquote>
+
 <p class="dk pk ac">
   <strong class="gk kk wm">What do you think of the current features?</strong> Are there any specific tools, translations, or functionalities you would like us to add before the official IPFS launch? Drop a comment below or reach out to the community. Let's build the future of decentralized Quran accessibility together!
 </p>
