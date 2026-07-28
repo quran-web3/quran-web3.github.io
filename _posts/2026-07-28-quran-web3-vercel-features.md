@@ -12,6 +12,7 @@ image: "images/blog-big.png"
 </p>
 
 <h2 class="sj ck fk kk wm ac">Intuitive Navigation & View Modes</h2>
+
 <p class="dk pk ac">
   We want to ensure that accessing the Quran is as seamless as possible. The application features a straightforward tabbed navigation system that lets you jump exactly where you need to be.
 </p>
@@ -32,6 +33,7 @@ image: "images/blog-big.png"
 </ul>
 
 <h2 class="sj ck fk kk wm ac">Deep Dive into "Page" Mode</h2>
+
 <p class="dk pk ac">
   In "Page" mode, the layout is designed for deep study and reflection, presenting the Quran verse by verse. We have packed this mode with powerful tools for everyday readers and students of knowledge alike.
 </p>
@@ -64,19 +66,22 @@ image: "images/blog-big.png"
 </ol>
 
 <h2 class="sj ck fk kk wm ac">"Surah" Mode & The Verse Repeater</h2>
+
 <p class="dk pk ac">
-  For those focusing on memorization (Hifz), our "Surah" mode includes a highly requested <strong class="gk kk wm">Verse Repeater</strong> feature. You can select a starting verse, an ending verse, and how many times you want the audio to loop. 
+  For those focusing on memorization (Hifz), our "Surah" mode includes a highly requested <strong class="gk kk wm">Verse Repeater</strong> feature. You can select a starting verse, an ending verse, and how many times you want the audio to loop.
 </p>
+
 <p class="dk pk ac">
   As a quick dev log update, here is a snippet of the HTML structure we used to build the Verse Repeater modal for Surah Al-Baqarah:
 </p>
 
 <h2 class="sj ck fk kk wm ac">Transparency: Our Data Sources</h2>
+
 <p class="dk pk ac">
   In the spirit of Web3, transparency regarding where our data comes from is an absolute priority. We utilize verified and trusted sources for our Arabic texts, Tafsir, audio, and translations.
 </p>
 
-<div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
+<div x-data="{ open: false }" markdown="0" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
   <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
     <span>Click Here to View All Data Sources & Translations</span>
     <span x-text="open ? '−' : '+'" class="ck"></span>
@@ -89,13 +94,11 @@ image: "images/blog-big.png"
       <li><div class="tc"><span class="mk ub gk bf">•</span><p>Tafsir Ibn Kathir: <a href="https://github.com/spa5k/tafsir_api" target="_blank" style="color: #4E6BFF; text-decoration: none;">github.com/spa5k/tafsir_api</a></p></div></li>
       <li><div class="tc"><span class="mk ub gk bf">•</span><p>Surah Info (A. Maududi): quran.com</p></div></li>
     </ul>
-
-<p style="margin-top: 15px;"><strong class="gk kk wm">Audio Recitations (everyayah.com):</strong></p>
+    <p style="margin-top: 15px;"><strong class="gk kk wm">Audio Recitations (everyayah.com):</strong></p>
     <ul class="tc sf cg ac dk pk">
       <li><div class="tc"><span class="mk ub gk bf">•</span><p>Abdul Rahman Al-Sudais, Abu Bakr Al-Shatri, Fares Abbad, Maher Al-Muaiqly, Saad Al-Ghamdi, Saud Al-Shuraim</p></div></li>
     </ul>
-
-<p style="margin-top: 15px;"><strong class="gk kk wm">Translations (Sourced from QuranEnc.com & Tanzil.net):</strong></p>
+    <p style="margin-top: 15px;"><strong class="gk kk wm">Translations (Sourced from QuranEnc.com & Tanzil.net):</strong></p>
     <p class="ak pk qk">Note: Translations marked with an asterisk (*) contain footnotes.</p>
     <ul class="tc sf cg ac dk pk">
       <li><div class="tc"><span class="mk ub gk bf">•</span><p>English: Rowwad Translation Center*, Hilali & Khan*, Saheeh International*</p></div></li>
@@ -113,15 +116,16 @@ image: "images/blog-big.png"
 </div>
 
 <h3 class="sj zj fk kk wm ac">Try It Out and Share Your Feedback!</h3>
+
 <p class="dk pk ac">
-  We are building this project for the Ummah, and your feedback is incredibly valuable during this Vercel testing phase. 
+  We are building this project for the Ummah, and your feedback is incredibly valuable during this Vercel testing phase.
 </p>
 
 <blockquote class="hh rm _g ch pm sg ci ic" style="border-left: 4px solid #4E6BFF; padding-left: 20px;">
-    <p class="dk pk ac">
-        You can access and test the app right now at: <br>
-        <a href="[https://quran-web3-nft.vercel.app/](https://quran-web3-nft.vercel.app/)" target="_blank" class="gk kk wm" style="color: #4E6BFF; text-decoration: none;">[https://quran-web3-nft.vercel.app/](https://quran-web3-nft.vercel.app/)</a>
-    </p>
+  <p class="dk pk ac">
+    You can access and test the app right now at: <br>
+    <a href="https://quran-web3-nft.vercel.app/" target="_blank" class="gk kk wm" style="color: #4E6BFF; text-decoration: none;">https://quran-web3-nft.vercel.app/</a>
+  </p>
 </blockquote>
 
 <p class="dk pk ac">
