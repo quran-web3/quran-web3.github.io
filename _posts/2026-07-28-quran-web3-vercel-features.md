@@ -85,7 +85,7 @@ image: "images/blog-big.png"
 
 {% raw %}
 <div class="fh sm sg ci ac">
-  <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
+  <div x-data="{ open: false }" markdown="0" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
     <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
       <span>Click Here to View All Data Sources & Translations</span>
       <span x-text="open ? '−' : '+'" class="ck"></span>
