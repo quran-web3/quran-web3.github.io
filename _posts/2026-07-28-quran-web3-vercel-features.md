@@ -47,10 +47,8 @@ image: "images/blog-big.png"
   </li>
   <li>
     <div class="tc">
-      <span class="tc">
-        <span class="kk wm fk ub bf">2.</span>
-        <p><strong class="gk kk wm">Study Tools:</strong> Access in-depth Tafsir (Ibn Kathir), bookmark verses for later, write personal notes, and easily copy or share verses with your community.</p>
-      </span>
+      <span class="kk wm fk ub bf">2.</span>
+      <p><strong class="gk kk wm">Study Tools:</strong> Access in-depth Tafsir (Ibn Kathir), bookmark verses for later, write personal notes, and easily copy or share verses with your community.</p>
     </div>
   </li>
   <li>
@@ -73,51 +71,39 @@ image: "images/blog-big.png"
   For those focusing on memorization (Hifz), our "Surah" mode includes a highly requested <strong class="gk kk wm">Verse Repeater</strong> feature. You can select a starting verse, an ending verse, and how many times you want the audio to loop.
 </p>
 
-<p class="dk pk ac">
-  As a quick dev log update, here is a snippet of the HTML structure we used to build the Verse Repeater modal for Surah Al-Baqarah:
-</p>
-
 <h2 class="sj ck fk kk wm ac">Transparency: Our Data Sources</h2>
 
 <p class="dk pk ac">
   In the spirit of Web3, transparency regarding where our data comes from is an absolute priority. We utilize verified and trusted sources for our Arabic texts, Tafsir, audio, and translations.
 </p>
 
-{% raw %}
-  <div x-data="{ open: false }" markdown="0" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
-    <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
-      <span>Click Here to View All Data Sources & Translations</span>
-      <span x-text="open ? '−' : '+'" class="ck"></span>
-    </button>
-    <div x-show="open" x-transition class="lc bh ch pm dk pk" style="margin-top: 15px; padding-top: 15px;">
-      <p><strong class="gk kk wm">Quran Text & Tafsir:</strong></p>
-      <ul class="tc sf cg ac dk pk">
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>Uthmanic Hafs (Arabic): Tanzil Quran Text</p></div></li>
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>Indopak Naskh (Tajweed): Tarteel AI</p></div></li>
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>Tafsir Ibn Kathir: <a href="https://github.com/spa5k/tafsir_api" target="_blank" style="color: #4E6BFF; text-decoration: none;">github.com/spa5k/tafsir_api</a></p></div></li>
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>Surah Info (A. Maududi): quran.com</p></div></li>
-      </ul>
-      <p style="margin-top: 15px;"><strong class="gk kk wm">Audio Recitations (everyayah.com):</strong></p>
-      <ul class="tc sf cg ac dk pk">
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>Abdul Rahman Al-Sudais, Abu Bakr Al-Shatri, Fares Abbad, Maher Al-Muaiqly, Saad Al-Ghamdi, Saud Al-Shuraim</p></div></li>
-      </ul>
-      <p style="margin-top: 15px;"><strong class="gk kk wm">Translations (Sourced from QuranEnc.com & Tanzil.net):</strong></p>
-      <p class="ak pk qk">Note: Translations marked with an asterisk (*) contain footnotes.</p>
-      <ul class="tc sf cg ac dk pk">
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>English: Rowwad Translation Center*, Hilali & Khan*, Saheeh International*</p></div></li>
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>Indonesian: Indonesian Sabiq*, Ministry of Religious Affairs*, The Complex*</p></div></li>
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>Spanish: Garcia, Spanish Montada eu*, Isa Garcia*, Spanish Montada Latin*</p></div></li>
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>French: Hamidullah, French Montada*, Rachid Maach*</p></div></li>
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>Chinese: Ma Jian (Traditional), Chinese Makin, Chinese Suliman</p></div></li>
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>Hindi: Farooq Khan & Nadwi, Hindi Omari*</p></div></li>
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>Portuguese: Helmi Nasr, El-Hayek</p></div></li>
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>German: Bubenheim & Elyas, Rowwad Translation Center</p></div></li>
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>Japanese: Ryoichi Mita, Japanese Saeed Sato*</p></div></li>
-        <li><div class="tc"><span class="mk ub gk bf">•</span><p>Bengali (Zohurul Hoque), Russian (Abu Adel), Korean (Unknown)</p></div></li>
-      </ul>
-    </div>
-  </div>
-{% endraw %}
+<p class="dk pk ac"><strong class="gk kk wm">Quran Text & Tafsir:</strong></p>
+<ul class="tc sf cg ac dk pk">
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>Uthmanic Hafs (Arabic): Tanzil Quran Text</p></div></li>
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>Indopak Naskh (Tajweed): Tarteel AI</p></div></li>
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>Tafsir Ibn Kathir: <a href="https://github.com/spa5k/tafsir_api" target="_blank" style="color: #4E6BFF; text-decoration: none;">github.com/spa5k/tafsir_api</a></p></div></li>
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>Surah Info (A. Maududi): quran.com</p></div></li>
+</ul>
+
+<p class="dk pk ac" style="margin-top: 15px;"><strong class="gk kk wm">Audio Recitations (everyayah.com):</strong></p>
+<ul class="tc sf cg ac dk pk">
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>Abdul Rahman Al-Sudais, Abu Bakr Al-Shatri, Fares Abbad, Maher Al-Muaiqly, Saad Al-Ghamdi, Saud Al-Shuraim</p></div></li>
+</ul>
+
+<p class="dk pk ac" style="margin-top: 15px;"><strong class="gk kk wm">Translations (Sourced from QuranEnc.com & Tanzil.net):</strong></p>
+<p class="ak pk qk">Note: Translations marked with an asterisk (*) contain footnotes.</p>
+<ul class="tc sf cg ac dk pk">
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>English: Rowwad Translation Center*, Hilali & Khan*, Saheeh International*</p></div></li>
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>Indonesian: Indonesian Sabiq*, Ministry of Religious Affairs*, The Complex*</p></div></li>
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>Spanish: Garcia, Spanish Montada eu*, Isa Garcia*, Spanish Montada Latin*</p></div></li>
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>French: Hamidullah, French Montada*, Rachid Maach*</p></div></li>
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>Chinese: Ma Jian (Traditional), Chinese Makin, Chinese Suliman</p></div></li>
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>Hindi: Farooq Khan & Nadwi, Hindi Omari*</p></div></li>
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>Portuguese: Helmi Nasr, El-Hayek</p></div></li>
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>German: Bubenheim & Elyas, Rowwad Translation Center</p></div></li>
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>Japanese: Ryoichi Mita, Japanese Saeed Sato*</p></div></li>
+  <li><div class="tc"><span class="mk ub gk bf">•</span><p>Bengali (Zohurul Hoque), Russian (Abu Adel), Korean (Unknown)</p></div></li>
+</ul>
 
 <h3 class="sj zj fk kk wm ac">Try It Out and Share Your Feedback!</h3>
 
