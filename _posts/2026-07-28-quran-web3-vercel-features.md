@@ -47,8 +47,10 @@ image: "images/blog-big.png"
   </li>
   <li>
     <div class="tc">
-      <span class="kk wm fk ub bf">2.</span>
-      <p><strong class="gk kk wm">Study Tools:</strong> Access in-depth Tafsir (Ibn Kathir), bookmark verses for later, write personal notes, and easily copy or share verses with your community.</p>
+      <span class="tc">
+        <span class="kk wm fk ub bf">2.</span>
+        <p><strong class="gk kk wm">Study Tools:</strong> Access in-depth Tafsir (Ibn Kathir), bookmark verses for later, write personal notes, and easily copy or share verses with your community.</p>
+      </span>
     </div>
   </li>
   <li>
@@ -81,8 +83,9 @@ image: "images/blog-big.png"
   In the spirit of Web3, transparency regarding where our data comes from is an absolute priority. We utilize verified and trusted sources for our Arabic texts, Tafsir, audio, and translations.
 </p>
 
+{% raw %}
 <div class="fh sm sg ci ac">
-  <div x-data="{ open: false }" markdown="0" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
+  <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
     <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
       <span>Click Here to View All Data Sources & Translations</span>
       <span x-text="open ? '−' : '+'" class="ck"></span>
@@ -116,6 +119,7 @@ image: "images/blog-big.png"
     </div>
   </div>
 </div>
+{% endraw %}
 
 <h3 class="sj zj fk kk wm ac">Try It Out and Share Your Feedback!</h3>
 
