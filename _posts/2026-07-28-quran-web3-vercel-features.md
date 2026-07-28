@@ -84,7 +84,6 @@ image: "images/blog-big.png"
 </p>
 
 {% raw %}
-<div class="fh sm sg ci ac">
   <div x-data="{ open: false }" markdown="0" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
     <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
       <span>Click Here to View All Data Sources & Translations</span>
@@ -118,7 +117,6 @@ image: "images/blog-big.png"
       </ul>
     </div>
   </div>
-</div>
 {% endraw %}
 
 <h3 class="sj zj fk kk wm ac">Try It Out and Share Your Feedback!</h3>
