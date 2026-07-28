@@ -89,6 +89,8 @@ image: "images/blog-big.png"
             <li><div class="tc"><span class="mk ub gk bf">•</span><p>Tafsir Ibn Kathir: [github.com/spa5k/tafsir_api](https://github.com/spa5k/tafsir_api)</p></div></li>
             <li><div class="tc"><span class="mk ub gk bf">•</span><p>Surah Info (A. Maududi): quran.com</p></div></li>
         </ul>
+    </div>
+ </div>
         
   <p><strong class="gk kk wm">Audio Recitations (everyayah.com):</strong></p>
     <ul class="tc sf cg ac dk pk">
@@ -109,8 +111,7 @@ image: "images/blog-big.png"
             <li><div class="tc"><span class="mk ub gk bf">•</span><p>Japanese: Ryoichi Mita, Japanese Saeed Sato*</p></div></li>
             <li><div class="tc"><span class="mk ub gk bf">•</span><p>Bengali (Zohurul Hoque), Russian (Abu Adel), Korean (Unknown)</p></div></li>
         </ul>
-    </div>
-
+    
 <h3 class="sj zj fk kk wm ac">Try It Out and Share Your Feedback!</h3>
 <p class="dk pk ac">
   We are building this project for the Ummah, and your feedback is incredibly valuable during this Vercel testing phase. 
