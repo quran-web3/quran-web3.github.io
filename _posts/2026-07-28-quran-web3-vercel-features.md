@@ -71,32 +71,6 @@ image: "images/blog-big.png"
   As a quick dev log update, here is a snippet of the HTML structure we used to build the Verse Repeater modal for Surah Al-Baqarah:
 </p>
 
-```html
-<a class="button myBtn_multi" style="font-size: 16px;width:100%;margin-bottom: 20px;margin-top: -5px;margin-bottom: 23px;cursor:pointer;">Listen to Surah Al-Baqarah</a>
-<div class="modal1 modal_multi">
-    <div class="repeat-form modal-content1 w3-border w3-round-xlarge w3-padding-large" style="max-width: 1128px; margin: auto;">
-        <div class="button w3-border w3-round-large" style="font-size: 16px;width:100%;margin-bottom: 20px;cursor:default;">Verse Repeater</div>
-        <div class="w3-margin-top">
-            <label for="startVerse">Start Verse:</label>
-            <input type="number" id="startVerse" min="1" max="286" value="1" oninput="validateInput(this)" class="w3-input w3-border w3-round-large">
-        </div>
-        <div class="w3-margin-top">
-            <label for="endVerse">End Verse:</label>
-            <input type="number" id="endVerse" min="1" max="286" value="286" oninput="validateInput(this)" class="w3-input w3-border w3-round-large">
-        </div>
-        <div class="w3-margin-top">
-            <label for="repeatCount">Repeat Count:</label>
-            <input type="number" id="repeatCount" min="1" max="9" value="3" oninput="validateInput(this)" class="w3-input w3-border w3-round-large">
-        </div>
-        <div class="w3-margin-top w3-center">
-            <button id="startRepeatBtn" style="float: left;" class="button w3-border w3-round-large" onclick="startRepeat('002')">Start Repeat</button>
-            <button style="float: right;" class="button w3-border w3-round-large" onclick="pauseRepeat()">Pause Repeat</button>
-        </div>
-        <div id="closeButton" class="button w3-border w3-round-large close close_multi" style="font-size: 16px;width:100%;margin-top: 20px;cursor:pointer;">Close</div>
-    </div>
-</div>
-```
-
 <h2 class="sj ck fk kk wm ac">Transparency: Our Data Sources</h2>
 <p class="dk pk ac">
   In the spirit of Web3, transparency regarding where our data comes from is an absolute priority. We utilize verified and trusted sources for our Arabic texts, Tafsir, audio, and translations.
