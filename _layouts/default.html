@@ -118,11 +118,11 @@
         <div class="fh sm sg ci ac" markdown="0">
           <div x-data="{ answered: false, correct: false, current: 0, questions: quizDb, check(opt) { this.answered = true; this.correct = (opt === this.questions[this.current].ans); }, next() { this.answered = false; this.current = Math.floor(Math.random() * this.questions.length); }, init() { this.current = Math.floor(Math.random() * this.questions.length); } }" class="hh rm _g ch pm sg ci ic" style="padding: 25px; text-align: center;">
             <span class="gh lk rg ti vi ak fk" style="display: inline-block; margin-bottom: 12px;">Interactive Tajweed Quiz</span>
-            <h4 class="sj wj gk kk wm mb-4" style="line-height: 1.4;" x-text="questions[current].q"></h4>
+            <h4 class="sj wj gk kk wm mb-4" x-text="questions[current].q"></h4>
             <p class="sj wj fk kk wm gb mb-4" style="font-size: 32px; direction: rtl; color: #4E6BFF; margin: 20px 0;" x-text="questions[current].v"></p>
             <div x-show="!answered" class="tc wf xf ag" style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px; align-items: center;">
               <template x-for="(opt, index) in questions[current].opts" :key="index">
-                <button @click="check(opt)" class="sc fh sm kk wm sg wi si bl _g ch pm fk dk" style="width: 100%; max-width: 400px; padding: 12px; border-radius: 6px; cursor: pointer; transition: 0.2s;" x-text="opt"></button>
+                <button @click="check(opt)"class="sc fh sm kk wm sg wi si bl _g ch pm fk dk" x-text="opt"></button>
               </template>
             </div>
             <div x-show="answered" x-transition style="margin-top: 20px;">
