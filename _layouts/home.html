@@ -266,16 +266,111 @@
         <img src="{{ '/images/shape-14.svg' | relative_url }}" alt="Shape" class="h ja ka" />
         <img src="{{ '/images/shape-15.svg' | relative_url }}" alt="Shape" class="h q p" />
         <div class="bb ze i va ki xn br">
-          <div
-            x-data="{ sectionTitle: `IPFS Deployment Metrics`, sectionTitleText: `Track our current milestone in pinning the Holy Quran onto the decentralized web.`}"
-          >
-            <div class="animate_top bb ze rj ki xn vq" style="margin-bottom: 3.5rem;">
-                <h2
-                        x-text="sectionTitle"
-                        class="fk vj pr kk wm on/5 gq/2 bb _b"
-                >
-                </h2>
-                <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+
+
+          <div class="bb ze ki xn 2xl:ud-px-0 jb" x-data="{filterTab: 1}">
+            <div
+              x-data="{ sectionTitle: `Quran-Web3 NFT Collection`, sectionTitleText: `Explore the complete 114 Surahs, enriched with 9 translations and precise Tajweed rules. Set to be deployed on the Polygon network, this collection represents a new era of decentralized Quranic preservation. Minting status: Coming Soon.`}"
+            >
+              <div class="animate_top bb ze rj ki xn vq" style="margin-bottom: 3.5rem;">
+                  <h2
+                          x-text="sectionTitle"
+                          class="fk vj pr kk wm on/5 gq/2 bb _b"
+                  >
+                  </h2>
+                  <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+              </div>
+            </div>
+            <div
+              class="projects-tab _e bb tc uf wf xf cg rg hh rm vk xm si ti fc"
+            >
+              <button
+                data-filter="*"
+                @click="filterTab = 1"
+                :class="{ 'gh lk' : filterTab === 1 }"
+                class="project-tab-btn ek rg ml il vi mi"
+              >
+                Quran-Web3.NFT
+              </button>
+            </div>
+            <div class="projects-wrapper tc -ud-mx-5">
+              <div class="project-sizer"></div>
+              <div class="project-item wi fb vd jn/2 to/3 branding ecommerce">
+                <div class="c i pg sg z-1">
+                  <img src="{{ '/images/project-01.png' | relative_url }}" alt="Front Cover" />
+                  <div 
+                    class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
+                  >
+                    <h4 class="ek tj kk hc">Front Cover</h4>
+                    <p>Coming Soon</p>
+                    <a
+                      class="c tc wf xf ie ld rg _g dh ml il ph jm km jc"
+                      href="{{ '/mint.html' | relative_url }}"
+                    >
+                      <svg class="th lm ml il" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-item wi fb vd jn/2 to/3 digital">
+                <div class="c i pg sg z-1">
+                  <img src="{{ '/images/project-02.png' | relative_url }}" alt="Front Cover to Open" />
+                  <div
+                    class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
+                  >
+                    <h4 class="ek tj kk hc">Front Cover to Open</h4>
+                    <p>Coming Soon</p>
+                    <a
+                      class="c tc wf xf ie ld rg _g dh ml il ph jm km jc"
+                      href="{{ '/mint.html' | relative_url }}"
+                    >
+                      <svg class="th lm ml il" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-item wi fb vd jn/2 to/3 branding ecommerce">
+                <div class="c i pg sg z-1">
+                  <img src="{{ '/images/project-04.png' | relative_url }}" alt="The Surah Page Opens" />
+                  <div
+                    class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
+                  >
+                    <h4 class="ek tj kk hc">The Surah Page Opens</h4>
+                    <p>Coming Soon</p>
+                    <a
+                      class="c tc wf xf ie ld rg _g dh ml il ph jm km jc"
+                      href="{{ '/mint.html' | relative_url }}"
+                    >
+                      <svg class="th lm ml il" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-item wi fb vd vo/3 digital ecommerce">
+                <div class="c i pg sg z-1">
+                  <img src="{{ '/images/project-03.png' | relative_url }}" alt="Main Page Header" />
+                  <div
+                    class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
+                  >
+                    <h4 class="ek tj kk hc">Main Page Header</h4>
+                    <p>Coming Soon</p>
+                    <a
+                      class="c tc wf xf ie ld rg _g dh ml il ph jm km jc"
+                      href="{{ '/mint.html' | relative_url }}"
+                    >
+                      <svg class="th lm ml il" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="tc uf sn tn xf un gg">
