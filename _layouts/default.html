@@ -122,7 +122,7 @@
             <p class="sj wj fk kk wm gb mb-4" style="font-size: 32px; direction: rtl; color: #4E6BFF; margin: 20px 0;" x-text="questions[current].v"></p>
             <div x-show="!answered" class="tc wf xf ag" style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px; align-items: center;">
               <template x-for="(opt, index) in questions[current].opts" :key="index">
-                <button @click="check(opt)"class="sc fh sm kk wm sg wi si bl _g ch pm fk dk" x-text="opt"></button>
+                <button @click="check(opt)" class="sc fh sm kk wm sg wi si bl _g ch pm fk dk" x-text="opt"></button>
               </template>
             </div>
             <div x-show="answered" x-transition style="margin-top: 20px;">
