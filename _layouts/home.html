@@ -375,74 +375,71 @@
       </section>
       <section id="blog" class="ji gp uq">
         <div
-          x-data="{ sectionTitle: `Updates & Info``, sectionTitleText: `IPFS CID: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`}"
+          x-data="{ sectionTitle: `Quran-Web3.NFT Mint`, sectionTitleText: `Complete 114 Surahs, enriched with 9 translations, recitation and Tajweed rules. Set to be deployed on the Polygon network. Minting status: Coming Soon.`}"
         >
-            <div class="animate_top bb ze rj ki xn vq">
+          <div class="animate_top bb ze rj ki xn vq" style="margin-bottom: 3.5rem;">
               <h4
                       x-text="sectionTitle"
                       class="fk vj pr kk wm on/5 gq/2 bb _b"
               >
               </h4>
               <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
-              <div class="tc uf sn tn xf un gg">
-                <div class="animate_top me/5 ln rj">
-                  <h2 class="gk vj zp or kk wm hc">7</h2>
-                  <p class="ek bk aq">Pages Pinned</p>
-                </div>
-                <div class="animate_top me/5 ln rj">
-                  <h2 class="gk vj zp or kk wm hc">3</h2>
-                  <p class="ek bk aq">Juz Completed</p>
-                </div>
-                <div class="animate_top me/5 ln rj">
-                  <h2 class="gk vj zp or kk wm hc">2</h2>
-                  <p class="ek bk aq">Surahs In Progress</p>
-                </div>
-                <div class="animate_top me/5 ln rj">
-                  <h2 class="gk vj zp or kk wm hc">2</h2>
-                  <p class="ek bk aq">Surahs Completed</p>
-                </div>
-              </div>
-              <div class="tc wf xf bg" style="margin-top: 30px; width: 100%;">
-              <a href="{{ '/blog/' | relative_url }}" class="vc ek rg lk gh sl ml il gi hi" style="display: inline-block; padding: 12px 35px;">
-                View Blog
-              </a>
-            </div>
           </div>
         </div>
-        <div class="bb ye ki xn vq jb jo">
-          <div class="tc uf zo xf ap zf iq">
-            {% if site.posts.size == 0 %}
-              <div class="animate_top sg vk rm xm yh text-center w-full" style="padding: 40px;">
-                <p class="kk wm xl">No Post Yet</p>
-              </div>
-            {% endif %}
-            {% for post in site.posts limit:3 %}
-            <div class="animate_top sg vk rm xm vd kn to/3">
-              <div class="c rc i z-1 pg">
-                <img class="w-full" src="{{ post.image | default: 'images/blog-big.png' | relative_url }}" alt="{{ post.title }}" />
-                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                  <a href="{{ post.url | relative_url }}" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
-                </div>
-              </div>
-              <div class="yh">
-                <div class="tc uf wf ag jq">
-                  <div class="tc wf ag">
-                    <img src="{{ '/images/icon-man.svg' | relative_url }}" alt="User" />
-                    <p>{{ post.author | default: "Zamil" }}</p>
-                  </div>
-                  <div class="tc wf ag">
-                    <img src="{{ '/images/icon-calender.svg' | relative_url }}" alt="Calender" />
-                    <p>{{ post.date | date: "%b %d" }}</p>
-                  </div>
-                </div>
-                <h4 class="ek tj ml il kk wm xl eq lb">
-                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                </h4>
+          <div class="animate_top me/5 ln rj">
+              <h2 class="gk vj zp or kk wm hc">3</h2>
+              <p class="ek bk aq">Juz Completed</p>
+            </div>
+            <div class="animate_top me/5 ln rj">
+              <h2 class="gk vj zp or kk wm hc">2</h2>
+              <p class="ek bk aq">Surahs In Progress</p>
+            </div>
+            <div class="animate_top me/5 ln rj">
+              <h2 class="gk vj zp or kk wm hc">2</h2>
+              <p class="ek bk aq">Surahs Completed</p>
+            </div>
+          </div>
+          <div class="tc wf xf bg" style="margin-top: 30px; width: 100%;">
+            <a href="{{ '/blog/' | relative_url }}" class="vc ek rg lk gh sl ml il gi hi" style="display: inline-block; padding: 12px 35px;">
+                View Blog
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="bb ye ki xn vq jb jo">
+        <div class="tc uf zo xf ap zf iq">
+          {% if site.posts.size == 0 %}
+          <div class="animate_top sg vk rm xm yh text-center w-full" style="padding: 40px;">
+              <p class="kk wm xl">No Post Yet</p>
+            </div>
+          {% endif %}
+          {% for post in site.posts limit:3 %}
+          <div class="animate_top sg vk rm xm vd kn to/3">
+            <div class="c rc i z-1 pg">
+              <img class="w-full" src="{{ post.image | default: 'images/blog-big.png' | relative_url }}" alt="{{ post.title }}" />
+              <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
+                <a href="{{ post.url | relative_url }}" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
               </div>
             </div>
-            {% endfor %}
-          </div> 
-        </div>
+            <div class="yh">
+              <div class="tc uf wf ag jq">
+                <div class="tc wf ag">
+                  <img src="{{ '/images/icon-man.svg' | relative_url }}" alt="User" />
+                  <p>{{ post.author | default: "Zamil" }}</p>
+                </div>
+                <div class="tc wf ag">
+                  <img src="{{ '/images/icon-calender.svg' | relative_url }}" alt="Calender" />
+                  <p>{{ post.date | date: "%b %d" }}</p>
+                </div>
+              </div>
+              <h4 class="ek tj ml il kk wm xl eq lb">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h4>
+            </div>
+          </div>
+          {% endfor %}
+        </div> 
+      </div>
       </section>
       <section class="hj rp hr">
         <div class="bb ze ki xn ar">
