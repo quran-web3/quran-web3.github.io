@@ -101,7 +101,6 @@
     </header>
     <main>
       <section class="gj qp gr hj rp hr i pg qh rm ji hp">
-        <img src="{{ '/images/shape-15.svg' | relative_url }}" alt="Shape" class="h q p" />
         <script>
           const quizDb = [
             { q: "When a natural mad letter and Hamzah (ء) meet within the exact same word, what is this called?", v: "سَوَآءٌ", opts: ["Madd Jaiz", "Madd Wajib", "Madd Farqi"], ans: "Madd Wajib", exp: "Madd Wajib (Obligatory connected prolongation). Must be stretched for 4 to 5 vowel counts." },
@@ -132,7 +131,7 @@
             { q: "A sign indicating that stopping is strictly prohibited. You must continue unless it's the end of a verse.", v: "لَا وَقْفَ فِيهِ ۙ", opts: ["Laa Waqfa Fih", "Waqaf Jaiz", "Waqaf Muanaqah"], ans: "Laa Waqfa Fih", exp: "Often indicated by the letters 'Laa' (لا or ۙ)." }
           ];
         </script>
-        <div class="fh sm sg ci ac" markdown="0">
+        <div class="fh sm sg ci ac">
           <div x-data="{ answered: false, correct: false, current: 0, questions: quizDb, check(opt) { this.answered = true; this.correct = (opt === this.questions[this.current].ans); }, next() { this.answered = false; this.current = Math.floor(Math.random() * this.questions.length); }, init() { this.current = Math.floor(Math.random() * this.questions.length); } }" class="hh rm _g ch pm sg ci ic" style="padding: 25px; text-align: center;">
             <span class="gh lk rg ti vi ak fk" style="display: inline-block; margin-bottom: 12px;">Interactive Tajweed Quiz</span>
             <h4 class="sj wj gk kk wm mb-4" style="line-height: 1.4;" x-text="questions[current].q"></h4>
