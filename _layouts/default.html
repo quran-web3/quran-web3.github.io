@@ -100,6 +100,30 @@
       </div>
     </header>
     <main>
+    <section class="i pg gh ji" markdown="0">
+        <img class="h p q" src="{{ '/images/shape-16.svg' | relative_url }}" alt="Bg Shape" />
+        <div class="bb ye i z-10 ki xn dr">
+          <div class="animate_top" style="padding: 10px 0;">
+            <blockquote class="hh rm _g ch pm sg ci ic" style="border-left: 4px solid #4E6BFF; padding-left: 20px; background: transparent;">
+              <p id="top-verse-arabic" class="sj wj fk kk wm gb lk" style="font-size: 26px; direction: rtl; text-align: right; line-height: 48px; margin-bottom: 10px;"></p>
+              <p id="top-verse-translation" class="dk pk ik lk" style="margin-bottom: 5px; opacity: 0.9;"></p>
+              <footer id="top-verse-source" class="ak pk lk" style="opacity: 0.7;"></footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+      <script>
+        const verses = [
+          { ar: "اِقْرَأْ بِاسْمِ رَبِّكَ الَّذِيْ خَلَقَۚ", tr: "\"Read! In the name of your Lord who created.\"", src: "QS. Al-'Alaq: 1" },
+          { ar: "فَاذْكُرُوْنِيْٓ اَذْكُرْكُمْ", tr: "\"So remember Me; I will remember you.\"", src: "QS. Al-Baqarah: 152" },
+          { ar: "وَهُوَ مَعَكُمْ اَيْنَ مَا كُنْتُمْۗ", tr: "\"And He is with you wherever you are.\"", src: "QS. Al-Hadid: 4" },
+          { ar: "إِنَّ مَعَ الْعُسْرِ يُسْرًا", tr: "\"Indeed, with hardship [will be] ease.\"", src: "QS. Al-Insyirah: 6" }
+        ];
+        const randomVerse = verses[Math.floor(Math.random() * verses.length)];
+        document.getElementById("top-verse-arabic").innerText = randomVerse.ar;
+        document.getElementById("top-verse-translation").innerText = randomVerse.tr;
+        document.getElementById("top-verse-source").innerText = "— " + randomVerse.src;
+      </script>
       <section class="gj qp gr hj rp hr">
         <div class="bb ze ki xn 2xl:ud-px-0">
           {% if page.categories %}
