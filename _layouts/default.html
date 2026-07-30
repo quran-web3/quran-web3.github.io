@@ -101,29 +101,27 @@
     </header>
     <main>
       <section class="gj qp gr hj rp hr">
-                  <div class="fh sm sg ci ac">
-                      <div x-data="{ answered: false, correct: false }" class="hh rm _g ch pm sg ci ic" style="padding: 25px; text-align: center;">
-                          <span class="gh lk rg ti vi ak fk" style="display: inline-block; margin-bottom: 12px;">Quick Tajweed Quiz</span>
-                          <h4 class="sj wj gk kk wm mb-4">When a Nun Sukun meets a Mim (م), what is this recitation rule called?</h4>
-                          
-                          <div x-show="!answered" class="tc wf xf ag" style="margin-top: 15px;">
-                              <button @click="answered = true; correct = false" class="sc fh sm kk wm sg wi si bl _g ch pm fk dk">A. Idzhar Halqi</button>
-                              <button @click="answered = true; correct = true" class="sc fh sm kk wm sg wi si bl _g ch pm fk dk">B. Idgham Bighunnah</button>
-                              <button @click="answered = true; correct = false" class="sc fh sm kk wm sg wi si bl _g ch pm fk dk">C. Iqlab</button>
-                          </div>
-
-                          <div x-show="answered" x-transition style="margin-top: 20px;">
-                              <div x-show="correct">
-                                <span class="nh lk rg wi vi ak fk">🎉 Correct (Idgham Bighunnah)!</span>
-                              </div>
-                              <div x-show="!correct">
-                                <span class="kh lk rg wi vi ak fk">❌ Incorrect, Try Studying Again!</span>
-                              </div>
-                              <p class="dk pk jc">When Nun Sukun meets Mim, the sound of Nun is merged into the letter Mim accompanied by a nasal sound (ghunnah).</p>
-                              <button @click="answered = false" class="sc fh sm kk wm sg wi vi bl _g ch pm fk ak jc">Retry Quiz</button>
-                          </div>
-                      </div>
-                  </div>
+        <div class="fh sm sg ci ac">
+          <div x-data="{ answered: false, correct: false }" class="hh rm _g ch pm sg ci ic" style="padding: 25px; text-align: center;">
+          <span class="gh lk rg ti vi ak fk" style="display: inline-block; margin-bottom: 12px;">Quick Tajweed Quiz</span>
+          <h4 class="sj wj gk kk wm mb-4">When a Nun Sukun meets a Mim (م), what is this recitation rule called?</h4>
+          <div x-show="!answered" class="tc wf xf ag" style="margin-top: 15px;">
+            <button @click="answered = true; correct = false" class="sc fh sm kk wm sg wi si bl _g ch pm fk dk">A. Idzhar Halqi</button>
+            <button @click="answered = true; correct = true" class="sc fh sm kk wm sg wi si bl _g ch pm fk dk">B. Idgham Bighunnah</button>
+            <button @click="answered = true; correct = false" class="sc fh sm kk wm sg wi si bl _g ch pm fk dk">C. Iqlab</button>
+          </div>
+          <div x-show="answered" x-transition style="margin-top: 20px;">
+              <div x-show="correct">
+                <span class="nh lk rg wi vi ak fk">🎉 Correct (Idgham Bighunnah)!</span>
+              </div>
+              <div x-show="!correct">
+                <span class="kh lk rg wi vi ak fk">❌ Incorrect, Try Studying Again!</span>
+              </div>
+              <p class="dk pk jc">When Nun Sukun meets Mim, the sound of Nun is merged into the letter Mim accompanied by a nasal sound (ghunnah).</p>
+              <button @click="answered = false" class="sc fh sm kk wm sg wi vi bl _g ch pm fk ak jc">Retry Quiz</button>
+            </div>
+          </div>
+        </div>
         <div class="bb ze ki xn 2xl:ud-px-0">
           {% if page.categories %}
             <div class="animate_left to/2" style="margin-bottom: 40px; width: 100%; display: block; overflow: hidden;">
