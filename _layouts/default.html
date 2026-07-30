@@ -111,14 +111,14 @@
             <button @click="answered = true; correct = false" class="sc fh sm kk wm sg wi si bl _g ch pm fk dk">C. Iqlab</button>
           </div>
           <div x-show="answered" x-transition style="margin-top: 20px;">
-              <div x-show="correct">
-                <span class="nh lk rg wi vi ak fk">🎉 Correct (Idgham Bighunnah)!</span>
-              </div>
-              <div x-show="!correct">
-                <span class="kh lk rg wi vi ak fk">❌ Incorrect, Try Studying Again!</span>
-              </div>
-              <p class="dk pk jc">When Nun Sukun meets Mim, the sound of Nun is merged into the letter Mim accompanied by a nasal sound (ghunnah).</p>
-              <button @click="answered = false" class="sc fh sm kk wm sg wi vi bl _g ch pm fk ak jc">Retry Quiz</button>
+            <div x-show="correct">
+              <span class="nh lk rg wi vi ak fk">🎉 Correct (Idgham Bighunnah)!</span>
+            </div>
+            <div x-show="!correct">
+              <span class="kh lk rg wi vi ak fk">❌ Incorrect, Try Studying Again!</span>
+            </div>
+            <p class="dk pk jc">When Nun Sukun meets Mim, the sound of Nun is merged into the letter Mim accompanied by a nasal sound (ghunnah).</p>
+            <button @click="answered = false" class="sc fh sm kk wm sg wi vi bl _g ch pm fk ak jc">Retry Quiz</button>
             </div>
           </div>
         </div>
