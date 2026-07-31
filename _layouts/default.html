@@ -173,16 +173,17 @@
             </div>
             {% endif %}
 
-        <div class="hh rm _g ch pm sg bi fb xk xm bl">
-
+            
           <div class="tc sf yo zf kq">
             <div class="ro">
               <div class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
+
+              <div class="hh rm _g ch pm sg bi fb xk xm bl"></div>
+                <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">{{ page.title }}</h1><br />
                 {% if page.image %}
                 <center><img src="{{ page.image | relative_url }}" style="max-width:100%; border-radius: 8px;" alt="{{ page.title }}" /></center>
                 <br />
                 {% endif %}
-                <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">{{ page.title }}</h1><br />
                 <ul class="tc uf cg 2xl:ud-gap-15 fb">
                   <li><span class="rc kk wm">Author: </span> {{ page.author | default: "Zamil" }}</li>
                   <li><span class="rc kk wm">Published On: </span> {{ page.date | date: "%B %d, %Y" }}</li>
@@ -230,7 +231,7 @@
                     </a>
                   </li>
                 </ul>
-        </div>
+              </div>
                 <nav class="post-navigation">
                   <div class="nav-box prev-post">
                     {% if page.previous %}
