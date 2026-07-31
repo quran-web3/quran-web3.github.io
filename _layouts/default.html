@@ -133,8 +133,8 @@
     { q: "A sign indicating that stopping is strictly prohibited. You must continue unless it's the end of a verse.", v: "لَا وَقْفَ فِيهِ ۙ", opts: ["Laa Waqfa Fih", "Waqaf Jaiz", "Waqaf Muanaqah"], ans: "Laa Waqfa Fih", exp: "Often indicated by the letters 'Laa' (لا or ۙ)." }
   ];
 </script>
-<div class="fb i hh rm sg vk xm bi qj">
-  <div x-data="{ answered: false, correct: false, current: 0, questions: quizDb, check(opt) { this.answered = true; this.correct = (opt === this.questions[this.current].ans); }, next() { this.answered = false; this.current = Math.floor(Math.random() * this.questions.length); }, init() { this.current = Math.floor(Math.random() * this.questions.length); } }" class="hh rm _g ch pm sg ci ic" style="padding: 25px; text-align: center;">
+<div class="fb i hh rm sg vk xm bi qj" markdown="0">
+  <div x-data="{ answered: false, correct: false, current: 0, questions: quizDb, check(opt) { this.answered = true; this.correct = (opt === this.questions[this.current].ans); }, next() { this.answered = false; this.current = Math.floor(Math.random() * this.questions.length); }, init() { this.current = Math.floor(Math.random() * this.questions.length); } }" style="padding: 25px; text-align: center;">
     <span class="gh lk rg ti vi ak fk" style="display: inline-block; margin-bottom: 12px;">Interactive Tajweed Quiz</span>
     <h4 class="sj wj gk kk wm mb-4" style="line-height: 1.4;" x-text="questions[current].q"></h4>
     <p class="sj wj fk kk wm gb mb-4" style="font-size: 32px; direction: rtl; color: #4E6BFF; margin: 20px 0;" x-text="questions[current].v"></p>
@@ -151,7 +151,7 @@
         <span class="kh lk rg wi vi ak fk" style="font-size: 16px;" x-text="'❌ Incorrect! Answer: ' + questions[current].ans"></span>
       </div>
       <p class="dk pk jc" style="margin-top: 15px; font-size: 16px; line-height: 1.6;" x-text="questions[current].exp"></p>
-      <button @click="next()" class="sc fh sm kk wm sg wi vi bl _g ch pm fk ak jc" style="margin-top: 20px; padding: 10px 20px; border-radius: 6px; cursor: pointer;">Next Random Question</button>
+      <button @click="next()" class="sc fh sm kk wm sg wi vi bl _g ch pm fk ak jc" style="margin-top: 20px; padding: 10px 20px; border-radius: 6px; cursor: pointer;">Next Question</button>
     </div>
   </div>
 </div>
