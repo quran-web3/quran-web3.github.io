@@ -12,7 +12,7 @@
     <link href="{{ '/style.css' | relative_url }}" rel="stylesheet">
   </head>
   <body
-    x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+    x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
     x-init="
          darkMode = JSON.parse(localStorage.getItem('darkMode'));
          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
@@ -694,14 +694,6 @@
                       <span class="sc ek uj lk nh rg zi _i nc">Mint Coming Soon</span>
                     </a>
                   </li>
-                </ul>
-              </div>
-              <div class="animate_top">
-                <h4 class="kk wm tj ec">Resources</h4>
-                <ul>
-                  <li><a href="https://github.com/quran-web3/quran-web3.nft/projects" target="_blank" class="sc xl vb">Progress</a></li>
-                  <li><a href="https://github.com/quran-web3/quran-web3.nft/releases" target="_blank" class="sc xl vb">Releases</a></li>
-                  <li><a href="https://github.com/quran-web3/quran-web3.nft/discussions" target="_blank" class="sc xl vb">Discussions</a></li>
                 </ul>
               </div>
               <div class="animate_top">
