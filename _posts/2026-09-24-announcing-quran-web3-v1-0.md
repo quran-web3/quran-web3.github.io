@@ -108,18 +108,9 @@ image: "images/blog-big.png"
   </li>
 </ol>
 
-<div class="fh sm sg ci ac" markdown="0">
-  <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="padding: 15px 20px;">
-    <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
-      <span>Technical Note regarding IPFS Gateway Routing</span>
-      <span x-text="open ? '−' : '+'" class="ck"></span>
-    </button>
-    <div x-show="open" x-transition class="lc bh ch pm dk pk" style="margin-top: 15px; padding-top: 15px;">
-      <span class="ak pk qk"><strong class="gk kk wm">Note:</strong> The decentralized P2P archive is currently hosted on a free experimental testing tier (Lighthouse). Due to public gateway routing limits, the IPFS node may experience minor loading delays for audio and translations compared to our lightning-fast Vercel deployment above.</span>
-    </div>
-  </div>
-</div>
-
+<blockquote class="hh rm _g ch pm sg ci ic" style="border-left: 4px solid #4E6BFF; padding-left: 20px;">
+  <p class="dk pk ik yb"><span class="ak pk qk"><strong class="gk kk wm">Note:</strong> The decentralized P2P archive is currently hosted on a free experimental testing tier (Lighthouse). Due to public gateway routing limits, the IPFS node may experience minor loading delays for audio and translations compared to our lightning-fast Vercel deployment above.</span></p>
+</blockquote>
 <h2 class="sj ck fk kk wm ac">🛡️ Built-in Content Guard</h2>
 
 <p class="dk pk ac">Because the files on a decentralized network are open-source, anyone can copy them. To protect the global Muslim community from fake clones that might secretly alter the holy text or inject malicious tracking codes, the platform includes a built-in <strong class="gk kk wm">Cryptographic Security Guard</strong>. The moment our script detects that someone is using an unofficial, tampered copy, it automatically halts execution and safely redirects the user back to our verified official domain.</p>
