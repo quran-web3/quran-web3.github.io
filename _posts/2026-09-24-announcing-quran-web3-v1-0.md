@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Announcing Quran Web3 V1.0: A Permanent, Privacy-First Quran Built for the Future of the Internet"
+title: "Announcing Quran Web3 V1.0: A Permanent, Privacy-First Quran"
 date: 2026-09-24
 author: "Zamil"
 category: "updates"
