@@ -329,12 +329,12 @@
                       <div>
                         <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
                         <p class="ek ik xj _p kc fb">
-                          The development of Quran-Web3.NFT is complete. It is currently hosted temporarily on Vercel for final checks and improvements before the permanent deployment to IPFS.
+                          Started this journey to see if we can build a Quran app completely independent of central databases. Spent the week reversing the public Quran.com API endpoints to extract the core text blocks and standard translations. Saving raw snapshots locally. Long road ahead.
                         </p>
                         <div class="tc yf vf">
                           <div>
                             <span class="rc ek xj kk wm zb"><a href="https://www.linkedin.com/in/quran-web3" target="_blank">Zamil Hasballah</a></span>
-                            <span class="rc">Dev Log #1 • IPFS Integration</span>
+                            <span class="rc">Dev Log #1 • Inception & Raw Data Extraction</span>
                           </div>
                           <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
                         </div>
@@ -352,12 +352,12 @@
                       <div>
                         <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
                         <p class="ek ik xj _p kc fb">
-                          This week's hurdle: ensuring stable IPFS pinning. Retrieving data can be a bit slow if nearby nodes are offline, but I'm actively researching ways to optimize our gateway for faster loads.
+                          Loading every layout asset on a single page is killing mobile browser frames. Decoupled the header components and Tajweed bar into separate static files. Writing a Vanilla JS engine to fetch them asynchronously via lifecycle hooks. Bandwidth problem solved.
                         </p>
                         <div class="tc yf vf">
                           <div>
                             <span class="rc ek xj kk wm zb"><a href="https://www.linkedin.com/in/quran-web3" target="_blank">Zamil Hasballah</a></span>
-                            <span class="rc">Dev Log #2 • Technical Challenge</span>
+                            <span class="rc">Dev Log #2 • Breaking Up Individual Page Bloat</span>
                           </div>
                           <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
                         </div>
@@ -375,12 +375,12 @@
                       <div>
                         <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
                         <p class="ek ik xj _p kc fb">
-                          Started drafting the smart contracts for the Quran-Web3.NFT single. The concept isn't just digital art; it acts as an immutable proof of contribution to this Web3 ecosystem.
+                          Discovered the EveryAyah database mirror links. Began writing a Python script to download and parse the raw .mp3 tracks for 6 global reciters. Figuring out how to map standard verse formats dynamically based on page matrix boundaries without breaking client-side load speeds.
                         </p>
                         <div class="tc yf vf">
                           <div>
                             <span class="rc ek xj kk wm zb"><a href="https://www.linkedin.com/in/quran-web3" target="_blank">Zamil Hasballah</a></span>
-                            <span class="rc">Dev Log #3 • NFT Smart Contracts</span>
+                            <span class="rc">Dev Log #3 • Mapping the Audio Matrix</span>
                           </div>
                           <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
                         </div>
@@ -398,12 +398,12 @@
                       <div>
                         <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
                         <p class="ek ik xj _p kc fb">
-                          Sometimes I pause while coding and reflect. Decentralization perfectly mirrors the early transmission of the Quran: from person to person (node to node), preserved collectively by the Ummah.
+                          Encountered massive browser memory leak crashes when streaming raw Base64 audio strings directly. Rewrote the handler to dynamically translate arrays into local binary memory Blobs (URL.createObjectURL).
                         </p>
                         <div class="tc yf vf">
                           <div>
                             <span class="rc ek xj kk wm zb"><a href="https://www.linkedin.com/in/quran-web3" target="_blank">Zamil Hasballah</a></span>
-                            <span class="rc">Dev Log #4 • Spiritual Thoughts</span>
+                            <span class="rc">Dev Log #4 • Base64 Sharding & Blob Streams</span>
                           </div>
                           <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
                         </div>
@@ -421,12 +421,12 @@
                       <div>
                         <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
                         <p class="ek ik xj _p kc fb">
-                          Today’s focus is strictly on UI/UX. Web3 can be intimidating for beginners. The ultimate goal of Quran-Web3 is to make accessing decentralized tech as simple as opening a physical book.
+                          Tired of apps that force user accounts and email tracking. Designed a localized dashboard engine using localStorage. Bookmarks, private note-taking, and the 365-day algorithmic Khatm schedule charts now run securely inside the user's browser sandbox. Complete privacy by design.
                         </p>
                         <div class="tc yf vf">
                           <div>
                             <span class="rc ek xj kk wm zb"><a href="https://www.linkedin.com/in/quran-web3" target="_blank">Zamil Hasballah</a></span>
-                            <span class="rc">Dev Log #5 • User Experience</span>
+                            <span class="rc">Dev Log #5 • Going 100% Serverless & Offline</span>
                           </div>
                           <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
                         </div>
@@ -444,12 +444,12 @@
                       <div>
                         <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
                         <p class="ek ik xj _p kc fb">
-                          Structuring NFT metadata to align seamlessly with Tafsir and Tajweed rules requires immense precision. Every token deployed must carry deep educational value, not just crypto hype.
+                          Since public P2P network files can be easily cloned, I built a client-side text integrity guard to prevent malicious tampering. Script obfuscation automatically halts and forces a hard-redirect if a fake copy is detected, without triggering false anti-virus flags.
                         </p>
                         <div class="tc yf vf">
                           <div>
                             <span class="rc ek xj kk wm zb"><a href="https://www.linkedin.com/in/quran-web3" target="_blank">Zamil Hasballah</a></span>
-                            <span class="rc">Dev Log #6 • Data Integrity</span>
+                            <span class="rc">Dev Log #6 • Cryptographic Shield Initialized</span>
                           </div>
                           <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
                         </div>
@@ -467,12 +467,12 @@
                       <div>
                         <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
                         <p class="ek ik xj _p kc fb">
-                          Finally deployed a dedicated IPFS Gateway! Reading access across the DApp is now significantly faster. Alhamdulillah, a major technical roadblock has been cleared today.
+                          The automated 10-script Python pipeline is fully locked, dumping clean static layers directly into parallel frontend tracks (../). Production staging is flying at quranweb3.vercel.app and pinned on IPFS via Lighthouse. 
                         </p>
                         <div class="tc yf vf">
                           <div>
                             <span class="rc ek xj kk wm zb"><a href="https://www.linkedin.com/in/quran-web3" target="_blank">Zamil Hasballah</a></span>
-                            <span class="rc">Dev Log #7 • Milestone Achieved</span>
+                            <span class="rc">Dev Log #7 • V1.0 Stable Release Live! </span>
                           </div>
                           <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
                         </div>
@@ -512,7 +512,7 @@
         <img src="{{ '/images/shape-12.svg' | relative_url }}" alt="Shape" class="h p s" />
         <img src="{{ '/images/shape-13.svg' | relative_url }}" alt="Shape" class="h r q" />
         <div
-          x-data="{ sectionTitle: `Support Our Project`, sectionTitleText: `Choose your preferred crypto asset to copy the wallet address or scan the QR Code.`}"
+          x-data="{ sectionTitle: `Support Our Project`, sectionTitleText: `Support the decentralized future of Quran. Your crypto contributions are fully transparent and verifiable on public blockchains (except Monero). All funds go directly towards long-term decentralized storage, infrastructure scaling, and the continuous development of Quran Web3.`}"
         >
           <div class="animate_top bb ze rj ki xn vq">
               <h2
@@ -591,9 +591,9 @@
                 <ul>
                   <li><a href="https://quran-web3-nft.vercel.app/" target="_blank" class="sc xl vb">Quran Web3</a></li>
                   <li>
-                    <a href="https://polygonscan.com/token/0x74814b153519f3d77d5521cd185dd3071b6a017a" target="_blank" class="sc xl vb">
-                      Quran NFT
-                      <span class="sc ek uj lk nh rg zi _i nc">Past Personal Project</span>
+                    <a href="https://opensea.io/collection/quran-web3-nft" target="_blank" class="sc xl vb">
+                      604 Page Quran NFT
+                      <span class="sc ek uj lk nh rg zi _i nc">Personal Project History</span>
                     </a>
                   </li>
                 </ul>
