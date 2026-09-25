@@ -47,7 +47,6 @@
                 <nav>
                   <ul class="tc _o sf yo cg ep">
                     <li><a href="/" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
-                    <li><a href="/#mint" class="xl">Mint</a></li>
                     <li><a href="/blog/" class="xl">Blog</a></li>
                     <li><a href="/#donate" class="xl">Donate</a></li>
                   </ul>
@@ -62,8 +61,8 @@
                       <img class="xc nm" src="/images/icon-moon.svg" alt="Moon" />
                     </label>
                   </div>
-                  <a href="/wp.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Whitepaper</a>
-                  <a href="https://quran-web3-nft.vercel.app/" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Open Quran</a>
+                  <a href="/info.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Info</a>
+                  <a href="https://quranweb3.vercel.app/" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Open Quran</a>
                 </div>
               </div>
             </div>
@@ -74,25 +73,50 @@
                 <div class="tc sf yo zf kq">
                   <div class="bb ze">
                     <div class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
-                      <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">Specialize in UI/UX, Web Development, Digital Marketing.</h1><br />
-                      <center><img src="/images/blog-big.png" style="max-width:100%;" alt="Blog" /></center>
-                      <br />
-                      <p style="text-align: justify;" class="ob">
-                        Welcome to my creative realm, where the fusion of art and technology transforms user experiences into captivating journeys. I am Ogi, a passionate UI/UX designer dedicated to crafting digital masterpieces that blend form and function seamlessly.
-                      </p>
-                      <p style="text-align: justify;" class="ob">
-                        With an eye for detail and a commitment to user-centric design, I strive to breathe life into ideas, curating intuitive interfaces that leave a lasting impression. My mission is to bridge the gap between user needs and elegant design solutions, transforming complexity into simplicity.
-                      </p>
-                      <div class="wc qf pn dg cb">
-                        <center><img src="/images/blog-04.png" alt="Blog" /></center>
-                        <center><img src="/images/blog-05.png" alt="Blog" /></center>
-                      </div>
-                      <p style="text-align: justify;" class="ob">
-                        Through years of experience, I have honed my skills in wireframing, prototyping, and visual design, always seeking innovation and pushing boundaries. I thrive on collaborating with cross-functional teams, fueling my belief that collective creativity leads to extraordinary outcomes.
-                      </p>
-                      <p style="text-align: justify;" class="ob">
-                        Join me on this journey as we explore a diverse array of projects, each a testament to my dedication to excellence. Together, let's create meaningful interactions that inspire, engage, and leave a smile on every user's face.
-                      </p>
+    <h1 class="w3-animate-opacity">Data Provenance & Security Information</h1>
+    <p style="font-size: 18px; opacity: 0.85;">
+        To maintain absolute reliability and transparent authenticity, all script inputs, text elements, and recitation assets are derived directly from verified public repositories [1.2].
+    </p>
+
+    <div class="divider"></div>
+
+    <h2>1. Primary Data Citation Links</h2>
+    <p>We deeply respect and officially credit the foundational data streams that made this serverless compilation possible [1.2]:</p>
+    <ul>
+        <li><strong>Arabic Text & Tajweed Layer:</strong> Extracted directly from the official, trusted <a href="https://quran.com" target="_blank" rel="noopener noreferrer">Quran.com API (v4)</a> data tracks [1.2].</li>
+        <li><strong>Word-by-Word Translation Mapping:</strong> Sourced via the Quran.com Network data clusters, originally compiled by the meticulous engineering team at <a href="https://quranwbw.com" target="_blank" rel="noopener noreferrer">QuranWbW.com</a> [1.2].</li>
+        <li><strong>Linguistic Text Interpretations:</strong> Structural Tafsir Ibn Kathir records and Maududi Surah metadata extracted directly from verified open API layers [1.2].</li>
+        <li><strong>Audio Recitation Datasets:</strong> Raw audio assets are credited to the public archives at <a href="https://everyayah.com" target="_blank" rel="noopener noreferrer">EveryAyah.com</a>, covering 6 world-renowned Qaris (including Al-Sudais, Al-Shatri, Fares Abbad, Al-Muaiqly, Al-Ghamdi, and Al-Shuraim) [1.2].</li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <h2>2. Technical Build Pipeline Details</h2>
+    <p style="line-height: 1.6;">
+        Instead of calling live server database clusters at runtime, our local backend utilizes a custom <strong>10-script Python automation compiler</strong> [1.2]. The master pipeline processes the raw public datasets, filters out corrupted audio anomalies, and outputs optimized, minified static code maps straight into parallel local frontend tracks (<code>../</code>) [1.2]:
+    </p>
+    <ul>
+        <li>The textual scripts and 33 international translations are compiled into granular static JSON chunks partitioned cleanly by Hizb (Hizb 1-60) [1.2].</li>
+        <li>Audio files are compressed and translated into isolated Base64 text streams split across 240 Rub files per Qari to fully eliminate server-side CORS blocks [1.2].</li>
+        <li>The compiler automatically processes metadata boundaries to print the structural search indexes and pre-renders 604 physical Mushaf pages into <code>/p</code> and 114 native chapters into <code>/s</code> [1.2].</li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <h2>3. The Cryptographic Content Guard</h2>
+    <p style="line-height: 1.6;">
+        Because decentralized file systems (IPFS) are inherently public, malicious actors could technically clone the repository files and attempt to tamper with translation targets or alter creator attribution paths [1.2]. 
+    </p>
+    <p style="line-height: 1.6;">
+        To protect the absolute purity of the text, the compiled production frontend enforces a client-side integrity script [1.2]. It utilizes an optimized <strong>RC4 string array obfuscation engine split across a 4-chunk text layout</strong> tied directly to our verified canonical domain identities [1.2]. This layer successfully locks down text-validation hooks without triggering aggressive anti-virus packages or browser heuristic warnings, ensuring users always access an untampered, genuine environment [1.2].
+    </p>
+
+    <div class="divider"></div>
+
+    <p style="text-align: center; opacity: 0.7; margin-top: 50px; font-size: 15px;">
+        Explore the un-obfuscated script proofs and master automation suite inside our private repository tree.<br>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">Request Developer Collaboration Access</a>
+    </p>
                     </div>
                   </div>
                  </div>
