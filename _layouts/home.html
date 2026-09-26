@@ -50,6 +50,7 @@
       <nav>
         <ul class="tc _o sf yo cg ep">
               <li><a href="{{ '/' | relative_url }}" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
+              <li><a href="{{ '/#features' | relative_url }}" class="xl">Features</a></li>
               <li><a href="{{ '/#blog' | relative_url }}" class="xl">Blog</a></li>
               <li><a href="{{ '/#status' | relative_url }}" class="xl">Updates</a></li>
               <li><a href="{{ '/#donate' | relative_url }}" class="xl">Donate</a></li>
@@ -65,7 +66,6 @@
                 <img class="xc nm" src="{{ '/images/icon-moon.svg' | relative_url }}" alt="Moon" />
               </label>
             </div>
-            <a href="{{ '/info.html' | relative_url }}" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Info</a>
             <a href="https://quranweb3.vercel.app/" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Open Quran</a>
           </div>
         </div>
@@ -163,7 +163,7 @@
           </div>
         </div>
       </section>
-      <section class="i pg ji gp uq">
+      <section id="features" class="i pg ji gp uq">
         <span class="rc h s r vd fd/5 fh rm"></span>
         <img src="{{ '/images/shape-08.svg' | relative_url }}" alt="Shape Bg" class="h q r" />
         <img src="{{ '/images/shape-09.svg' | relative_url }}" alt="Shape" class="of h y z/2" />
