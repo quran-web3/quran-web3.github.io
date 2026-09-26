@@ -12,7 +12,7 @@
     <link href="{{ '/style.css' | relative_url }}" rel="stylesheet">
   </head>
   <body
-    x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+    x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
     x-init="
          darkMode = JSON.parse(localStorage.getItem('darkMode'));
          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
@@ -49,7 +49,6 @@
     >
       <nav>
         <ul class="tc _o sf yo cg ep">
-              <li><a href="{{ '/' | relative_url }}" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
               <li><a href="{{ '/#features' | relative_url }}" class="xl">Features</a></li>
               <li><a href="{{ '/#blog' | relative_url }}" class="xl">Blog</a></li>
               <li><a href="{{ '/#status' | relative_url }}" class="xl">Updates</a></li>
