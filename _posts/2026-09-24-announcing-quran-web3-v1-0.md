@@ -97,13 +97,13 @@ image: "images/blog-big.png"
   <li>
     <div class="tc">
       <span class="kk wm fk ub bf">1.</span>
-      <p><strong class="gk kk wm">The Fast HTTP Staging Gate (Recommended for Daily Use):</strong> Experience instantaneous load speeds and seamless navigation on our cloud edge server at: 👉 <a href="https://quranweb3.vercel.app/"  target="_blank" class="gk kk wm">https://vercel.app</a></p>
+      <p><strong class="gk kk wm">The Fast HTTP Staging Gate (Recommended for Daily Use):</strong> Experience instantaneous load speeds and seamless navigation on our cloud edge server at: <a href="https://quranweb3.vercel.app/"  target="_blank" class="gk kk wm">Vercel Link</a></p>
     </div>
   </li>
   <li>
     <div class="tc">
       <span class="kk wm fk ub bf">2.</span>
-      <p><strong class="gk kk wm">The Decentralized P2P Gateway (Permanent IPFS Archive):</strong> Access the raw, un-censorable static snapshot safely pinned on the distributed peer-to-peer network. If you use a Web3-compliant browser like Brave or Opera, this exact same build resolves natively via blockchain domains: <strong class="gk kk wm">quran-web3.nft</strong> and <strong class="gk kk wm">quran-web3.crypto</strong>: 👉 <a href="https://bafybeifutyidgdkxy4ib22ol4tfmcbi7w66ixyngmxxw25dhyt4y5kah7i.ipfs.inbrowser.link/" target="_blank" class="gk kk wm">IPFS InBrowser Gateway Node Link</a></p>
+      <p><strong class="gk kk wm">The Decentralized P2P Gateway (Permanent IPFS Archive):</strong> Access the raw, un-censorable static snapshot safely pinned on the distributed peer-to-peer network. If you use a Web3-compliant browser like Brave or Opera, this exact same build resolves natively via blockchain domains: <strong class="gk kk wm">quran-web3.nft</strong> and <strong class="gk kk wm">quran-web3.crypto</strong>: <a href="https://bafybeifutyidgdkxy4ib22ol4tfmcbi7w66ixyngmxxw25dhyt4y5kah7i.ipfs.inbrowser.link/" target="_blank" class="gk kk wm">IPFS InBrowser Gateway Node Link</a></p>
     </div>
   </li>
 </ol>
