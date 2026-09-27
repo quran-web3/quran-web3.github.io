@@ -17,7 +17,7 @@ image: "images/blog-big.png"
 
 <p class="dk pk ac"><strong class="gk kk wm">Quran Web3 changes everything.</strong> By leveraging decentralized Web3 networks (IPFS), we have built a platform that operates entirely without central servers or live databases. It is a standalone, serverless gift to the global Ummah.</p>
 
-<h2 class="sj ck fk kk wm ac">✨ Features You Can Explore Right Now in V1.0</h2>
+<h2 class="sj ck fk kk wm ac">Features You Can Explore Right Now in V1.0</h2>
 
 <p class="dk pk ac">The stable V1.0 release brings a premium, high-fidelity reading and listening experience directly to your browser, built with your daily worship in mind:</p>
 
@@ -64,7 +64,7 @@ image: "images/blog-big.png"
 
 <p class="dk pk ac">When you press play, a smooth background color dynamically fills the Arabic text, tracking the progress of the audio in real-time. This high-performance feature was built mathematically to run smoothly on any device without draining your battery or slowing down your browser.</p>
 
-<h2 class="sj ck fk kk wm ac">🔒 Absolute Privacy & True Data Ownership</h2>
+<h2 class="sj ck fk kk wm ac">Absolute Privacy & True Data Ownership</h2>
 
 <p class="dk pk ac">The defining feature of Quran Web3 is that <strong class="gk kk wm">you are in total control.</strong></p>
 
@@ -89,7 +89,7 @@ image: "images/blog-big.png"
   </li>
 </ul>
 
-<h2 class="sj ck fk kk wm ac">🌍 Access the Live Stable Platforms</h2>
+<h2 class="sj ck fk kk wm ac">Access the Live Stable Platforms</h2>
 
 <p class="dk pk ac">The stable platform is currently live and ready for use across two primary digital gateway entries:</p>
 
@@ -110,8 +110,8 @@ image: "images/blog-big.png"
 
 <blockquote class="hh rm _g ch pm sg ci ic" style="border-left: 4px solid #4E6BFF; padding-left: 20px;">
   <p class="dk pk ik yb"><span class="ak pk qk"><strong class="gk kk wm">Note:</strong> The decentralized P2P archive is currently hosted on a free experimental testing tier (Lighthouse). Due to public gateway routing limits, the IPFS node may experience minor loading delays for audio and translations compared to our lightning-fast Vercel deployment above.</span></p>
-</blockquote>
-<h2 class="sj ck fk kk wm ac">🛡️ Built-in Content Guard</h2>
+</blockquote><br>
+<h2 class="sj ck fk kk wm ac">Built-in Content Guard</h2>
 
 <p class="dk pk ac">Because the files on a decentralized network are open-source, anyone can copy them. To protect the global Muslim community from fake clones that might secretly alter the holy text or inject malicious tracking codes, the platform includes a built-in <strong class="gk kk wm">Cryptographic Security Guard</strong>. The moment our script detects that someone is using an unofficial, tampered copy, it automatically halts execution and safely redirects the user back to our verified official domain.</p>
 
