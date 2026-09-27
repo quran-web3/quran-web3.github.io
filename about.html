@@ -46,9 +46,10 @@
             >
                 <nav>
                   <ul class="tc _o sf yo cg ep">
-                    <li><a href="/" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
-                    <li><a href="/blog/" class="xl">Blog</a></li>
-                    <li><a href="/#donate" class="xl">Donate</a></li>
+                    <li><a href="{{ '/#features' | relative_url }}" class="xl">Features</a></li>
+                    <li><a href="{{ '/#blog' | relative_url }}" class="xl">Blog</a></li>
+                    <li><a href="{{ '/#status' | relative_url }}" class="xl">Updates</a></li>
+                    <li><a href="{{ '/#donate' | relative_url }}" class="xl">Donate</a></li>
                   </ul>
                 </nav>
                 <div class="tc wf ig pb no">
@@ -61,7 +62,6 @@
                       <img class="xc nm" src="/images/icon-moon.svg" alt="Moon" />
                     </label>
                   </div>
-                  <a href="/info.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Info</a>
                   <a href="https://quranweb3.vercel.app/" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Open Quran</a>
                 </div>
               </div>
@@ -73,50 +73,106 @@
                 <div class="tc sf yo zf kq">
                   <div class="bb ze">
                     <div class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
-    <h1 class="w3-animate-opacity">Data Provenance & Security Information</h1>
-    <p style="font-size: 18px; opacity: 0.85;">
-        To maintain absolute reliability and transparent authenticity, all script inputs, text elements, and recitation assets are derived directly from verified public repositories [1.2].
-    </p>
+<h1 class="sj _j gk kk wm ac">About the Quran Web3 Ecosystem</h1>
 
-    <div class="divider"></div>
+<p class="dk pk ac">
+  <span class="sj _j gk kk wm" style="float: left; font-size: 50px; line-height: 40px; padding-right: 10px; margin-top: 4px;">Q</span>uran Web3 is an independent, non-profit full-stack R&D initiative dedicated to exploring serverless, immutable, and highly optimized methods for digital Quranic preservation over public distributed networks.
+</p>
 
-    <h2>1. Primary Data Citation Links</h2>
-    <p>We deeply respect and officially credit the foundational data streams that made this serverless compilation possible [1.2]:</p>
-    <ul>
-        <li><strong>Arabic Text & Tajweed Layer:</strong> Extracted directly from the official, trusted <a href="https://quran.com" target="_blank" rel="noopener noreferrer">Quran.com API (v4)</a> data tracks [1.2].</li>
-        <li><strong>Word-by-Word Translation Mapping:</strong> Sourced via the Quran.com Network data clusters, originally compiled by the meticulous engineering team at <a href="https://quranwbw.com" target="_blank" rel="noopener noreferrer">QuranWbW.com</a> [1.2].</li>
-        <li><strong>Linguistic Text Interpretations:</strong> Structural Tafsir Ibn Kathir records and Maududi Surah metadata extracted directly from verified open API layers [1.2].</li>
-        <li><strong>Audio Recitation Datasets:</strong> Raw audio assets are credited to the public archives at <a href="https://everyayah.com" target="_blank" rel="noopener noreferrer">EveryAyah.com</a>, covering 6 world-renowned Qaris (including Al-Sudais, Al-Shatri, Fares Abbad, Al-Muaiqly, Al-Ghamdi, and Al-Shuraim) [1.2].</li>
-    </ul>
+<h2 class="sj ck fk kk wm ac">The Centralized Infrastructure Dilemma</h2>
 
-    <div class="divider"></div>
+<blockquote class="hh rm _g ch pm sg ci ic" style="border-left: 4px solid #4E6BFF; padding-left: 20px;">
+  <p class="dk pk ac">Traditional digital Quran platforms operate on conventional Web2 models. Serving millions of global users through live dynamic database queries incurs massive continuous server infrastructure costs and heavy compute resource bills. <strong class="gk kk wm">Quran Web3 removes centralized server runtime billing entirely</strong> by refactoring the system into a static, client-side autonomous architecture.</p>
+</blockquote>
 
-    <h2>2. Technical Build Pipeline Details</h2>
-    <p style="line-height: 1.6;">
-        Instead of calling live server database clusters at runtime, our local backend utilizes a custom <strong>10-script Python automation compiler</strong> [1.2]. The master pipeline processes the raw public datasets, filters out corrupted audio anomalies, and outputs optimized, minified static code maps straight into parallel local frontend tracks (<code>../</code>) [1.2]:
-    </p>
-    <ul>
-        <li>The textual scripts and 33 international translations are compiled into granular static JSON chunks partitioned cleanly by Hizb (Hizb 1-60) [1.2].</li>
-        <li>Audio files are compressed and translated into isolated Base64 text streams split across 240 Rub files per Qari to fully eliminate server-side CORS blocks [1.2].</li>
-        <li>The compiler automatically processes metadata boundaries to print the structural search indexes and pre-renders 604 physical Mushaf pages into <code>/p</code> and 114 native chapters into <code>/s</code> [1.2].</li>
-    </ul>
+<h2 class="sj ck fk kk wm ac">The 3 Pillars of Our Serverless Manifesto</h2>
 
-    <div class="divider"></div>
+<h3 class="sj zj fk kk wm ac">1. Sovereign User Autonomy</h3>
+<p class="dk pk ac">All interactive engagement tools—such as the 365-day automated Khatm scheduler and personal Hifz loops—run privately inside the user's browser local storage sandbox without ever collecting personal emails or tracking user sessions.</p>
 
-    <h2>3. The Cryptographic Content Guard</h2>
-    <p style="line-height: 1.6;">
-        Because decentralized file systems (IPFS) are inherently public, malicious actors could technically clone the repository files and attempt to tamper with translation targets or alter creator attribution paths [1.2]. 
-    </p>
-    <p style="line-height: 1.6;">
-        To protect the absolute purity of the text, the compiled production frontend enforces a client-side integrity script [1.2]. It utilizes an optimized <strong>RC4 string array obfuscation engine split across a 4-chunk text layout</strong> tied directly to our verified canonical domain identities [1.2]. This layer successfully locks down text-validation hooks without triggering aggressive anti-virus packages or browser heuristic warnings, ensuring users always access an untampered, genuine environment [1.2].
-    </p>
+<h3 class="sj zj fk kk wm ac">2. Censor-Resistant Longevity</h3>
+<p class="dk pk ac">The static data capsules utilize immutable cryptographic Content Identifiers (CIDs) on the peer-to-peer IPFS network, rendering the core text permanent and indestructible for future generations regardless of centralized domain updates.</p>
 
-    <div class="divider"></div>
+<h3 class="sj zj fk kk wm ac">3. Lightweight Performance (Sat-Set)</h3>
+<p class="dk pk ac">Runs on custom-tailored, bare-metal Vanilla JavaScript and clean semantic styles. Animations like the progressive audio playback highlight are handled straight by the device GPU via native CSS properties to eliminate modern framework bloat.</p>
 
-    <p style="text-align: center; opacity: 0.7; margin-top: 50px; font-size: 15px;">
-        Explore the un-obfuscated script proofs and master automation suite inside our private repository tree.<br>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">Request Developer Collaboration Access</a>
-    </p>
+<h2 class="sj ck fk kk wm ac">Data Provenance & Architecture Logs</h2>
+
+<p class="dk pk ac">To maintain absolute reliability and transparent authenticity, all script inputs, text elements, and recitation assets are derived directly from verified public sources.</p>
+
+<p class="dk pk ac">Instead of calling live server database clusters at runtime, our local backend utilizes a custom 10-script Python automation compiler. The master pipeline processes the raw datasets, filters out corrupted audio anomalies, shards text files by Hizb (1-60), encodes audio into minified Base64 text streams distributed across 240 Rub files per Qari, and enforces a client-side RC4 string obfuscation engine split across 4 chunks to block malicious text tampering on open P2P networks.</p>
+
+<h3 class="sj zj fk kk wm ac">Verified Primary Data Sources:</h3>
+
+<ul class="tc sf cg ac dk pk">
+  <li>
+    <div class="tc">
+      <span class="mk ub gk bf">•</span>
+      <p><strong class="gk kk wm">Arabic Text & Tajweed Layer:</strong> Sourced and extracted directly from the official trusted Quran.com API (v4) data tracks.</p>
+    </div>
+  </li>
+  <li>
+    <div class="tc">
+      <span class="mk ub gk bf">•</span>
+      <p><strong class="gk kk wm">Word-by-Word Translation Mapping:</strong> Sourced via the Quran.com Network data clusters, originally compiled by QuranWbW.com.</p>
+    </div>
+  </li>
+  <li>
+    <div class="tc">
+      <span class="mk ub gk bf">•</span>
+      <p><strong class="gk kk wm">Linguistic Text Interpretations:</strong> Complete Tafsir Ibn Kathir records and Maududi Surah metadata extracted directly from open repositories.</p>
+    </div>
+  </li>
+  <li>
+    <div class="tc">
+      <span class="mk ub gk bf">•</span>
+      <p><strong class="gk kk wm">Audio Recitation Datasets:</strong> Sourced from the public archives at EveryAyah.com, covering 6 world-renowned Qaris.</p>
+    </div>
+  </li>
+</ul>
+
+<h2 class="sj ck fk kk wm ac">The Definitive FAQ Grid</h2>
+
+<div class="fh sm sg ci ac" markdown="0">
+  <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="margin-bottom: 15px; padding: 15px 20px;">
+    <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
+      <span>Can this platform function completely offline?</span>
+      <span x-text="open ? '−' : '+'" class="ck"></span>
+    </button>
+    <div x-show="open" x-transition class="lc bh ch pm dk pk" style="margin-top: 15px; padding-top: 15px;">
+      Yes. Because the automation tree compiles datasets into relative local paths, the entire project folder can be saved directly onto a flash drive and opened on a local machine anywhere in the world with absolute runtime autonomy.
+    </div>
+  </div>
+  <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="margin-bottom: 15px; padding: 15px 20px;">
+    <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
+      <span>Why is the decentralized P2P IPFS node marked as experimental?</span>
+      <span x-text="open ? '−' : '+'" class="ck"></span>
+    </button>
+    <div x-show="open" x-transition class="lc bh ch pm dk pk" style="margin-top: 15px; padding-top: 15px;">
+      The distributed P2P node currently operates as an un-optimized static snapshot container under a free Lighthouse storage tier to demonstrate infrastructure feasibility. For lightning-fast production use with zero routing delays, our Vercel cloud edge gateway is recommended.
+    </div>
+  </div>
+  <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="margin-bottom: 15px; padding: 15px 20px;">
+    <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
+      <span>What does a database-free Quran mean for the community?</span>
+      <span x-text="open ? '−' : '+'" class="ck"></span>
+    </button>
+    <div x-show="open" x-transition class="lc bh ch pm dk pk" style="margin-top: 15px; padding-top: 15px;">
+      It means the entire application code runs locally inside your browser window. Once the static JSON structures load, you can navigate verses, tracks, and study markers instantly with zero dependence on external database stability.
+    </div>
+  </div>
+  <div x-data="{ open: false }" class="hh rm _g ch pm sg ci ic" style="margin-bottom: 15px; padding: 15px 20px;">
+    <button @click="open = !open" class="vd tc un wf ph ab sj wj fk kk wm">
+      <span>Who is behind the Quran Web3 project?</span>
+      <span x-text="open ? '−' : '+'" class="ck"></span>
+    </button>
+    <div x-show="open" x-transition class="lc bh ch pm dk pk" style="margin-top: 15px; padding-top: 15px;">
+      <p class="dk pk ac" style="margin-bottom: 12px;">This ecosystem is built and maintained by a single, independent hobbyist who loves tinkering with code as a self-taught way to learn web engineering.</p>
+      <p class="dk pk ac" style="margin-bottom: 12px;">The project began 3 years ago as a raw, personal sandbox. The early days were completely manual—painstakingly copy-pasting Quranic texts and Tajweed scripts from various sources like Quran NU, and sourcing international translations directly from Tanzil and QuranEnc. As the technical curiosity grew, the development evolved into hunting down bugs on StackOverflow, fetching live endpoints from al-quran.cloud, and eventually reverse-engineering the public API layers of quran.com. This long history of manual migration is why the backend scripts still contain specific, custom logic to convert modern data layers back to legacy formats just to keep the interface running smoothly. When the modern AI era arrived, the development speed accelerated rapidly, allowing this long chain of experimental scripts to finally mature into a stable, serverless production reality.</p>
+      <p class="dk pk ac">The platform operates strictly under the cryptographic pseudonym <strong class="gk kk wm">Zamil Hasballah</strong> to keep human names out of the picture. The alias itself carries a quiet spiritual manifesto: "Zamil" signifies a companion in service to the global community, while "Hasballah" serves as a permanent anchor reminding the builder that Allah alone is sufficient as the sustainer. By staying anonymous, the focus remains entirely on the purity of the sacred text.</p>
+    </div>
+  </div>
+</div>
                     </div>
                   </div>
                  </div>
@@ -149,45 +205,15 @@
     </main>
     <footer>
       <div class="bb ze ki xn 2xl:ud-px-0">
-        <div class="ji gp">
-          <div class="tc uf ap gg fp">
-            <div class="animate_top zd/2 to/4">
-              <a href="/">
-                <img src="/images/logo-light.png" alt="Logo" class="om" />
-                <img src="/images/logo-dark.png" alt="Logo" class="xc nm" />
-              </a>
-              <p class="lc fb">Revolutionizing Quranic studies through Web3, ensuring decentralization, transparency, and collaborative knowledge-sharing.</p>
-            </div>
-            <div class="vd ro tc sf rn un gg vn">
-              <div class="animate_top">
-                <h4 class="kk wm tj ec">Platform</h4>
-                <ul>
-                  <li><a href="https://quran-web3-nft.vercel.app/" target="_blank" class="sc xl vb">Quran-Web3.NFT </a></li>
-                  <li><a href="https://polygonscan.com/token/0x74814b153519f3d77d5521cd185dd3071b6a017a" target="_blank" class="sc xl vb">605 Pages NFT</a></li>
-                  <li>
-                    <a href="/mint.html" class="sc xl vb">
-                      Quran-Web3.NFT 
-                      <span class="sc ek uj lk nh rg zi _i nc">Mint Coming Soon</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="animate_top">
-                <h4 class="kk wm tj ec">Network</h4>
-                <ul>
-                  <li><a href="https://ud.me/quran-web3.nft" target="_blank" class="sc xl vb">Unstoppable Domains</a></li>
-                  <li><a href="https://github.com/quran-web3" target="_blank" class="sc xl vb">Github</a></li>
-                  <li><a href="https://twitter.com/quran_web3" target="_blank" class="sc xl vb">Twitter (X)</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
           <div class="animate_top">
             <ul class="tc wf gg">
-              <li><a href="/privacy-policy.html" class="xl">Privacy Policy</a></li>
-              <li><a href="/support.html" class="xl">Support</a></li>
+              <li>
+                <a href="{{ '/' | relative_url }}">
+                  <img src="{{ '/images/logo-light.png' | relative_url }}" alt="Logo" class="om" />
+                  <img src="{{ '/images/logo-dark.png' | relative_url }}" alt="Logo" class="xc nm" />
+                </a>
+              </li>
             </ul>
           </div>
           <div class="animate_top">
