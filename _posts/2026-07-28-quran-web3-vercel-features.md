@@ -7,6 +7,7 @@ category: "updates"
 image: "images/blog-big.png"
 ---
 
+<h2 class="sj _j gk kk wm ac">[The post is no longer valid]</h2>
 <p class="dk pk ac">
   <span class="sj _j gk kk wm" style="float: left; font-size: 50px; line-height: 40px; padding-right: 10px; margin-top: 4px;">A</span>s we prepare for our ultimate goal of a fully decentralized launch on the IPFS network, the Quran-Web3.NFT project is currently hosted temporarily on Vercel. This testing phase is a crucial stepping stone for us to iron out bugs, gather community feedback, improve the overall user experience, and ensure that everything runs flawlessly before our immutable Web3 deployment. Let's dive into the core features you can try out right now!
 </p>
