@@ -518,18 +518,45 @@
         <img src="{{ '/images/shape-07.svg' | relative_url }}" alt="Shape" class="h w da ee" />
         <img src="{{ '/images/shape-12.svg' | relative_url }}" alt="Shape" class="h p s" />
         <img src="{{ '/images/shape-13.svg' | relative_url }}" alt="Shape" class="h r q" />
-        
         <div
           x-data="{ sectionTitle: `Support Our Project`, sectionTitleText: `Support the decentralized future of Quran. Your crypto contributions are fully transparent and verifiable on public blockchains (except Monero). All funds go directly towards long-term decentralized storage, infrastructure scaling, and the continuous development of Quran Web3.`}"
         >
           <div class="animate_top bb ze rj ki xn vq">
-              <img :src="plan.qr" :alt="`QR Code ${plan.name}`" class="bb gb" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 8px; border: 2px solid #D8E1ED;" />
-              <textarea readonly :value="plan.address" class="vd di _g ch sg rj gb kk" style="resize: none; height: 60px; font-size: 13px; background-color: #F4F7FA; outline: none; word-break: break-all;"></textarea>
-              <button @click="navigator.clipboard.writeText(plan.address); alert(plan.name + ' address copied successfully!')" class="vd ek rg lk ml il gi gh sl" style="margin-top: auto;">
-                Copy Address
-              </button>
-            </div>
-          </template>
+              <h2
+                      x-text="sectionTitle"
+                      class="fk vj pr kk wm on/5 gq/2 bb _b"
+              >
+              </h2>
+              <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+          </div>
+        </div>
+        <div class="animate_top tc wf xf jb bg uf">
+          <span class="ek kk wm ak">Crypto Coins</span>
+          <button class="i rg gm bf" x-cloak @click="billPlan = (billPlan === 'monthly' ? 'annually' : 'monthly')">
+            <div class="fe id bl gh rg xk outline-none"></div>
+            <div
+              class="h vc wf xf ge jd cl jl ml mf hh rg yk ea fa"
+              :class="{ 'ff': billPlan === 'monthly', 'gf': billPlan === 'annually' }"
+            ></div>
+          </button>
+          <span class="ek kk wm ak">Smart Chains</span>
+        </div>
+        <div class="animate_top bb ze i va ki xn yq bc">
+          <div class="tc uf zo xf ap jg">
+            <template x-for="(plan, i) in plans" x-key="i">
+              <div 
+                x-show="plan.type === billPlan" 
+                x-transition
+                class="tc sf wf yf rj sg hh sm vk xm hi nj oj vd kn to/3"
+              >
+                <h4 x-text="plan.name" class="wj kk wm fb"></h4>
+                <img :src="plan.qr" :alt="`QR Code ${plan.name}`" class="bb gb" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 8px; border: 2px solid #D8E1ED;" />
+                <textarea readonly :value="plan.address" class="vd di _g ch sg rj gb kk" style="resize: none; height: 60px; font-size: 13px; background-color: #F4F7FA; outline: none; word-break: break-all;"></textarea>
+                <button @click="navigator.clipboard.writeText(plan.address); alert(plan.name + ' address copied successfully!')" class="vd ek rg lk ml il gi gh sl" style="margin-top: auto;">
+                  Copy Address
+                </button>
+              </div>
+            </template>
           </div>
         </div>
       
