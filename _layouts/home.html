@@ -266,59 +266,55 @@
         </div>
       </section>
       <section id="blog" class="ji gp uq">
-        <div
-          x-data="{ sectionTitle: `Blog & Updates`}"
-        >
+        <div x-data="{ 
+          sectionTitle: `Blog & Updates`, 
+          sectionTitleText: `Tracking our developmental updates, engineering logs, and technical announcements as we expand the serverless core framework of Quran Web3 across distributed peer-to-peer networks.`
+        }">
           <div class="animate_top bb ze rj ki xn vq">
-              <h4
-                      x-text="sectionTitle"
-                      class="fk vj pr kk wm on/5 gq/2 bb _b"
-              >
-              </h4>
-          </div>
-        </div>
-        <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
-        <div class="tc wf xf bg" style="margin-top: 30px; width: 100%;">
-          <a href="{{ '/blog/' | relative_url }}" class="animate_top vc ek rg lk gh sl ml il gi hi" style="display: inline-block; padding: 12px 35px;">
-              View Blog
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="bb ye ki xn vq jb jo">
-      <div class="tc uf zo xf ap zf iq">
-        {% if site.posts.size == 0 %}
-        <div class="animate_top sg vk rm xm yh text-center w-full" style="padding: 40px;">
-            <p class="kk wm xl">No Post Yet</p>
-          </div>
-        {% endif %}
-        {% for post in site.posts limit:3 %}
-        <div class="animate_top sg vk rm xm vd kn to/3">
-          <div class="c rc i z-1 pg">
-            <img class="w-full" src="{{ post.image | default: 'images/blog-big.png' | relative_url }}" alt="{{ post.title }}" />
-            <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-              <a href="{{ post.url | relative_url }}" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
+            <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
+            <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+            
+            <div class="tc wf xf bg" style="margin-top: 30px; width: 100%;">
+              <a href="{{ '/blog/' | relative_url }}" class="vc ek rg lk gh sl ml il gi hi" style="display: inline-block; padding: 12px 35px;">
+                  View Blog
+              </a>
             </div>
           </div>
-          <div class="yh">
-            <div class="tc uf wf ag jq">
-              <div class="tc wf ag">
-                <img src="{{ '/images/icon-man.svg' | relative_url }}" alt="User" />
-                <p>{{ post.author | default: "Zamil" }}</p>
+        </div>
+        <div class="bb ye ki xn vq jb jo">
+          <div class="tc uf zo xf ap zf iq">
+            {% if site.posts.size == 0 %}
+            <div class="animate_top sg vk rm xm yh text-center w-full" style="padding: 40px;">
+                <p class="kk wm xl">No Post Yet</p>
               </div>
-              <div class="tc wf ag">
-                <img src="{{ '/images/icon-calender.svg' | relative_url }}" alt="Calender" />
-                <p>{{ post.date | date: "%b %d" }}</p>
+            {% endif %}
+            {% for post in site.posts limit:3 %}
+            <div class="animate_top sg vk rm xm vd kn to/3">
+              <div class="c rc i z-1 pg">
+                <img class="w-full" src="{{ post.image | default: 'images/blog-big.png' | relative_url }}" alt="{{ post.title }}" />
+                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
+                  <a href="{{ post.url | relative_url }}" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
+                </div>
+              </div>
+              <div class="yh">
+                <div class="tc uf wf ag jq">
+                  <div class="tc wf ag">
+                    <img src="{{ '/images/icon-man.svg' | relative_url }}" alt="User" />
+                    <p>{{ post.author | default: "Zamil" }}</p>
+                  </div>
+                  <div class="tc wf ag">
+                    <img src="{{ '/images/icon-calender.svg' | relative_url }}" alt="Calender" />
+                    <p>{{ post.date | date: "%b %d" }}</p>
+                  </div>
+                </div>
+                <h4 class="ek tj ml il kk wm xl eq lb">
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h4>
               </div>
             </div>
-            <h4 class="ek tj ml il kk wm xl eq lb">
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </h4>
-          </div>
+            {% endfor %}
+          </div> 
         </div>
-        {% endfor %}
-      </div> 
-    </div>
     </section>
       <section id="status" class="hj rp hr">
         <div class="bb ze ki xn ar">
@@ -326,28 +322,41 @@
             <div class="swiper testimonial-01">
               <div class="swiper-wrapper">
 
-                <div class="swiper-slide">
-                  <div class="i hh rm sg vk xm bi qj">
-                    <span class="rc je md/2 gh xg h q r"></span>
-                    <span class="rc je md/2 mh yg h q p"></span>
-                    <div class="tc sf rn tn un zf dp">
-                      <img class="bf" src="{{ '/images/testimonial.png' | relative_url }}" alt="Zamil Hasballah" />
-                      <div>
-                        <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
-                        <p class="ek ik xj _p kc fb">
-                          The automated 10-script Python pipeline is fully locked, dumping clean static layers directly into parallel frontend tracks (../). Production staging is flying at quranweb3.vercel.app and pinned on IPFS via Lighthouse. 
-                        </p>
-                        <div class="tc yf vf">
-                          <div>
-                            <span class="rc ek xj kk wm zb"><a href="https://www.linkedin.com/in/quran-web3" target="_blank">Zamil Hasballah</a></span>
-                            <span class="rc">Dev Log #7 • V1.0 Stable Release Live! </span>
-                          </div>
-                          <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          <!-- SAMPLE SLIDE NODE (Apply this structural adjustment to all your slides loop) -->
+          <div class="swiper-slide" style="height: auto; display: flex;">
+            <div class="i hh rm sg vk xm bi qj" style="width: 100%; display: flex; flex-direction: column; justify-content: space-between; height: 100%; padding: 30px;">
+              <span class="rc je md/2 gh xg h q r"></span>
+              <span class="rc je md/2 mh yg h q p"></span>
+              
+              <!-- Core Card Layout Grid Flex Shift -->
+              <div class="tc sf rn tn un zf dp" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; width: 100%; gap: 15px;">
+                
+                <!-- Top Row: Profile Avatar Image -->
+                <div style="text-align: center;">
+                  <img class="bf" src="{{ '/images/testimonial.png' | relative_url }}" alt="Zamil Hasballah" style="margin: 0 auto;" />
                 </div>
+                
+                <!-- Middle Row: Quote Text Content Box (Expands to fill vertical empty spaces smoothly) -->
+                <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 120px;">
+                  <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" style="width: 32px; height: auto; margin-bottom: 10px;" />
+                  <p class="ek ik xj _p kc fb" style="font-size: 14px; line-height: 1.6; text-align: left; margin: 0; padding: 0;">
+                    The automated 10-script Python pipeline is fully locked, dumping clean static layers directly into parallel frontend tracks (../). Production staging is flying at quranweb3.vercel.app and pinned on IPFS via Lighthouse.
+                  </p>
+                </div>
+                
+                <!-- Bottom Row: Metadata Footer Module (Locked perfectly at the absolute baseline) -->
+                <div class="tc yf vf" style="border-top: 1px solid #E2E8F0; padding-top: 15px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                  <div style="text-align: left;">
+                    <span class="rc ek xj kk wm zb" style="display: block; font-weight: bold;"><a href="https://www.linkedin.com/in/quran-web3" target="_blank">Zamil Hasballah</a></span>
+                    <span class="rc" style="font-size: 12px; display: block; margin-top: 2px;">Dev Log #7 • V1.0 Stable Release Live!</span>
+                  </div>
+                  <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" style="height: 24px; width: auto; object-fit: contain;" />
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- END OF SAMPLE SLIDE -->
                 
                 <div class="swiper-slide">
                   <div class="i hh rm sg vk xm bi qj">
