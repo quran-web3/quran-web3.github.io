@@ -322,35 +322,35 @@
             <div class="swiper testimonial-01">
               <div class="swiper-wrapper">
 
-                <div class="swiper-slide">
-                  <!-- Added "flex flex-col justify-between" to the main card container -->
-                  <div class="i hh rm sg vk xm bi qj flex flex-col justify-between">
-                    <span class="rc je md/2 gh xg h q r"></span>
-                    <span class="rc je md/2 mh yg h q p"></span>
+              <div class="swiper-slide">
+                <!-- 1. The main layout wrapper uses '.flex .flex-col .justify-between .h-full' to claim Swiper's 100% height grid -->
+                <div class="i hh rm sg vk xm bi qj flex flex-col justify-between h-full">
+                  <span class="rc je md/2 gh xg h q r"></span>
+                  <span class="rc je md/2 mh yg h q p"></span>
+                  
+                  <!-- 2. Inside the inner container, we set '.flex .flex-col .justify-between .h-full' to control the rows -->
+                  <div class="tc sf rn tn un zf dp flex flex-col justify-between h-full w-full">
+                    <img class="bf" src="{{ '/images/testimonial.png' | relative_url }}" alt="Zamil Hasballah" />
                     
-                    <!-- Core container handles the interior flex vertical distribution -->
-                    <div class="tc sf rn tn un zf dp flex flex-col justify-between h-full w-full">
-                      <img class="bf" src="{{ '/images/testimonial.png' | relative_url }}" alt="Zamil Hasballah" />
-                      
-                      <!-- Wrapping the quote and description inside a flex-grow wrapper to push the footer down -->
-                      <div class="flex-grow flex flex-col justify-start">
-                        <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
-                        <p class="ek ik xj _p kc fb">
-                          The automated 10-script Python pipeline is fully locked, dumping clean static layers directly into parallel frontend tracks (../). Production staging is flying at quranweb3.vercel.app and pinned on IPFS via Lighthouse. 
-                        </p>
+                    <!-- 3. The quote description box takes '.flex-grow' to absorb vertical empty spaces smoothly -->
+                    <div class="flex-grow flex flex-col justify-start">
+                      <img src="{{ '/images/icon-quote.svg' | relative_url }}" alt="Quote" />
+                      <p class="ek ik xj _p kc fb">
+                        The automated 10-script Python pipeline is fully locked, dumping clean static layers directly into parallel frontend tracks (../). Production staging is flying at quranweb3.vercel.app and pinned on IPFS via Lighthouse. 
+                      </p>
+                    </div>
+                    
+                    <!-- 4. The metadata block is now perfectly anchored to the absolute baseline across all viewport cards -->
+                    <div class="tc yf vf mt-auto">
+                      <div>
+                        <span class="rc ek xj kk wm zb"><a href="https://linkedin.com" target="_blank">Zamil Hasballah</a></span>
+                        <span class="rc">Dev Log #7 • V1.0 Stable Release Live! </span>
                       </div>
-                      
-                      <!-- This metadata footer module will now permanently sit at the identical baseline spot -->
-                      <div class="tc yf vf mt-auto">
-                        <div>
-                          <span class="rc ek xj kk wm zb"><a href="https://linkedin.com" target="_blank">Zamil Hasballah</a></span>
-                          <span class="rc">Dev Log #7 • V1.0 Stable Release Live! </span>
-                        </div>
-                        <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
-                      </div>
+                      <img class="rk" src="{{ '/images/brand.png' | relative_url }}" alt="Quran-Web3" />
                     </div>
                   </div>
                 </div>
+              </div>
                 
                 <div class="swiper-slide">
                   <div class="i hh rm sg vk xm bi qj">
